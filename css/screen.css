@@ -1,0 +1,119 @@
+/* Easy Slider */
+
+	#slider ul, #slider li,
+	#slider2 ul, #slider2 li{
+		margin:0;
+		padding:0;
+		list-style:none;
+		text-align: center;
+		}
+	#slider2{margin-top:1em;}
+	#slider li, #slider2 li{ 
+		/* 
+			define width and height of list item (slide)
+			entire slider area will adjust according to the parameters provided here
+		*/ 
+	/*	width:1123px;
+		height:430px;
+		overflow:hidden; */
+		}
+	#slider-apple li{ 
+		/* 
+			define width and height of list item (slide)
+			entire slider area will adjust according to the parameters provided here
+		*/ 
+		width:726px;
+		height:135px;
+		overflow:hidden; 
+		}	
+		
+	/* numeric controls */	
+
+	ol#controls{
+		margin:1em 0;
+		padding:0;
+		height:58px;
+		position:absolute;
+		left:950px;
+		top:366px;
+		}
+	ol#controls li{
+		margin:0 10px 0 0; 
+		padding:0;
+		float:left;
+		list-style:none;
+		height:28px;
+		line-height:28px;
+		}
+	ol#controls li a{
+		float:left;
+		height:20px;
+		line-height:28px;
+		border:1px solid #ccc;
+		background:#ccc;
+		color:#ccc;
+		padding:0;
+		text-decoration:none;
+		width:20px;
+		border-radius: 3px;
+		-moz-border-radius:3px;
+		}
+	ol#controls li.current a{
+		border-color:#008ed0;
+		background:#008ed0;
+	color: #008ed0;
+		}
+	ol#controls li a:focus, #prevBtn a:focus, #nextBtn a:focus{outline:none;}
+	
+/* // Easy Slider */
+ul.slidesjs-pagination {
+		margin:1em 0;
+		padding:0;
+		height:58px;
+		position:absolute;
+
+right: 57px;		top:366px;
+		z-index:20;
+}
+ul.slidesjs-pagination li {
+		margin:0 10px 0 0 !important;  
+		padding:0;
+		float:left;
+		list-style:none;
+		height:28px;
+		line-height:28px;
+}
+ul.slidesjs-pagination li a{
+
+float: left;
+height: 12px;
+line-height: 28px;
+padding: 0;
+text-decoration: none;
+width: 12px;
+border-radius: 8px;
+-moz-border-radius: 3px;
+font-size: 0;
+background-color: #FFF;
+border-color: rgba(210, 210, 210, 1);
+border-width: 1px;
+border-style: solid;
+-moz-box-shadow: inset 0px 1px 0px 0px rgba(3,2,4,0.34);
+-webkit-box-shadow: inset 0px 2px 0px 0px rgba(3, 2, 4, 0.34);
+box-shadow: inset 0px 2px 0px 0px rgba(3, 2, 4, 0.34);
+		}
+
+ul.slidesjs-pagination li a.active{
+//		border-color:#19B2FF;
+//		background:#19B2FF;
+//	color: #19B2FF;
+//		border-color:#008ED0;
+		background:#008ED0;
+	color: #008ED0;
+
+
+		}
+
+  #slider {
+      display:none;
+    }
