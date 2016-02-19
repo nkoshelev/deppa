@@ -12,11 +12,11 @@
 .h-menu > .cart {margin-top:29px;  margin-right: 36px;}
 .h-menu > .fav {margin-top:27px;}
 .h-menu-wrap.fw {height: 80px;}
-.h-slider.fw { // margin: 88px 0 0 0;
-width:auto;
+.h-slider.fw { 
+  width: auto;
 }
-.h-menu > .menu {  padding: 36px 0 0 0;width:auto;}
-.h-menu > form {width:140px; margin: 21px 92px 0 0;}
+.h-menu > .menu {  padding: 36px 0 0 0; width: auto;}
+.h-menu > form {width: 140px; margin: 21px 92px 0 0;}
 .h-menu input#search-site {width:140px;}
 .h-menu > .lang {right: 0;top: 35px;}
 .h-menu {  overflow: hidden;}

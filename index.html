@@ -18,7 +18,7 @@
 <link media="screen" href="css/default.css" type="text/css" rel="stylesheet" />
   <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />    
   <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
-  <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  <link href="css/style2.css" rel="stylesheet" type="text/css" />
   <link href="css/mobile.css" rel="stylesheet" type="text/css" />
   <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
   <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script-->
@@ -54,12 +54,22 @@
            });            
         $(document).ready(function(){   
     $(window).scroll(function() {
+        bound = $('#footer_cont'),
+        st = $(window).scrollTop(),
+        wh = $(window).height(),
+        dh = $(document).height(),
+        fh = $('#footer_cont').height();
         if($(this).scrollTop() != 0) {
             $('#toTop').fadeIn();   
             $('#toTop2').fadeIn();
         } else {
             $('#toTop').fadeOut();
             $('#toTop2').fadeOut();
+        }
+        if (st > dh - (wh + fh)) {
+            $('#toTop2').addClass('white');
+        }else{
+            $('#toTop2').removeClass('white');
         }
     });
  
@@ -461,7 +471,7 @@ var allow_dle_delete_news   = false;
               <input type="text" name="story" id="search-site" />
           </form>
           <div class="lang">
-              <A href="#" class="sel">rus</a> | <a href="/eng/">eng</a>
+              <a href="#" class="sel">rus</a> | <a href="/eng/">eng</a>
           </div>
           <a href="#my-menu" class="burger"></a>
           <a href="#" class="auth_link"></a>
@@ -570,7 +580,7 @@ var allow_dle_delete_news   = false;
              <div class="ban-text">
                         СТИЛЬ <br />БОЛЬШОГО<br />ГОРОДА
                 <span>Чехлы Air</span>
-                <a href="http://deppa.ru/covers-cases-bumpers/#air-case"><div class="more"></div></a>
+                <a href="http://deppa.ru/covers-cases-bumpers/#air-case"><div class="more">УЗНАТЬ БОЛЬШЕ</div></a>
              </div>
              <img src="css/img/1434725505_ban_1-1.jpg" alt="">
          </li>
@@ -578,7 +588,7 @@ var allow_dle_delete_news   = false;
              <div class="ban-text">
                         ВСЕ ДЕЛО<br />В МАГНИТЕ
                 <span>Держатели Crab Mage</span>
-                <a href="http://deppa.ru/top3/"><div class="more"></div></a>
+                <a href="http://deppa.ru/top3/"><div class="more">УЗНАТЬ БОЛЬШЕ</div></a>
              </div>
              <img src="css/img/1435050648_banners-big-2.jpg" alt="">
          </li>
@@ -586,7 +596,7 @@ var allow_dle_delete_news   = false;
              <div class="ban-text">
                         ТОНКИЕ<br />РЕШЕНИЯ
                 <span>Универсальные чехлы Fold</span>
-                <a href="http://deppa.ru/fold-cover.html"><div class="more"></div></a>
+                <a href="http://deppa.ru/fold-cover.html"><div class="more">УЗНАТЬ БОЛЬШЕ</div></a>
              </div>
              <img src="css/img/1435053439_banners-big-3.jpg" alt="">
          </li>
@@ -594,7 +604,7 @@ var allow_dle_delete_news   = false;
              <div class="ban-text">
                         СВОБОДА<br />БЫТЬ<br />СОБОЙ
                 <span>Чехлы Ultra Cover</span>
-                <a href="http://deppa.ru/top5/"><div class="more"></div></a>
+                <a href="http://deppa.ru/top5/"><div class="more">УЗНАТЬ БОЛЬШЕ</div></a>
              </div>
              <img src="css/img/1435054054_banners-big-4.jpg" alt="">
          </li>
@@ -614,43 +624,126 @@ var allow_dle_delete_news   = false;
         </li>
 
         </ul>
-    <div class="slider-text">
+    <!-- <div class="slider-text">
         <div>
 
         Мы создаем аксессуары для Ваших девайсов 10 лет. <br />
 Качественно. Элегантно. С умом. На этих принципах основаны все наши решения.<br />
 Наша цель состоит в том,  чтобы повысить качество Вашей жизни через детали.
         </div>
-    </div>
+    </div> -->
 
     </div>
       </div>
  </div>
-    <div class="slider-text fw mob">
+    <!-- <div class="slider-text fw mob">
         <div>
 
         Мы создаем аксессуары для Ваших девайсов 10 лет. <br />
 Качественно. Элегантно. С умом. На этих принципах основаны все наши решения.<br />
 Наша цель состоит в том,  чтобы повысить качество Вашей жизни через детали.
         </div>
+    </div> -->
+  
+    <div class="welcome">
+        <div class="container">
+            <div class="title">
+                Добро пожаловать в мир Deppa!
+            </div>
+            <div class="anons">
+                Мы создаем аксессуары для Ваших девайсов вот уже более 10 лет.<br>
+                Качественно. Элегантно. С умом. На этих принципах основаны все наши решения.<br>
+                Наша цель — повысить качество Вашей жизни через детали.
+            </div>
+            <div class="actions_block">
+                <a href="#" class="about_more">
+                    <span>Узнать о нас больше</span>
+                </a>
+                <a href="#" class="want_distribution">Хочу рассылку</a>
+            </div>
+        </div>
     </div>
- <div class="h-banners fw">
-    <div class="h-top">
-        <div class="hdr">Новые продукты</div>
-        <div class="subscribe">хочу рассылку</div>
+    <div class="main_banners">
+        <div class="container">
+            <a href="#" class="banner">
+                <div class="ban_head">
+                    <div class="name">
+                        Кейсы Air
+                    </div>
+                    <div class="anons">
+                        Стиль большого города
+                    </div>
+                </div>
+                <img src="css/img/ban1.jpg" class="ban_img" alt="" />
+                <div class="action_block">
+                    <div class="action_text">
+                        Кейсы с покрытием «soft touch» для Sony Xperia Z5 Compact
+                    </div>
+                    <div class="date">
+                        СКОРО<br>В ПРОДАЖЕ
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="banner">
+                <div class="ban_head">
+                    <div class="name">
+                        Защитные стекла Full
+                    </div>
+                    <div class="anons">
+                        Инновации в защите
+                    </div>
+                </div>
+                <img src="css/img/ban2.jpg" class="ban_img" alt="" />
+                <div class="action_block">
+                    <div class="action_text">
+                        Кейсы с покрытием «soft touch» для Sony Xperia Z5 Compact
+                    </div>
+                    <div class="date">
+                        СКОРО<br>В ПРОДАЖЕ
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="banner">
+                <div class="ban_head">
+                    <div class="name">
+                        Кейсы Gel
+                    </div>
+                    <div class="anons">
+                        Эластичный минимализм
+                    </div>
+                </div>
+                <img src="css/img/ban3.jpg" class="ban_img" alt="" />
+                <div class="action_block">
+                    <div class="action_text">
+                        Кейсы с покрытием «soft touch» для Sony Xperia Z5 Compact
+                    </div>
+                    <div class="date">
+                        СКОРО<br>В ПРОДАЖЕ
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="banner">
+                <div class="ban_head">
+                    <div class="name">
+                        Моноподы для селфи
+                    </div>
+                    <div class="anons">
+                        Эластичный минимализм
+                    </div>
+                </div>
+                <img src="css/img/ban4.jpg" class="ban_img" alt="" />
+                <div class="action_block">
+                    <div class="action_text">
+                        Кейсы с покрытием «soft touch» для Sony Xperia Z5 Compact
+                    </div>
+                    <div class="date">
+                        СКОРО<br>В ПРОДАЖЕ
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
-    <div class="banners">
-        <div class="block">
-    <a href="http://deppa.ru/new1/"><img src="css/img/1455293690_gorilla_glass_banner_rus.jpg" width="250"  title="http://deppa.ru/uploads/posts/2016-02/thumbs/1455293688_gorilla_glass_banner_rus_overlay.jpg" /></a>
-</div><div class="block">
-    <a href="http://deppa.ru/new7/"><img src="css/img/1455196533_air-for-samsung-a5-2016-a7-20161.jpg" width="250"  title="http://deppa.ru/uploads/posts/2016-02/thumbs/1455196627_air-for-samsung-a5-2016-a7-20162.jpg" /></a>
-</div><div class="block">
-    <a href="http://deppa.ru/adapters-cardreaders/adapters/1052-usb-c-adapter-dlya-macbook-5v1.html"><img src="css/img/1454064848__type-c_updated_blue.jpg" width="250"  title="http://deppa.ru/uploads/posts/2016-01/thumbs/1454064889__type-c_updated_red.jpg" /></a>
-</div><div class="block">
-    <a href="http://deppa.ru/new2/"><img src="css/img/1452762607_banner_quick_chargers_rus.jpg" width="250"  title="http://deppa.ru/uploads/posts/2016-01/thumbs/1452762643_banner_quick_chargers_rus_overlay.jpg" /></a>
-</div>
-    </div>
- </div>
+    
  <div class="h-popular fw">
     <div class="h-top">
         <div class="hdr">Популярные продукты</div>
@@ -700,7 +793,7 @@ $('.tovar_block .sel_color .color-link').hover(
 );
 
 </script>
-<div class="h-foo fw">
+<div class="h-foo fw footer_blocks">
     <div class="h-foo">
         <div class="reklam sld">
             <div class="hdr">Рекламации</div>
@@ -737,8 +830,8 @@ $('.tovar_block .sel_color .color-link').hover(
                 </form>
             </div>
         </div>
-        <div class="subscribe">
-            <div class="subscr sld"><a name="subscr-form"></a>
+        <div class="subscribe sld">
+            <div class="subscr"><a name="subscr-form"></a>
                 <div class="hdr">Подписка на новинки</div>
 
                 <div class="hid">
@@ -773,19 +866,6 @@ $('.tovar_block .sel_color .color-link').hover(
             
                 </div>
             </div>  
-            <div class="social">
-<a href="https://www.facebook.com/pages/Deppa/299338476879857?fref=ts" class="fb-link">
-    <img src="css/img/fb-icon.png" />
-</a>
-<a href="https://instagram.com/deppa_accessories/" class="fb-link">
-    <img src="css/img/insta-icon.png" />
-</a>
-<a href="http://www.youtube.com/channel/UCNs2_Jdo4vVwPnty4HBO3LQ" class="fb-link">
-    <img src="css/img/youtube-ico.png" />
-</a>
-<span>Присоединяйтесь к нам!</span>
-
-            </div>
     
         </div>
     </div>
@@ -932,6 +1012,23 @@ function reload () {
           </div>
           <div class="clr"></div>
      </div>
+    <div class="footer_bottom container">
+        <div class="copyright">
+            © 2016 Deppa. Все права защищены.
+        </div>
+        <div class="social">
+           <span>Присоединяйтесь к нам!</span>
+            <a href="https://www.facebook.com/pages/Deppa/299338476879857?fref=ts" class="fb-link">
+               <img src="css/img/fb-icon.png">
+            </a>
+            <a href="https://instagram.com/deppa_accessories/" class="fb-link">
+               <img src="css/img/insta-icon.png">
+            </a>
+            <a href="http://www.youtube.com/channel/UCNs2_Jdo4vVwPnty4HBO3LQ" class="fb-link">
+               <img src="css/img/youtube-ico.png">
+            </a>
+        </div>
+    </div>
  </div>
 
 <!-- Yandex.Metrika counter -->

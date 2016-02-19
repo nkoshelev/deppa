@@ -38,21 +38,15 @@
     box-sizing: border-box;
     padding: 20px;
     -webkit-transform: translate(100%, 0);
-    -moz-transform: translate(100%, 0);
     -ms-transform: translate(100%, 0);
-    -o-transform: translate(100%, 0);
     transform: translate(100%, 0); }
     .mm-menu > .mm-panel.mm-opened {
       -webkit-transform: translate(0%, 0);
-      -moz-transform: translate(0%, 0);
       -ms-transform: translate(0%, 0);
-      -o-transform: translate(0%, 0);
       transform: translate(0%, 0); }
     .mm-menu > .mm-panel.mm-subopened {
       -webkit-transform: translate(-30%, 0);
-      -moz-transform: translate(-30%, 0);
       -ms-transform: translate(-30%, 0);
-      -o-transform: translate(-30%, 0);
       transform: translate(-30%, 0); }
     .mm-menu > .mm-panel.mm-highest {
       z-index: 1; }
@@ -167,9 +161,7 @@
     width: 7px;
     height: 7px;
     -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
     margin-bottom: -5px;
     position: absolute;
@@ -198,9 +190,7 @@
     bottom: auto; }
 .mm-menu.mm-vertical .mm-list > li.mm-opened > a.mm-subopen:after {
   -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
   transform: rotate(45deg); }
 .mm-menu.mm-vertical .mm-list > li.mm-label > a.mm-subopen {
   height: 25px; }
@@ -238,7 +228,6 @@ html.mm-opened .mm-page {
 
 .mm-slideout {
   -webkit-transition: -webkit-transform 0.4s ease;
-  -ms-transition: -ms-transform 0.4s ease;
   transition: transform 0.4s ease; }
 
 html.mm-opened {
@@ -277,22 +266,16 @@ html.mm-blocking #mm-blocker {
 
 html.mm-opening .mm-slideout {
   -webkit-transform: translate(80%, 0);
-  -moz-transform: translate(80%, 0);
   -ms-transform: translate(80%, 0);
-  -o-transform: translate(80%, 0);
   transform: translate(80%, 0); }
 
 @media all and (max-width: 175px) {
   html.mm-opening .mm-slideout {
     -webkit-transform: translate(140px, 0);
-    -moz-transform: translate(140px, 0);
     -ms-transform: translate(140px, 0);
-    -o-transform: translate(140px, 0);
     transform: translate(140px, 0); } }
 @media all and (min-width: 550px) {
   html.mm-opening .mm-slideout {
     -webkit-transform: translate(440px, 0);
-    -moz-transform: translate(440px, 0);
     -ms-transform: translate(440px, 0);
-    -o-transform: translate(440px, 0);
     transform: translate(440px, 0); } }
