@@ -1,3 +1,14 @@
+.clearfix() {
+    &::before,
+    &::after {
+        display: table;
+        content: "";
+    }
+
+    &::after {
+        clear: both;
+    }
+}
 @media (max-width: 1650px) {
 .h-menu > .menu > a {font-size:0.95em;}
 .h-menu > img.logo {
@@ -17,7 +28,6 @@
 }
 .h-menu > .menu {  padding: 36px 0 0 0; width: auto;}
 .h-menu > form {width: 140px; margin: 21px 92px 0 0;}
-.h-menu input#search-site {width:140px;}
 .h-menu > .lang {right: 0;top: 35px;}
 .h-menu {  overflow: hidden;}
 
@@ -31,7 +41,7 @@
   width: 950px;
   margin: 0px auto;
   overflow: hidden;
-  padding: 20px 0 20px 158px;
+  padding: 20px 0 20px 150px;
 }
 
 }
@@ -40,20 +50,20 @@
 .h-cat-wrap > .h-cat {
     width: auto;
 }
-.h-menu > img.logo {   left: 0px;  position: relative;  float: left;  margin: 0px 40px 0px 30px;}
+.h-menu > img.logo {   left: 0px;  position: relative;  float: left;  margin: 0px 20px 0px 20px;}
 .h-menu > .menu > a {font-size:0.9em;}
 
 
 
 .h-menu > img.logo {
-	width:110px;	
+    width:110px;    
 }
 .h-menu > .menu > a {font-size:0.8em;  margin: 0 13px 0 0;}
 .h-menu-wrap.fw {height: 78px;}
  .h-menu-wrap.fw > .h-menu {width:auto;}
 .h-menu > input#search-site {
-	width:40px;height:30px;
-	background-position:10% 50%;	
+    width:40px;height:30px;
+    background-position:10% 50%;    
 }
 
 .h-menu > .cart img, .h-menu > .fav img {
@@ -110,9 +120,187 @@ width:auto;
   top: 78px;
 }
 .container {
-  width: auto;
+    width:750px
 }
-
+.main_banners {
+  .banner {
+    width: 49%;
+    height: 375px;
+    .ban_img {
+      width: 100%;
+    }
+    .ban_head {
+        .name {
+          font-size: 1.9em;  
+        }
+        .anons {
+            font-size: 1em;
+        }
+    }
+    .action_block {
+        padding: 30px 4% 25px;
+        .action_text {
+            font-size: 0.938em;
+        }
+        .action_text {
+            width: 236px;
+        }
+        .date {
+            font-size: 0.9em;
+            &:before {
+                left: -10px;
+            }
+        }
+    }
+    &:hover {
+        .action_block {
+            bottom: 35px;
+        }
+    }
+  }
+}
+.welcome {
+    padding: 45px 0 52px;
+   .title {
+        font-size: 2.5em;
+   }
+    .anons {
+       font-size: 1.125em;
+       margin-bottom: 45px;
+    }
+    .actions_block {
+        .about_more {
+            span {
+                font-size: 18px;
+            }
+        }
+        .want_distribution {
+            font-size: 18px;
+            &:before {
+                top: 0;
+            }
+        }
+    }
+}
+.footer_blocks {
+    .sld {
+        padding: 20px 19px 24px;
+        p {
+            font-size: 0.9em;
+            line-height: 21px;
+        }
+        div.hdr {
+            font-size: 2em;
+        }
+    }
+}
+.h-foo.fw > .h-foo > div form > textarea {
+    font-size: 0.7em;
+}
+#footer > .menu_foo > b {
+    font-size: 1.2em;
+}
+#footer > .menu_foo > a {
+    font-size: 0.8em;
+}
+.footer_bottom {
+    .copyright {
+        font-size: 0.9em;
+    }
+    .social {
+        span {
+            font-size: 0.9em;
+        }
+    }
+}
+.h-popular > .banners .banner > .goods > .tovar_block {
+    width: 31%;
+}
+.h-menu .menu_icon .fav > img {
+    width: 23px;
+}
+.h-menu .menu_icon .cart > img {
+    width: 28px;
+}
+.h-menu .menu_icon .fav span {
+    top: -2px;
+    right: -10px;
+}
+.h-menu .menu_icon .cart span {
+    top: -2px;
+}
+.h-menu .menu_icon {
+    margin: 8px 24px 0 0;
+}
+.search_adaptive {
+    display: block;
+    float: left;
+    background: url('img/search-ico.png') no-repeat;
+    width: 16px;
+    height: 18px;
+    margin: 9px 25px 0 0;
+    cursor: pointer;
+    &.active {
+        background: url('img/button_close.png') no-repeat;
+        width: 15px;
+        height: 15px;
+        background-size: 100%;
+        margin-top: 11px;
+    }
+    & + form {
+        position: absolute;
+        width: 300px;
+        top: 100%;
+        background: #fff;
+        z-index: 4000;
+        right: 0;
+        padding: 20px;
+        box-sizing: border-box;
+        float: none;
+        margin: 10px 0 0;
+        .clearfix();
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,.4);
+        visibility: hidden;
+        opacity: 0;
+        transition: all .3s ease-in-out;
+        &.active {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+.h-menu {
+    overflow: inherit;
+}
+.h-menu .lang a {
+    font-size: 15px;
+}
+.h-menu .actions {
+    margin: 25px 0 0;
+    position: relative;
+}
+.h-popular > .banners .banner > .hdr {
+    margin-bottom: 30px;
+}
+.slides ul li div.ban-text {
+    padding: 250px 0 0 20px;
+}
+.slides ul li div.ban-text {
+    width: 750px;
+}
+.slides ul li div.ban-text {
+    font-size: 2.7em;
+}
+.slides ul li div.ban-text span {
+    font-size: 0.5em;
+}
+.ban-text a {
+    margin: 48px 0 0 0;
+}
+.slides-pagination {
+    width: 750px !important;
+    margin-left: 20px;
+}
 
 }
 
@@ -121,7 +309,9 @@ width:auto;
 
 @media (max-width: 767px) {
 body {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
   .h-menu-wrap.fw {
  position:fixed;
@@ -158,7 +348,7 @@ top:-30px;
 }
 
 .h-menu-wrap.fw > .h-menu {
-	overflow:hidden;
+    overflow:hidden;
 }
 
 .h-popular > .banners .banner > .goods > .tovar_block {
@@ -177,8 +367,8 @@ top:-30px;
 
 .h-menu-wrap.fw {
     width: auto;
-	left:0;
-	right:0;
+    left:0;
+    right:0;
   height: 45px;
 }
 .h-menu > .menu {
@@ -214,8 +404,8 @@ margin: 15px 4px 7px 4px;
 }
 
 .h-slider.fw .slider-text {
-	font-size:0.8em;
-	position: relative; 
+    font-size:0.8em;
+    position: relative; 
 }
 
 .h-popular.fw > .h-top > .hdr, .h-banners.fw > .h-top > .hdr {
@@ -242,7 +432,7 @@ font-size:2.2em;
   padding: 0 20px;
 }
 .h-cat-wrap > .h-cat h1 {
-  padding: 0 20px;	
+  padding: 0 20px;  
 }
 
 .h-cat-wrap.fw {
@@ -261,7 +451,7 @@ font-size:2.2em;
     font-size: 0.7em;
 }
 div.tov_list.where_buy > .tovar_block a {
-  padding: 30px 0;	
+  padding: 30px 0;  
 }
 
 div.subscr form {
@@ -337,7 +527,7 @@ div#right_slider {
 
 .info-menu > .pluso {
     position: relative;
-	display:block;
+    display:block;
 }
 
 .h-foo .subscribe .social {

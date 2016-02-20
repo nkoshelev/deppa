@@ -19,7 +19,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />    
   <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
   <link href="css/style2.css" rel="stylesheet" type="text/css" />
-  <link href="css/mobile.css" rel="stylesheet" type="text/css" />
+  <link href="css/mobile2.css" rel="stylesheet" type="text/css" />
   <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
   <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script-->
   <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?52"></script>
@@ -37,6 +37,7 @@
    <script src="js/jquery.mmenu.min.js" type="text/javascript"></script>
    <link href="css/jquery.mmenu.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 
   <script type="text/javascript">
 
@@ -121,7 +122,7 @@
     },function() {
            setTimeoutConst = setTimeout(function(){
                 $('.h-menu-drop-wrap').slideUp();
-             }, 1000);
+             }, 100);
     }
 
     );
@@ -465,6 +466,7 @@ var allow_dle_delete_news   = false;
                 <span>2</span>
             </div>
           </div>
+          <div class="search_adaptive"></div>
           <form action="/search.html" name="searchform" method="post">
               <input type="hidden" name="do" value="search">
               <input type="hidden" name="subaction" value="search">
@@ -510,31 +512,98 @@ var allow_dle_delete_news   = false;
             <ul>
                 <li>
                     <a href="/iphone/" class="bold">iPhone</a>
-                    <a href="/iphone-6s/">iPhone 6S</a><a href="/iphone-6s-plus/">iPhone 6S Plus</a><a href="/iphone-6/">iPhone 6</a><a href="/iphone-6-plus/">iPhone 6 Plus</a><a href="/iphone-5/">iPhone 5/5S</a><a href="/iphone-5c/">iPhone 5C</a><a href="/iphone-4/">iPhone 4/4S</a>
+                    <ul>
+                        <li><a href="/iphone-6s/">iPhone 6S</a></li>
+                        <li><a href="/iphone-6s-plus/">iPhone 6S Plus</a></li>
+                        <li><a href="/iphone-6/">iPhone 6</a></li>
+                        <li><a href="/iphone-6-plus/">iPhone 6 Plus</a></li>
+                        <li><a href="/iphone-5/">iPhone 5/5S</a></li>
+                        <li><a href="/iphone-5c/">iPhone 5C</a></li>
+                        <li><a href="/iphone-4/">iPhone 4/4S</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="/ipad/" class="bold">iPad</a>
-                    <a href="/ipad-pro/">iPad Pro</a><a href="/ipad-air-2/">iPad Air 2</a><a href="/ipad-air/">iPad Air</a><a href="/ipad-4/">iPad 4</a><a href="/ipad-3/">iPad 3</a><a href="/ipad-2/">iPad 2</a><a href="/ipad-mini-4/">iPad mini 4</a><a href="/ipad-mini-3/">iPad mini 3</a><a href="/ipad-mini-2/">iPad mini 2</a><a href="/ipad-mini/">iPad mini</a>
+                    <ul>
+                        <li><a href="/ipad-pro/">iPad Pro</a></li>
+                        <li><a href="/ipad-air-2/">iPad Air 2</a></li>
+                        <li><a href="/ipad-air/">iPad Air</a></li>
+                        <li><a href="/ipad-4/">iPad 4</a></li>
+                        <li><a href="/ipad-3/">iPad 3</a></li>
+                        <li><a href="/ipad-2/">iPad 2</a></li>
+                        <li><a href="/ipad-mini-4/">iPad mini 4</a></li>
+                        <li><a href="/ipad-mini-3/">iPad mini 3</a></li>
+                        <li><a href="/ipad-mini-2/">iPad mini 2</a></li>
+                        <li><a href="/ipad-mini/">iPad mini</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="/ipod/" class="bold">iPod</a>
-                    <a href="/ipod-touch-5/">iPod touch 5th Gen</a><a href="/ipod-nano-7/">iPod nano 7th Gen</a><a href="/ipod-classic/">iPod classic</a>
-                    <br /><br />
-                    <a href="/mac/" class="bold">Mac</a>
-                    <a href="/macbook-12/">MacBook 12 (2015) </a><a href="/macbook-pro-13/">MacBook Pro 13</a><a href="/macbook-pro-15-retina/">MacBook Pro 15 with Retina display</a><a href="/macbook-air-13-2012/">MacBook Air 13 (Mid 2012)</a><a href="/macbook-air-11/">MacBook Air 11</a>
+                    <ul>
+                        <li><a href="/ipod-touch-5/">iPod touch 5th Gen</a></li>
+                        <li><a href="/ipod-nano-7/">iPod nano 7th Gen</a></li>
+                        <li><a href="/ipod-classic/">iPod classic</a></li>
+                    </ul>                  
                 </li>
-
+                <li>
+                    <a href="/mac/" class="bold">Mac</a>
+                    <ul>
+                        <li><a href="/macbook-12/">MacBook 12 (2015) </a></li>
+                        <li><a href="/macbook-pro-13/">MacBook Pro 13</a></li>
+                        <li><a href="/macbook-pro-15-retina/">MacBook Pro 15 with Retina display</a></li>
+                        <li><a href="/macbook-air-13-2012/">MacBook Air 13 (Mid 2012)</a></li>
+                        <li><a href="/macbook-air-11/">MacBook Air 11</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <div class="hid m-samsung">
             <ul>
                 <li>
                     <a href="/samsung/" class="bold">Смартфоны Samsung</a>
-                    <a href="/galaxy_a7_2016/">Galaxy A7 (2016)</a><a href="/galaxy_a5_2016/">Galaxy A5 (2016)</a><a href="/galaxy_a3_2016/">Galaxy A3 (2016)</a><a href="/galaxy-s6-edge-plus/">Galaxy S6 edge+</a><a href="/galaxy-s6/">Galaxy S6</a><a href="/galaxy-s6-edge/">Galaxy S6 edge</a><a href="/galaxy-s5/">Galaxy S5</a><a href="/s5-mini/">Galaxy S5 mini</a><a href="/galaxy-s4/">Galaxy S4</a><a href="/galaxy-s4-mini/">Galaxy S4 mini</a><a href="/galaxy-s4-active/">Galaxy S4 Active</a><a href="/galaxy-s4-zoom/">Galaxy S4 Zoom</a><a href="/galaxy-s3/">Galaxy S3</a><a href="/galaxy-s3-mini/">Galaxy S3 mini</a><a href="/galaxy-s3-neo/">Galaxy S3 Neo</a><a href="/galaxy-a7/">Galaxy A7</a><a href="/galaxy-a5/">Galaxy A5</a><a href="/galaxy-a3/">Galaxy A3</a><a href="/galaxy-alpha/">Galaxy Alpha</a><a href="/galaxy-note5/">Galaxy Note5</a><a href="/galaxy-note-4/">Galaxy Note 4</a><a href="/galaxy-note-3/">Galaxy Note 3</a><a href="/galaxy-note-3-neo/">Galaxy Note 3 Neo</a><a href="/galaxy-note-2/">Galaxy Note 2</a>
+                    <ul>
+                        <li><a href="/galaxy_a7_2016/">Galaxy A7 (2016)</a></li>
+                        <li><a href="/galaxy_a5_2016/">Galaxy A5 (2016)</a></li>
+                        <li><a href="/galaxy_a3_2016/">Galaxy A3 (2016)</a></li>
+                        <li><a href="/galaxy-s6-edge-plus/">Galaxy S6 edge+</a></li>
+                        <li><a href="/galaxy-s6/">Galaxy S6</a></li>
+                        <li><a href="/galaxy-s6-edge/">Galaxy S6 edge</a></li>
+                        <li><a href="/galaxy-s5/">Galaxy S5</a></li>
+                        <li><a href="/s5-mini/">Galaxy S5 mini</a></li>
+                        <li><a href="/galaxy-s4/">Galaxy S4</a></li>
+                        <li><a href="/galaxy-s4-mini/">Galaxy S4 mini</a></li>
+                        <li><a href="/galaxy-s4-active/">Galaxy S4 Active</a></li>
+                        <li><a href="/galaxy-s4-zoom/">Galaxy S4 Zoom</a></li>
+                        <li><a href="/galaxy-s3/">Galaxy S3</a></li>
+                        <li><a href="/galaxy-s3-mini/">Galaxy S3 mini</a></li>
+                        <li><a href="/galaxy-s3-neo/">Galaxy S3 Neo</a></li>
+                        <li><a href="/galaxy-a7/">Galaxy A7</a></li>
+                        <li><a href="/galaxy-a5/">Galaxy A5</a></li>
+                        <li><a href="/galaxy-a3/">Galaxy A3</a></li>
+                        <li><a href="/galaxy-alpha/">Galaxy Alpha</a></li>
+                        <li><a href="/galaxy-note5/">Galaxy Note5</a></li>
+                        <li><a href="/galaxy-note-4/">Galaxy Note 4</a></li>
+                        <li><a href="/galaxy-note-3/">Galaxy Note 3</a></li>
+                        <li><a href="/galaxy-note-3-neo/">Galaxy Note 3 Neo</a></li>
+                        <li><a href="/galaxy-note-2/">Galaxy Note 2</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="/samsung-tablets/" class="bold">Планшеты Samsung</a>
-                    <a href="/galaxy-tab-4-10/">Galaxy Tab 4, 10.1</a><a href="/galaxy-tab-4-8/">Galaxy Tab 4, 8.0</a><a href="/galaxy-tab-4-7/">Galaxy Tab 4, 7.0</a><a href="/galaxy-tab-3-10/">Galaxy Tab 3, 10.1</a><a href="/galaxy-tab-3-8/">Galaxy Tab 3, 8.0</a><a href="/galaxy-tab-3-7/">Galaxy Tab 3, 7.0</a><a href="/galaxy-tab-3-lite-7/">Galaxy Tab 3 Lite, 7.0</a><a href="/galaxy-tab-s/">Galaxy Tab S</a><a href="/galaxy-tab-s-8/">Galaxy Tab S 8.4</a><a href="/galaxy-tab-pro/">Galaxy Tab Pro</a><a href="/galaxy-tab-pro-8/">Galaxy Tab Pro 8.4</a><a href="/galaxy-tab-pro-note-112/">Galaxy Tab Pro/Note Pro 12.2</a>
+                    <ul>
+                        <li><a href="/galaxy-tab-4-10/">Galaxy Tab 4, 10.1</a></li>
+                        <li><a href="/galaxy-tab-4-8/">Galaxy Tab 4, 8.0</a></li>
+                        <li><a href="/galaxy-tab-4-7/">Galaxy Tab 4, 7.0</a></li>
+                        <li><a href="/galaxy-tab-3-10/">Galaxy Tab 3, 10.1</a></li>
+                        <li><a href="/galaxy-tab-3-8/">Galaxy Tab 3, 8.0</a></li>
+                        <li><a href="/galaxy-tab-3-7/">Galaxy Tab 3, 7.0</a></li>
+                        <li><a href="/galaxy-tab-3-lite-7/">Galaxy Tab 3 Lite, 7.0</a></li>
+                        <li><a href="/galaxy-tab-s/">Galaxy Tab S</a></li>
+                        <li><a href="/galaxy-tab-s-8/">Galaxy Tab S 8.4</a></li>
+                        <li><a href="/galaxy-tab-pro/">Galaxy Tab Pro</a></li>
+                        <li><a href="/galaxy-tab-pro-8/">Galaxy Tab Pro 8.4</a></li>
+                        <li><a href="/galaxy-tab-pro-note-112/">Galaxy Tab Pro/Note Pro 12.2</a></li>
+                    </ul>
                 </li>
             </ul>
 
@@ -543,11 +612,28 @@ var allow_dle_delete_news   = false;
             <ul>
                 <li>
                     <a href="/sony/" class="bold">Смартфоны Sony</a>
-                    <a href="/xperia-z5-premium/">Xperia Z5 Premium</a><a href="/xperia-z5/">Xperia Z5</a><a href="/xperia-z5-compact/">Xperia Z5 Compact</a><a href="/xperia-m5/">Xperia M5</a><a href="/m4-aqua/">Xperia M4 Aqua</a><a href="/sony-xperia-z3/">Xperia Z3+</a><a href="/xperia-z3/">Xperia Z3</a><a href="/xperia-z3c/">Xperia Z3 Compact</a><a href="/xperia-z2/">Xperia Z2</a><a href="/xperia-z1/">Xperia Z1</a><a href="/xperia-z1c/">Xperia Z1 Compact</a>
+                    <ul>
+                        <li><a href="/xperia-z5-premium/">Xperia Z5 Premium</a></li>
+                        <li><a href="/xperia-z5/">Xperia Z5</a></li>
+                        <li><a href="/xperia-z5-compact/">Xperia Z5 Compact</a></li>
+                        <li><a href="/xperia-m5/">Xperia M5</a></li>
+                        <li><a href="/m4-aqua/">Xperia M4 Aqua</a></li>
+                        <li><a href="/sony-xperia-z3/">Xperia Z3+</a></li>
+                        <li><a href="/xperia-z3/">Xperia Z3</a></li>
+                        <li><a href="/xperia-z3c/">Xperia Z3 Compact</a></li>
+                        <li><a href="/xperia-z2/">Xperia Z2</a></li>
+                        <li><a href="/xperia-z1/">Xperia Z1</a></li>
+                        <li><a href="/xperia-z1c/">Xperia Z1 Compact</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="/tablets-sony/" class="bold">Планшеты Sony</a>
-                    <a href="/xperia-z4-tablet/">Xperia Z4 Tablet</a><a href="/xperia-z3-tablet-compact/">Xperia Z3 Tablet Compact</a><a href="/xperia-tablet-z2/">Xperia Tablet Z2</a><a href="/xperia-tablet-z/">Xperia Tablet Z</a>
+                    <ul>
+                        <li><a href="/xperia-z4-tablet/">Xperia Z4 Tablet</a></li>
+                        <li><a href="/xperia-z3-tablet-compact/">Xperia Z3 Tablet Compact</a></li>
+                        <li><a href="/xperia-tablet-z2/">Xperia Tablet Z2</a></li>
+                        <li><a href="/xperia-tablet-z/">Xperia Tablet Z</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
@@ -900,7 +986,7 @@ $('.h-foo > .h-foo div.sld').hover(function() {
 });
 }  */
 
-$('.h-banners.fw > .h-top > .subscribe').click(function() {
+$('.want_distribution').click(function() {
       $("html, body").animate({ scrollTop: $("div.subscribe div.subscr").offset().top - 50}, 1000);
     $('.h-foo.fw > .h-foo > div.subscribe').find('div.hid').slideDown();
 

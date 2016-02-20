@@ -2670,22 +2670,30 @@ div#footer {
   width: 100%;
   z-index: 1001;
   top: 80px;
-    display:none;
+    display: none;
   line-height: 1.4em;
 }
 .h-menu-drop-wrap .h-menu-drop {
   width: 1125px;
   margin: 0px auto;
   overflow: hidden;
-  padding: 20px 0 20px 0px;}
+  box-sizing: border-box;
+  padding: 25px 38px 35px 164px;}
 .h-menu-drop-wrap .h-menu-drop.cats > div {
   float: left;
   width: 33%;
-  font-size: 0.95em;
+  font-size: 1em;
+   font-family: pf_beausans_proextrabook;
 }
 .h-menu-drop-wrap .h-menu-drop > div > a {
     display: block;
-    color: #333;
+    color: #070706;
+    text-shadow: none;
+    margin-bottom: 13px;
+    line-height: 18px;
+    &:hover {
+        color: #008fd4;
+    }
 }
 
 
@@ -2877,42 +2885,91 @@ display:none;
 }
 
 .h-menu-drop-wrap > .device a {
-    color: #333;
+    color: #000002;
 }
 
 .h-menu-drop-wrap > .device a.sel {
-    color: #008ed1;
+    color: #008fd4;
+    &:hover {
+        color: #008fd4;
+    }
 }
 
 .h-menu-drop-wrap > .device > ul {
-margin:0 0 20px 0;
-    
+    margin:0 0 38px 0;  
 }
 
 .h-menu-drop-wrap > .device > div.hid {
     display: none;
+    &>ul {
+        &>li {
+            .bold {
+                border-bottom: 1px solid #3d3d3d;
+                margin-bottom: 16px;
+                padding-bottom: 7px;
+                position: relative;
+                &:before {
+                    .before_block(none, 0, 0);
+                    position: absolute;
+                    border-style: solid;
+                    border-width: 6px 6px 0 6px;
+                    border-color: #3d3d3d transparent transparent transparent;
+                    bottom: -6px;
+                    left: 9px;
+                }
+            }
+        }
+    }
 }
 
 .h-menu-drop-wrap > .device > div.m-apple {
     display: block;
+    & > ul {
+        & > li {
+            width: 25% !important;
+            margin: 0 !important;
+            ul {
+                li {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+.h-menu-drop-wrap > .device > div.m-samsung,
+.h-menu-drop-wrap > .device > div.m-sony {
+    & > ul {
+        & > li {
+            width: 50% !important;
+            margin: 0 !important;
+        }
+    }
 }
 
-
 .h-menu-drop-wrap > .device > div.hid > ul li a.bold {
-    font-family: pf_beausans_proregular;
-    font-weight: bold;
-    text-decoration: underline;
+    font-family: pf_beausans_proextrabook;
+    font-size: 1em;
+    color: #070706;
+    text-shadow: none;
 }
 
 .h-menu-drop-wrap > .device > div.hid > ul li {
     float: left;
-    width: 20%;
-    margin: 0 40px 0 0;
+    width: 48%;
+    margin: 0 2% 5px 0;
     list-style: none;
+    &:last-child {
+        margin: 0;
+    }
 }
 
 .h-menu-drop-wrap > .device > div.hid > ul li a {
     display: block;
+    color: #000;
+    font-size: 1em;
+    &:hover {
+        color: #008fd4;
+    }
 }
 
 .tovar_block img.fav {
@@ -3169,9 +3226,6 @@ cursor:pointer;
 display:none;
 }
 
-.h-menu-drop.device {
-    font-size: 0.95em;
-}
 
 #content_main > div#download {
     display: none;
@@ -3907,4 +3961,7 @@ ul.js-filter > li:first-child > a {
             vertical-align: middle;
         }
     }
+}
+.search_adaptive {
+    display: none;
 }
