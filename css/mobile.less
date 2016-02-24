@@ -301,6 +301,20 @@ width:auto;
     width: 750px !important;
     margin-left: 20px;
 }
+.main_tovar_slider_block {
+    display: block;
+    .title {
+        &:extend(.welcome .title);
+    }
+}
+.h-popular.fw {
+    display: none;
+}
+.ban-text .more {
+    &:before {
+        top: 5px;
+    }
+}
 
 }
 
@@ -589,6 +603,209 @@ border:1px solid rgba(0, 0, 0, 0);
 
 #right div#dle-content .news-body {width:100%;}
 
+.search_adaptive,
+.h-menu .auth_link {
+    display: none;
+}
+.h-menu .menu_icon {
+    opacity: 0;
+    visibility: hidden;
+    margin: 8px 0px 0 0;
+}
+.slides-pagination {
+    width: auto !important;
+    left: 0 !important;
+    transform: translate(0,0) !important;
+}
+.container {
+    width: 310px;
+}
+.h-menu .actions {
+    margin: 0;
+}
+.h-menu .lang {
+    margin: 12px 12px 0 0;
+}
+.h-menu a.burger {
+    top: 3px;
+    position: static;
+    float: right;
+    margin: 3px 10px 0 0;
+}
+.mmenu_icons {
+    padding: 15px 0 0 !important;
+    &:after {
+        content: none !important;
+    }
+    .img {
+        width: 33px;
+        display: block;
+        float: left;
+        margin-right: 8px;
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    .name {
+        float: left;
+    }
+    .cart{
+        .name {
+            margin: 2px 0 0;
+        }
+    }
+    .auth {
+        .name {
+            margin: 3px 0 0;
+        }
+    }
+    .cart,
+    .auth {
+        display: table;
+        margin: 10px 10px 10px 20px;
+        padding: 0;
+    }
+    .cart{
+        margin: 10px 10px 20px 20px;
+    }
+}
+.h-menu > img.logo {
+    float: left;
+}
+.welcome .title {
+    font-size: 2em;
+}
+.welcome .anons {
+    font-size: 1em;
+    margin-bottom: 35px;
+    line-height: 28px;
+}
+.welcome .actions_block .about_more span {
+    font-size: 1em;
+}
+.welcome .actions_block .want_distribution {
+    margin: 18px auto 0;
+    float: none;
+    display: table;
+    font-size: 1em;
+    &:before {
+        top: -1px;
+    }
+}
+.welcome .actions_block .about_more {
+    margin: 0;
+    float: none;
+}
+.main_banners .banner {
+    width: 100%;
+    height: 320px;
+}
+.main_banners .banner .action_block .action_text,
+.main_banners .banner .action_block .date {
+    float: none;
+}
+.main_banners .banner .action_block .date {
+    font-size: 0.85em;
+    br {
+        display: none;
+    }
+    &:before {
+        content: none;
+    }
+}
+.main_banners .banner .ban_head .name {
+    font-size: 1.6em;
+}
+.main_banners .banner .ban_head .anons {
+   font-size: 0.95em;
+}
+.main_banners .banner .action_block .action_text {
+    font-size: 0.9em;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.main_banners .banner .action_block {
+    padding: 10px 4%;
+}
+.footer_blocks .sld {
+    width: 100%;
+    min-height: 170px;
+}
+#footer > .menu_foo, #footer > .menu_foo {
+    width: 50%;
+    margin-bottom: 14px;
+    &:nth-child(4n) {
+        margin-bottom: 14px;
+    }
+    &:nth-child(4n+1) {
+        clear: left;
+    }
+}
+#footer > .menu_foo > b {
+    margin-bottom: 10px;
+}
+#footer > .menu_foo > a {
+    font-size: 0.9em;
+}
+.footer_bottom .copyright {
+    float: none;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.footer_bottom .social {
+    float: none;
+    text-align: center;
+    span {
+        float: none;
+        margin: 0 0 7px;
+    }
+    a {
+        float: none;
+        margin-right: 0;
+        display: inline-block;
+        margin: 0 2px;
+    }
+}
+.h-menu .menu_icon {
+    display: none;
+}
+.main_tovar_slider_block {
+    .title {
+        &:extend(.welcome .title);
+        font-size: 1.8em;
+    }
+    .tovar_block {
+        width: 300px;
+    }
+    .main_tovar_slider {
+        width: 310px;
+        .slick-next,
+        .slick-prev {
+            margin-top: -66px;
+        }
+        .slick-next {
+            right: -30px;
+        }
+        .slick-prev {
+            left: -30px;
+        }
+    }
+}
+.ban-text .more {
+    &:before {
+        top: 0;
+    }
+}
+
+// .mm-list > li > a {
+//     &:hover {
+//         background: #4d4d4d;
+//     }
+// }
+// .mm-list a.mm-subopen:hover + a {
+//     color: inherit;
+// }
 }
 
 

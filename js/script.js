@@ -10,4 +10,12 @@ $(document).ready(function() {
         $('.search_adaptive').removeClass('active');
         event.stopPropagation();
     });
+    $('.main_tovar_slider').slick({
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        prevArrow: '<button type="button" class="slick-prev"></button>',
+        nextArrow: '<button type="button" class="slick-next"></button>',
+        asNavFor: '.tovar_text_slider',
+        variableWidth: true
+    });
 });

@@ -2027,7 +2027,8 @@ td.inf > span.blue:hover {
   padding: 0 0 45px 0;
   background: #fff;
 }
-.h-popular > .banners .banner > .goods > .tovar_block {
+.h-popular > .banners .banner > .goods > .tovar_block,
+.main_tovar_slider_block .tovar_block {
   vertical-align: top;
   width: 13%;
   font-size: 0.9em;
@@ -2038,11 +2039,13 @@ td.inf > span.blue:hover {
 .h-banners.fw {
   background: #fff;
 }
-.h-popular > .banners .banner > .goods > .tovar_block > a > img {
+.h-popular > .banners .banner > .goods > .tovar_block > a > img,
+.main_tovar_slider_block .tovar_block > a > img {
   width: 100%;
   height: auto;
 }
-.h-popular > .banners .banner > .goods > .tovar_block > a {
+.h-popular > .banners .banner > .goods > .tovar_block > a,
+.main_tovar_slider_block .tovar_block > a {
   height: 100%;
 }
 .h-foo.fw {
@@ -3053,7 +3056,8 @@ ul.js-filter > li:first-child > a {
 .welcome {
   padding: 81px 0 83px;
 }
-.welcome .title {
+.welcome .title,
+.main_tovar_slider_block .title {
   font-size: 2.750em;
   font-family: pf_beausans_prothin;
   text-align: center;
@@ -3285,4 +3289,47 @@ ul.js-filter > li:first-child > a {
 }
 .search_adaptive {
   display: none;
+}
+.main_tovar_slider_block {
+  display: none;
+  padding: 40px 0;
+}
+.main_tovar_slider_block .tovar_block {
+  width: 300px;
+}
+.main_tovar_slider_block .tovar_block:focus {
+  outline: none;
+}
+.main_tovar_slider_block .main_tovar_slider {
+  width: 634px;
+  margin: 0 auto;
+}
+.main_tovar_slider_block .main_tovar_slider .slick-next,
+.main_tovar_slider_block .main_tovar_slider .slick-prev {
+  position: absolute;
+  top: 50%;
+  margin-top: -66px;
+  border: none;
+  z-index: 9;
+  cursor: pointer;
+}
+.main_tovar_slider_block .main_tovar_slider .slick-next:focus,
+.main_tovar_slider_block .main_tovar_slider .slick-prev:focus {
+  outline: none;
+}
+.main_tovar_slider_block .main_tovar_slider .slick-next {
+  right: -60px;
+  content: '';
+  background: url('img/right-arr.png') no-repeat;
+  width: 44px;
+  height: 62px;
+  display: block;
+}
+.main_tovar_slider_block .main_tovar_slider .slick-prev {
+  left: -60px;
+  content: '';
+  background: url('img/left-arr.png') no-repeat;
+  width: 44px;
+  height: 62px;
+  display: block;
 }

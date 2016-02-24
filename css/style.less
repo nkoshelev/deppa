@@ -3965,3 +3965,41 @@ ul.js-filter > li:first-child > a {
 .search_adaptive {
     display: none;
 }
+.main_tovar_slider_block {
+    display: none;
+    padding: 40px 0;
+    .title {
+        &:extend(.welcome .title all);
+    }
+    .tovar_block {
+        &:extend(.h-popular > .banners .banner > .goods > .tovar_block all);
+        width: 300px;
+        &:focus {
+            outline: none;
+        }
+    }
+    .main_tovar_slider {
+        width: 634px;
+        margin: 0 auto;
+        .slick-next,
+        .slick-prev {
+            position: absolute;
+            top: 50%;
+            margin-top: -66px;
+            border: none;
+            z-index: 9;
+            cursor: pointer;
+            &:focus {
+                outline: none;
+            }
+        }
+        .slick-next {
+            right: -60px;
+            .before_image('img/right-arr.png', 44px, 62px);
+        }
+        .slick-prev {
+            left: -60px;
+            .before_image('img/left-arr.png', 44px, 62px);
+        }
+    }
+}
