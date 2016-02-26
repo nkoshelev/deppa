@@ -61,3 +61,15 @@
     font-style: normal;
 
 }
+@font-face {
+    font-family: 'pf_beausans_prolight';
+    src: url('fonts/pfbeausanspro-light.eot');
+    src: url('fonts/pfbeausanspro-light.eot?#iefix') format('embedded-opentype'),
+         url('fonts/pfbeausanspro-light.woff2') format('woff2'),
+         url('fonts/pfbeausanspro-light.woff') format('woff'),
+         url('fonts/pfbeausanspro-light.ttf') format('truetype'),
+         url('fonts/pfbeausanspro-light.svg#pf_beausans_prolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
