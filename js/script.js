@@ -18,6 +18,13 @@ $(document).ready(function() {
         asNavFor: '.tovar_text_slider',
         variableWidth: true
     });
+    $(".small-pic").click(function() {
+        $('.thumb_mini').removeClass('active');
+        $(this).parents('.thumb_mini').addClass('active');
+    });
+    $('.order_button').click(function(e){
+        e.preventDefault();
+    });
     $('.show-map').click(function(e){
         e.preventDefault();
         var number = $(this).parents('.info').attr("id").substr(7);
