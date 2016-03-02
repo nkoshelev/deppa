@@ -424,6 +424,25 @@
 
     }
     </script>
+    <script>
+    $(function() {
+
+
+        $('.tovar_block .sel_color .color-link').click(function(event) {
+            event.preventDefault();
+            $(this).parent().parent().find('a > img').attr('src', $(this).attr('rel'));
+
+        });
+
+        $('.tovar_block .sel_color .color-link').hover(
+            function(event) {
+                event.preventDefault();
+                $(this).parent().parent().find('a > img').attr('src', $(this).attr('rel'));
+            },
+            function() {}
+        );
+    });
+    </script>
 </head>
 
 <body>
@@ -844,159 +863,250 @@
                 <div id="content">
                     <div id="right">
                         <div id='dle-content'>
-                            <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-                            <div id="content_main_static">
-                                <div class="cont-tri">
-                                    <div class="info" id="mapinfo1">
-                                        <span class="blue" style="border:none;">Российская федерация</span>
-                                        <b>ООО "Деппа"</b>
-                                        <br />
-                                        <b>Фактический адрес:</b> РФ, 197022, Санкт-Петербург,
-                                        <br /> ул. Профессора Попова, д. 37,
-                                        <br />БЦ&nbsp;"Сенатор", офис 433
-                                        <br />
-                                        <br />
-                                        <b>Почтовый адрес:</b> РФ, 197022, Санкт-Петербург,
-                                        <br />а/я 44
-                                        <br />
-                                        <br />
-                                        <b>Адрес склада:</b> РФ, 196626, Санкт-Петербург,
-                                        <br />Новгородский пр., д. 26, корп. 1
-                                        <br />
-                                        <br />
-                                        <b>Телефон:</b> +7 812 332 82 22
-                                        <br />
-                                        <br />
-                                        <a href="#" class="show-map">Показать на карте</a>
-                                    </div>
-                                    <div class="info" id="mapinfo2">
-                                        <span class="blue" style="border:none;">КНР, Гонконг</span>
-                                        <b>Деппа Технолоджи Лимитед</b>
-                                        <br />
-                                        <b>Фактический адрес:</b> КНР, Гонконг
-                                        <br /> Коулун, 55 Кинг Йип Стрит, Квун-Тонг,
-                                        <br /> Кинг Палас Плаза, офис Н, 11/F
-                                        <br />
-                                        <br />
-                                        <b>Почтовый адрес:</b> КНР, Гонконг
-                                        <br /> Коулун, 55 Кинг Йип Стрит, Квун-Тонг,
-                                        <br /> Кинг Палас Плаза, офис Н, 11/F
-                                        <br />
-                                        <br />
-                                        <b>Телефон:</b>+86 18620565002
-                                        <br />
-                                        <br />
-                                        <a href="#" class="show-map">Показать на карте</a>
-                                    </div>
-                                    <div class="info" id="mapinfo3">
-                                        <span class="blue">Беларусь</span>
-                                        <b>Smart Telecom</b>
-                                        <br />
-                                        <b>Фактический адрес:</b> РБ, 220007, Минск,
-                                        <br /> ул. Володько, д. 24, пом. 411
-                                        <br />
-                                        <br />
-                                        <b>Почтовый адрес:</b> РБ, 220007, Минск,
-                                        <br /> ул. Володько, д. 24, пом. 411
-                                        <br />
-                                        <br />
-                                        <b>Телефон:</b>+375 33 330 99 99
-                                        <br />
-                                        <br />
-                                        <a href="#" class="show-map">Показать на карте</a>
-                                    </div>
-                                    <div class="info" id="mapinfo4">
-                                        <span class="blue">Казахстан</span>
-                                        <b>Deppa.kz</b>
-                                        <br />
-                                        <b>Фактический адрес:</b> Казахстан, 010008,
-                                        <br /> Астана, р-н Сарыарка,
-                                        <br />ул. Куйши Дина, д. 17, оф. 507
-                                        <br />
-                                        <br />
-                                        <b>Почтовый адрес:</b> Казахстан, 010008,
-                                        <br /> Астана, р-н Сарыарка,
-                                        <br />ул. Куйши Дина, д. 17, оф. 507
-                                        <br />
-                                        <br />
-                                        <b>Телефон:</b> +7 701 8843384
-                                        <br />
-                                        <br />
-                                        <a href="#" class="show-map">Показать на карте</a>
-                                    </div>
+                            <div class="favorite_page">
+                                <div class="favorite_more">
+                                    Показать все товары
                                 </div>
-                                <div class="maps" id="maps_marker">
-                                    <div class="map-1">
-                                        <div class="maps_tabs">
-                                            <ul class="tabs-menu">
-                                                <li class="current">
-                                                    <a href="#tab1-1" class="kind_map">
-                                                       Адрес офиса
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#tab1-2" class="kind_map">
-                                                        Адрес склада
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <div class="tab">
-                                                <div id="tab1-1" class="tab-content">
-                                                    <div id="m1" class="map_block"></div>
-                                                </div>
-                                                <div id="tab1-2" class="tab-content">
-                                                    <div id="m11" class="map_block"></div>
-                                                </div>
-                                            </div>
+                                <div class="tovar_list">
+                                    <div class="tovar_block">
+                                        <img src="css/img/fav-on.png" class="fav fav-on" alt="743" />
+                                        <div class="sel_color">
+                                            <a href="#" rel="css/img/1431520194_dlya-sayta-produkt-m-87002.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
+                                            <a href="#" rel="css/img/1431519845_dlya-sayta-produkt-m-87001.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
+                                            <a href="#" rel="css/img/1431520182_dlya-sayta-produkt-m-87003.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
+                                            <a href="#" rel="css/img/1431520179_dlya-sayta-produkt-m-87004.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
+                                            <a href="#" rel="css/img/1431520215_dlya-sayta-produkt-m-87000.jpg" class="color-link" style="background-color:black;">black</a>
                                         </div>
+                                        <a href="css/img/743-chehol-podstavka-wallet-fold-s.html">
+                                            <img src="css/img/1431521165_dlya-sayta-produkt-m-87002.jpg" height="210" alt="Чехол-подставка Wallet Fold S" />
+                                            <br />
+                                        </a>
+                                        <span class="caption">Чехол-подставка Wallet Fold S</span>
                                     </div>
-                                    <div class="map-2">
-                                        <div class="maps_tabs">
-                                            <ul class="tabs-menu">
-                                                <li class="current">
-                                                    <a href="#tab2-1" class="kind_map">
-                                                       Адрес офиса
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <div class="tab">
-                                                <div id="tab2-1" class="tab-content">
-                                                    <div id="m2" class="map_block"></div>
-                                                </div>
-                                            </div>
+                                    <div class="tovar_block">
+                                        <img src="css/img/fav-on.png" class="fav fav-on" alt="743" />
+                                        <div class="sel_color">
+                                            <a href="#" rel="css/img/1431521887_dlya-sayta-produkt-m-87006.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
+                                            <a href="#" rel="css/img/1431522293_dlya-sayta-produkt-m-87007.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
+                                            <a href="#" rel="css/img/1431522294_dlya-sayta-produkt-m-87008.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
+                                            <a href="#" rel="css/img/1431522386_dlya-sayta-produkt-m-87009.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
+                                            <a href="#" rel="css/img/1431522387_dlya-sayta-produkt-m-87005.jpg" class="color-link" style="background-color:black;">black</a>
                                         </div>
+                                        <a href="css/img/744-chehol-podstavka-wallet-fold-m.html">
+                                            <img src="css/img/1431521887_dlya-sayta-produkt-m-87006.jpg" height="210" alt="Чехол-подставка Wallet Fold M" />
+                                            <br />
+                                        </a>
+                                        <span class="caption">Чехол-подставка Wallet Fold M</span>
                                     </div>
-                                    <div class="map-3">
-                                        <div class="maps_tabs">
-                                            <ul class="tabs-menu">
-                                                <li class="current">
-                                                    <a href="#tab3-1" class="kind_map">
-                                                       Адрес офиса
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <div class="tab">
-                                                <div id="tab3-1" class="tab-content">
-                                                    <div id="m3" class="map_block"></div>
-                                                </div>
-                                            </div>
+                                    <div class="tovar_block">
+                                        <img src="css/img/fav-on.png" class="fav fav-on" alt="743" />
+                                        <div class="sel_color">
+                                            <a href="#" rel="css/img/1431599673_dlya-sayta-produkt-m-87010.jpg" class="color-link" style="background-color:black;">black</a>
+                                            <a href="#" rel="css/img/1431599674_dlya-sayta-produkt-m-87011.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
+                                            <a href="#" rel="css/img/1431599682_dlya-sayta-produkt-m-87012.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
+                                            <a href="#" rel="css/img/1431599701_dlya-sayta-produkt-m-87013.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
+                                            <a href="#" rel="css/img/1431599618_dlya-sayta-produkt-m-87014.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
                                         </div>
+                                        <a href="css/img/745-chehol-podstavka-wallet-fold-l.html">
+                                            <img src="css/img/1431599673_dlya-sayta-produkt-m-87010.jpg" height="210" alt="Чехол-подставка Wallet Fold L" />
+                                            <br />
+                                        </a>
+                                        <span class="caption">Чехол-подставка Wallet Fold L</span>
                                     </div>
-                                    <div class="map-4">
-                                        <div class="maps_tabs">
-                                            <ul class="tabs-menu">
-                                                <li class="current">
-                                                    <a href="#tab4-1" class="kind_map">
-                                                       Адрес офиса
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <div class="tab">
-                                                <div id="tab4-1" class="tab-content">
-                                                    <div id="m4" class="map_block"></div>
-                                                </div>
-                                            </div>
+                                    <div class="tovar_block">
+                                        <img src="css/img/fav-on.png" class="fav fav-on" alt="743" />
+                                        <div class="sel_color">
+                                            <a href="#" rel="css/img/1431520194_dlya-sayta-produkt-m-87002.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
+                                            <a href="#" rel="css/img/1431519845_dlya-sayta-produkt-m-87001.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
+                                            <a href="#" rel="css/img/1431520182_dlya-sayta-produkt-m-87003.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
+                                            <a href="#" rel="css/img/1431520179_dlya-sayta-produkt-m-87004.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
+                                            <a href="#" rel="css/img/1431520215_dlya-sayta-produkt-m-87000.jpg" class="color-link" style="background-color:black;">black</a>
                                         </div>
+                                        <a href="css/img/743-chehol-podstavka-wallet-fold-s.html">
+                                            <img src="css/img/1431521165_dlya-sayta-produkt-m-87002.jpg" height="210" alt="Чехол-подставка Wallet Fold S" />
+                                            <br />
+                                        </a>
+                                        <span class="caption">Чехол-подставка Wallet Fold S</span>
+                                    </div>
+                                    <div class="tovar_block">
+                                        <img src="css/img/fav-on.png" class="fav fav-on" alt="743" />
+                                        <div class="sel_color">
+                                            <a href="#" rel="css/img/1431521887_dlya-sayta-produkt-m-87006.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
+                                            <a href="#" rel="css/img/1431522293_dlya-sayta-produkt-m-87007.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
+                                            <a href="#" rel="css/img/1431522294_dlya-sayta-produkt-m-87008.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
+                                            <a href="#" rel="css/img/1431522386_dlya-sayta-produkt-m-87009.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
+                                            <a href="#" rel="css/img/1431522387_dlya-sayta-produkt-m-87005.jpg" class="color-link" style="background-color:black;">black</a>
+                                        </div>
+                                        <a href="css/img/744-chehol-podstavka-wallet-fold-m.html">
+                                            <img src="css/img/1431521887_dlya-sayta-produkt-m-87006.jpg" height="210" alt="Чехол-подставка Wallet Fold M" />
+                                            <br />
+                                        </a>
+                                        <span class="caption">Чехол-подставка Wallet Fold M</span>
+                                    </div>
+                                    <div class="tovar_block">
+                                        <img src="css/img/fav-on.png" class="fav fav-on" alt="743" />
+                                        <div class="sel_color">
+                                            <a href="#" rel="css/img/1431599673_dlya-sayta-produkt-m-87010.jpg" class="color-link" style="background-color:black;">black</a>
+                                            <a href="#" rel="css/img/1431599674_dlya-sayta-produkt-m-87011.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
+                                            <a href="#" rel="css/img/1431599682_dlya-sayta-produkt-m-87012.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
+                                            <a href="#" rel="css/img/1431599701_dlya-sayta-produkt-m-87013.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
+                                            <a href="#" rel="css/img/1431599618_dlya-sayta-produkt-m-87014.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
+                                        </div>
+                                        <a href="css/img/745-chehol-podstavka-wallet-fold-l.html">
+                                            <img src="css/img/1431599673_dlya-sayta-produkt-m-87010.jpg" height="210" alt="Чехол-подставка Wallet Fold L" />
+                                            <br />
+                                        </a>
+                                        <span class="caption">Чехол-подставка Wallet Fold L</span>
+                                    </div>
+                                    <div class="tovar_block">
+                                        <img src="css/img/fav-on.png" class="fav fav-on" alt="743" />
+                                        <div class="sel_color">
+                                            <a href="#" rel="css/img/1431520194_dlya-sayta-produkt-m-87002.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
+                                            <a href="#" rel="css/img/1431519845_dlya-sayta-produkt-m-87001.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
+                                            <a href="#" rel="css/img/1431520182_dlya-sayta-produkt-m-87003.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
+                                            <a href="#" rel="css/img/1431520179_dlya-sayta-produkt-m-87004.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
+                                            <a href="#" rel="css/img/1431520215_dlya-sayta-produkt-m-87000.jpg" class="color-link" style="background-color:black;">black</a>
+                                        </div>
+                                        <a href="css/img/743-chehol-podstavka-wallet-fold-s.html">
+                                            <img src="css/img/1431521165_dlya-sayta-produkt-m-87002.jpg" height="210" alt="Чехол-подставка Wallet Fold S" />
+                                            <br />
+                                        </a>
+                                        <span class="caption">Чехол-подставка Wallet Fold S</span>
+                                    </div>
+                                    <div class="tovar_block">
+                                        <img src="css/img/fav-on.png" class="fav fav-on" alt="743" />
+                                        <div class="sel_color">
+                                            <a href="#" rel="css/img/1431521887_dlya-sayta-produkt-m-87006.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
+                                            <a href="#" rel="css/img/1431522293_dlya-sayta-produkt-m-87007.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
+                                            <a href="#" rel="css/img/1431522294_dlya-sayta-produkt-m-87008.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
+                                            <a href="#" rel="css/img/1431522386_dlya-sayta-produkt-m-87009.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
+                                            <a href="#" rel="css/img/1431522387_dlya-sayta-produkt-m-87005.jpg" class="color-link" style="background-color:black;">black</a>
+                                        </div>
+                                        <a href="css/img/744-chehol-podstavka-wallet-fold-m.html">
+                                            <img src="css/img/1431521887_dlya-sayta-produkt-m-87006.jpg" height="210" alt="Чехол-подставка Wallet Fold M" />
+                                            <br />
+                                        </a>
+                                        <span class="caption">Чехол-подставка Wallet Fold M</span>
+                                    </div>
+                                    <div class="tovar_block hidden">
+                                        <img src="css/img/fav-on.png" class="fav fav-on" alt="743" />
+                                        <div class="sel_color">
+                                            <a href="#" rel="css/img/1431520194_dlya-sayta-produkt-m-87002.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
+                                            <a href="#" rel="css/img/1431519845_dlya-sayta-produkt-m-87001.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
+                                            <a href="#" rel="css/img/1431520182_dlya-sayta-produkt-m-87003.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
+                                            <a href="#" rel="css/img/1431520179_dlya-sayta-produkt-m-87004.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
+                                            <a href="#" rel="css/img/1431520215_dlya-sayta-produkt-m-87000.jpg" class="color-link" style="background-color:black;">black</a>
+                                        </div>
+                                        <a href="css/img/743-chehol-podstavka-wallet-fold-s.html">
+                                            <img src="css/img/1431521165_dlya-sayta-produkt-m-87002.jpg" height="210" alt="Чехол-подставка Wallet Fold S" />
+                                            <br />
+                                        </a>
+                                        <span class="caption">Чехол-подставка Wallet Fold S</span>
+                                    </div>
+                                    <div class="tovar_block hidden">
+                                        <img src="css/img/fav-on.png" class="fav fav-on" alt="743" />
+                                        <div class="sel_color">
+                                            <a href="#" rel="css/img/1431521887_dlya-sayta-produkt-m-87006.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
+                                            <a href="#" rel="css/img/1431522293_dlya-sayta-produkt-m-87007.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
+                                            <a href="#" rel="css/img/1431522294_dlya-sayta-produkt-m-87008.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
+                                            <a href="#" rel="css/img/1431522386_dlya-sayta-produkt-m-87009.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
+                                            <a href="#" rel="css/img/1431522387_dlya-sayta-produkt-m-87005.jpg" class="color-link" style="background-color:black;">black</a>
+                                        </div>
+                                        <a href="css/img/744-chehol-podstavka-wallet-fold-m.html">
+                                            <img src="css/img/1431521887_dlya-sayta-produkt-m-87006.jpg" height="210" alt="Чехол-подставка Wallet Fold M" />
+                                            <br />
+                                        </a>
+                                        <span class="caption">Чехол-подставка Wallet Fold M</span>
+                                    </div>
+                                    <div class="tovar_block hidden">
+                                        <img src="css/img/fav-on.png" class="fav fav-on" alt="743" />
+                                        <div class="sel_color">
+                                            <a href="#" rel="css/img/1431599673_dlya-sayta-produkt-m-87010.jpg" class="color-link" style="background-color:black;">black</a>
+                                            <a href="#" rel="css/img/1431599674_dlya-sayta-produkt-m-87011.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
+                                            <a href="#" rel="css/img/1431599682_dlya-sayta-produkt-m-87012.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
+                                            <a href="#" rel="css/img/1431599701_dlya-sayta-produkt-m-87013.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
+                                            <a href="#" rel="css/img/1431599618_dlya-sayta-produkt-m-87014.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
+                                        </div>
+                                        <a href="css/img/745-chehol-podstavka-wallet-fold-l.html">
+                                            <img src="css/img/1431599673_dlya-sayta-produkt-m-87010.jpg" height="210" alt="Чехол-подставка Wallet Fold L" />
+                                            <br />
+                                        </a>
+                                        <span class="caption">Чехол-подставка Wallet Fold L</span>
+                                    </div>
+                                    <div class="tovar_block hidden">
+                                        <img src="css/img/fav-on.png" class="fav fav-on" alt="743" />
+                                        <div class="sel_color">
+                                            <a href="#" rel="css/img/1431520194_dlya-sayta-produkt-m-87002.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
+                                            <a href="#" rel="css/img/1431519845_dlya-sayta-produkt-m-87001.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
+                                            <a href="#" rel="css/img/1431520182_dlya-sayta-produkt-m-87003.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
+                                            <a href="#" rel="css/img/1431520179_dlya-sayta-produkt-m-87004.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
+                                            <a href="#" rel="css/img/1431520215_dlya-sayta-produkt-m-87000.jpg" class="color-link" style="background-color:black;">black</a>
+                                        </div>
+                                        <a href="css/img/743-chehol-podstavka-wallet-fold-s.html">
+                                            <img src="css/img/1431521165_dlya-sayta-produkt-m-87002.jpg" height="210" alt="Чехол-подставка Wallet Fold S" />
+                                            <br />
+                                        </a>
+                                        <span class="caption">Чехол-подставка Wallet Fold S</span>
+                                    </div>
+                                    <div class="tovar_block hidden">
+                                        <img src="css/img/fav-on.png" class="fav fav-on" alt="743" />
+                                        <div class="sel_color">
+                                            <a href="#" rel="css/img/1431521887_dlya-sayta-produkt-m-87006.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
+                                            <a href="#" rel="css/img/1431522293_dlya-sayta-produkt-m-87007.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
+                                            <a href="#" rel="css/img/1431522294_dlya-sayta-produkt-m-87008.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
+                                            <a href="#" rel="css/img/1431522386_dlya-sayta-produkt-m-87009.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
+                                            <a href="#" rel="css/img/1431522387_dlya-sayta-produkt-m-87005.jpg" class="color-link" style="background-color:black;">black</a>
+                                        </div>
+                                        <a href="css/img/744-chehol-podstavka-wallet-fold-m.html">
+                                            <img src="css/img/1431521887_dlya-sayta-produkt-m-87006.jpg" height="210" alt="Чехол-подставка Wallet Fold M" />
+                                            <br />
+                                        </a>
+                                        <span class="caption">Чехол-подставка Wallet Fold M</span>
+                                    </div>
+                                    <div class="tovar_block hidden">
+                                        <img src="css/img/fav-on.png" class="fav fav-on" alt="743" />
+                                        <div class="sel_color">
+                                            <a href="#" rel="css/img/1431599673_dlya-sayta-produkt-m-87010.jpg" class="color-link" style="background-color:black;">black</a>
+                                            <a href="#" rel="css/img/1431599674_dlya-sayta-produkt-m-87011.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
+                                            <a href="#" rel="css/img/1431599682_dlya-sayta-produkt-m-87012.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
+                                            <a href="#" rel="css/img/1431599701_dlya-sayta-produkt-m-87013.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
+                                            <a href="#" rel="css/img/1431599618_dlya-sayta-produkt-m-87014.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
+                                        </div>
+                                        <a href="css/img/745-chehol-podstavka-wallet-fold-l.html">
+                                            <img src="css/img/1431599673_dlya-sayta-produkt-m-87010.jpg" height="210" alt="Чехол-подставка Wallet Fold L" />
+                                            <br />
+                                        </a>
+                                        <span class="caption">Чехол-подставка Wallet Fold L</span>
+                                    </div>
+                                    <div class="tovar_block hidden">
+                                        <img src="css/img/fav-on.png" class="fav fav-on" alt="743" />
+                                        <div class="sel_color">
+                                            <a href="#" rel="css/img/1431520194_dlya-sayta-produkt-m-87002.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
+                                            <a href="#" rel="css/img/1431519845_dlya-sayta-produkt-m-87001.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
+                                            <a href="#" rel="css/img/1431520182_dlya-sayta-produkt-m-87003.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
+                                            <a href="#" rel="css/img/1431520179_dlya-sayta-produkt-m-87004.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
+                                            <a href="#" rel="css/img/1431520215_dlya-sayta-produkt-m-87000.jpg" class="color-link" style="background-color:black;">black</a>
+                                        </div>
+                                        <a href="css/img/743-chehol-podstavka-wallet-fold-s.html">
+                                            <img src="css/img/1431521165_dlya-sayta-produkt-m-87002.jpg" height="210" alt="Чехол-подставка Wallet Fold S" />
+                                            <br />
+                                        </a>
+                                        <span class="caption">Чехол-подставка Wallet Fold S</span>
+                                    </div>
+                                    <div class="tovar_block hidden">
+                                        <img src="css/img/fav-on.png" class="fav fav-on" alt="743" />
+                                        <div class="sel_color">
+                                            <a href="#" rel="css/img/1431521887_dlya-sayta-produkt-m-87006.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
+                                            <a href="#" rel="css/img/1431522293_dlya-sayta-produkt-m-87007.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
+                                            <a href="#" rel="css/img/1431522294_dlya-sayta-produkt-m-87008.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
+                                            <a href="#" rel="css/img/1431522386_dlya-sayta-produkt-m-87009.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
+                                            <a href="#" rel="css/img/1431522387_dlya-sayta-produkt-m-87005.jpg" class="color-link" style="background-color:black;">black</a>
+                                        </div>
+                                        <a href="css/img/744-chehol-podstavka-wallet-fold-m.html">
+                                            <img src="css/img/1431521887_dlya-sayta-produkt-m-87006.jpg" height="210" alt="Чехол-подставка Wallet Fold M" />
+                                            <br />
+                                        </a>
+                                        <span class="caption">Чехол-подставка Wallet Fold M</span>
                                     </div>
                                 </div>
                             </div>
@@ -1006,94 +1116,6 @@
                 </div>
             </div>
         </div>
-        <div class="h-foo fw footer_blocks">
-            <div class="h-foo">
-                <div class="reklam sld">
-                    <div class="hdr">Рекламации</div>
-                    <p>Пожалуйста, напишите свои вопросы или претензии к качеству продуктов нашим специалистам
-                    </p>
-                    <div class="hid">
-                        <form id="reklam_form" action="POST">
-                            <input type="text" value="" placeholder="Ваше имя" name="nn" />
-                            <input type="text" value="" placeholder="E-mail" name="ee" />
-                            <input type="text" value="" placeholder="Телефон" name="pp" />
-                            <textarea name="mm" placeholder="Ваш вопрос или комментарий к качеству продукта"></textarea>
-                            <input type="hidden" name="recip" value="1">
-                            <div class="form-error"></div>
-                            <input type="submit" value="Отправить" />
-                            <input type="hidden" name="subject" value="Рекламации">
-                        </form>
-                    </div>
-                </div>
-                <div class="writeus sld">
-                    <div class="hdr">Напишите нам</div>
-                    <p>
-                        Мы ответим на ваши вопросы, отзывы и предложения.
-                    </p>
-                    <div class="hid">
-                        <form id="writeus_form" action="POST">
-                            <input type="text" value="" placeholder="Ваше имя" name="nn" />
-                            <input type="text" value="" placeholder="E-mail" name="ee" />
-                            <input type="text" value="" placeholder="Телефон" name="pp" />
-                            <textarea name="mm" placeholder="Ваш вопрос, отзыв или предложение"></textarea>
-                            <input type="hidden" name="recip" value="1">
-                            <div class="form-error"></div>
-                            <input type="submit" value="Отправить" />
-                            <input type="hidden" name="subject" value="Напишите нам">
-                        </form>
-                    </div>
-                </div>
-                <div class="subscribe sld">
-                    <div class="subscr">
-                        <a name="subscr-form"></a>
-                        <div class="hdr">Подписка на новинки</div>
-                        <div class="hid">
-                            <!-- Begin MailChimp Signup Form -->
-                            <div id="mc_embed_signup">
-                                <form action="//deppa.us9.list-manage.com/subscribe/post?u=c9553ffdc5d66566206f0409e&amp;id=7998655a71" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                                    <div id="mc_embed_signup_scroll">
-                                        <div class="mc-field-group">
-                                            <label for="mce-FNAME"></label>
-                                            <input type="text" value="" name="FNAME" class="" placeholder="Ваше имя" id="mce-FNAME">
-                                        </div>
-                                        <div class="mc-field-group">
-                                            <label for="mce-EMAIL"></label>
-                                            <input type="email" value="" placeholder="E-mail" name="EMAIL" class="required email" id="mce-EMAIL">
-                                        </div>
-                                        <div id="mce-responses" class="clear">
-                                            <div class="response" id="mce-error-response" style="display:none"></div>
-                                            <div class="response" id="mce-success-response" style="display:none"></div>
-                                        </div>
-                                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                        <div style="position: absolute; left: -5000px;">
-                                            <input type="text" name="b_c9553ffdc5d66566206f0409e_7998655a71" tabindex="-1" value="">
-                                        </div>
-                                        <div class="clear">
-                                            <input type="submit" value="Подписка" name="subscribe" id="mc-embedded-subscribe" class="button">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <!--End mc_embed_signup-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script>
-        if (true) {
-            $('.h-foo.fw > .h-foo div.sld').click(function() {
-                if ((event.target.nodeName == 'INPUT') || (event.target.nodeName == 'TEXTAREA')) return;
-                $(this).find('p').slideToggle();
-                $(this).find('div.hid').slideToggle();
-                if ($(this).css('background-image') == 'url(css/img/foo-bird-2.png)') {
-                    $(this).css('background-image', 'url(css/img/foo-bird.png)');
-                } else {
-                    $(this).css('background-image', 'url(css/img/foo-bird-2.png)')
-                };
-            });
-        }
-        </script>
         <div id="footer_cont">
             <div id="footer">
                 <div class="menu_foo">

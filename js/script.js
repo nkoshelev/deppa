@@ -25,6 +25,34 @@ $(document).ready(function() {
     $('.order_button').click(function(e){
         e.preventDefault();
     });
+    $('.favorite_more').click(function() {
+        $(this).parent().find('.tovar_list').find('.hidden').slideToggle();
+        $(this).toggleClass('active');
+        if ($(this).text() != 'Скрыть') $(this).text('Скрыть');
+        else $(this).text('Показать все товары');
+    });
+    // Change size in basket
+    $('.minus').click(function (e) {
+        e.preventDefault();
+        var $input = $(this).parent().find('input');
+        var count = parseInt($input.val()) - 1;
+        count = count < 1 ? 1 : count;
+        $input.val(count);
+        $input.change();
+        return false;
+    });
+    $('.plus').click(function (e) {
+        e.preventDefault();
+        var $input = $(this).parent().find('input');
+        $input.val(parseInt($input.val()) + 1);
+        $input.change();
+        return false;
+    });
+    $('.input_amount').change(function(){
+        if($(this).val() <= 0) {
+            $(this).val(1);
+        }
+    });
     $('.show-map').click(function(e){
         e.preventDefault();
         var number = $(this).parents('.info').attr("id").substr(7);
