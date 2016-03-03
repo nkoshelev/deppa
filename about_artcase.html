@@ -826,523 +826,111 @@
             </div>
             <div class="h-menu-drop fav">
                 <a href="#" class="clear">ОЧИСТИТЬ</a>
-                <br>
-                <br> У вас нет избранного
-                <br>
-                <br>
+                <br />
+                <br /> У вас нет избранного
+                <br />
+                <br />
             </div>
         </div>
         <div class="h-cat-wrap fw">
+            <div class="h-cat-banner" style="background-image:url('http://deppa.ru/images/artcase/Artcase-banner-2.jpg');"></div>
+            <!-- <div class="h-cat">
+                <h1>
+                    Контакты
+                </h1>
+            </div> -->
         </div>
         <div id="main_cont">
             <div id="main">
                 <div id="content">
                     <div id="right">
                         <div id='dle-content'>
-                            <div class="catalog_vn_page">
-                                <div class="back_cat_link">
-                                    <a href="/covers-cases-bumpers/">Каталог</a>/
-                                    <a href="/covers-cases-bumpers/#wallet-slide">Универсальные чехлы Wallet Slide</a>
-                                </div>
-                                <a href="#" class="prn-link" onclick="window.print();"></a>
-                                <h1 class="big_header cart">Чехол-подставка Wallet Slide М</h1>
-                                <div class="rating">
-                                    <div class="star-rating">
-                                        <div class="star-rating__wrap disabled">
-                                            <input class="star-rating__input fa" id="star1-rating-5" type="radio" name="rating1" disabled value="5">
-                                            <label for="star1-rating-5" class="label_star"></label>
-                                            <input class="star-rating__input fa" id="star1-rating-4" type="radio" name="rating1" disabled value="4" checked>
-                                            <label for="star1-rating-4" class="label_star"></label>
-                                            <input class="star-rating__input fa" id="star1-rating-3" type="radio" name="rating1" disabled value="3">
-                                            <label for="star1-rating-3" class="label_star"></label>
-                                            <input class="star-rating__input fa" id="star1-rating-2" type="radio" name="rating1" disabled value="2">
-                                            <label for="star1-rating-2" class="label_star"></label>
-                                            <input class="star-rating__input fa" id="star1-rating-1" type="radio" name="rating1" disabled value="1">
-                                            <label for="star1-rating-1" class="label_star"></label>
-                                        </div>
-                                    </div>
-                                    <span>3 отзыва</span>
-                                </div>
-                                <div class="tovar_block fake tovar_like"></div>
-                                <div class="clear"></div>
-                                <div id="content_main">
-                                    <div class="content_main_left">
-                                        <script type="text/javascript">
-                                        $(window).load(function() {
+                            <div class="about_page">
+                                <script>
+                                $(window).load(function() {
+                                    $.each($('.wide-slider'), function() {
+                                        var tab = $(this);
+                                        $(this).carouFredSel({
+                                            start: 0,
+                                            items: 1,
+                                            direction: "left",
 
-                                            $(".small-pic").click(function() {
-                                                $("#big_img").attr('src', $(this).attr('src'));
-                                            });
-
-                                            $('.slider-body').carouFredSel({
-                                                start: 0,
-                                                items: 3,
-                                                direction: "up",
-                                                prev: ".slider-top",
-                                                next: ".slider-bottom",
-                                                height: '100%',
-                                                scroll: {
-                                                    items: 1,
-                                                    duration: 500,
-                                                    easing: 'linear'
-
-                                                },
-                                                auto: {
-                                                    play: false
-                                                },
-                                                onCreate: function() {
-                                                    if ($(".slider-body > div").length == 3) {
-                                                        $("#right_slider div.hidden").show()
-                                                    }
+                                            prev: {
+                                                button: function() {
+                                                    return tab.parent().parent().find('.wide-slider-left');
                                                 }
-                                            });
-
-                                            $('.slider-top').click(function() {
-                                                if ($(".slider-body > div").length == 3) $(".slider-wrap").effect("shake", {
-                                                    direction: 'up',
-                                                    times: 3,
-                                                    distance: 3
-                                                });
-                                            });
-                                            $('.slider-bottom').click(function() {
-                                                if ($(".slider-body > div").length == 3) $(".slider-wrap").effect("shake", {
-                                                    direction: 'up',
-                                                    times: 3,
-                                                    distance: 3
-                                                });
-                                            });
-
-
-
-                                            $('.slider-body').css('top', '0');
-
-                                            $('#big_img').attr('src', $('#big_img').attr('src').replace('thumbs/', ''));
-                                            $('img.small-pic').each(function() {
-                                                $(this).attr('src', $(this).attr('src').replace('thumbs/', ''));
-
-                                            });
-
-                                            arts = $('div.art').text().split('Арт. ')[1].split(',');
-                                            if (arts.length > 1) {
-                                                $('div.art').html('');
-                                                arthtml = '';
-                                                for (i = 0; i < arts.length; i++) {
-                                                    arthtml = arthtml + '<div>арт. ' + arts[i] + '</div>';
-
+                                            },
+                                            next: {
+                                                button: function() {
+                                                    return tab.parent().parent().find('.wide-slider-right');
                                                 }
-                                                $('div.art').html(arthtml);
+                                            },
+                                            scroll: {
+                                                items: 1,
+                                                duration: 500,
+                                                easing: 'linear'
+                                            },
+                                            auto: {
+                                                play: false
+
                                             }
 
-                                            $('div.art > div').hide();
-                                            $('div.art > div').eq(0).show();
-                                            $('div.art').show();
-
                                         });
-                                        </script>
-                                        <div id="left_slider">
-                                            <ul>
-                                                <li>
-                                                    <img src="css/img/tovar_slider1.jpg" id="big_img">
-                                                </li>
-                                            </ul>
+                                    });
+                                });
+                                </script>
+                                <div class="news-menu">
+                                    <a href="#">О нас</a>
+                                    <a href="#">DEPPALIFE</a>
+                                    <a href="#" class="sel">ARTCASE</a>
+                                    <a href="#">LAMEL SPb</a>
+                                    <a href="#">Вакансии</a>
+                                </div>
+                                <div class="about-block">
+                                    <div class="slogan">
+                                        В начале 2015 года мы запустили собственное производство чехлов с принтами в Санкт-Петербурге. Помимо коллекции Deppa Artcase, произведенной на нашем оборудовании, мы разрабатываем готовые решения OEM-производства чехлов под Вашими собственными марками и с Вашим дизайном.
+                                    </div>
+                                    <div class="left">
+                                        <div class="block">
+                                            <h2>
+                                                МЫ ПРОРАБАТЫВАЕМ ДЕТАЛИ
+                                            </h2>
+                                            <p>Наше преимущество – большой выбор способов нанесения изображения. Современные японские и американские машины позволяют делать разные уровни подъема рисунка, наносить выборочный лак и детализировать изображение, производя тончайшие линии от 0,2 мм. Выверенный технологический процесс и современное оборудование малярного сектора позволяет наносить всевозможные цветные основы и финишные покрытия, такие как soft touch или глянцевый лак.
+                                            </p>
                                         </div>
-                                        <div id="right_slider">
-                                            <div class="slider-top"></div>
-                                            <div class="slider-bottom"></div>
-                                            <div class="slider-wrap">
-                                                <div class="slider-body">
-                                                    <div class="slider-item">
-                                                        <div class="thumb_mini active">
-                                                            <img src="css/img/1422020359_dlya-sayta-produkt-m-84049.jpg" class="small-pic" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="slider_item">
-                                                        <div class="thumb_mini">
-                                                            <img src="css/img/1421835216_dlya-sayta-upakovka-m84049.jpg" class="small-pic" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="slider_item">
-                                                        <div class="thumb_mini">
-                                                            <img src="css/img/1422449841_slide-rezhim-podstavki.jpg" class="small-pic" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="block">
+                                            <h2>
+                                                РАБОТАЕМ БЫСТРО И ОСНОВАТЕЛЬНО
+                                            </h2>
+                                            <p>Объем производства – 70 000 единиц готовой продукции в месяц. Производим партии под ключ от 2-х дней в зависимости от объема. Находим оптимальные для Вас решения по себестоимости, производим профессиональную допечатную подготовку макетов, предлагаем варианты упаковки.
+                                            </p>
                                         </div>
                                     </div>
-                                    <div class="content_main_right">
-                                        <h2 class="half_header">Назначение</h2>
-                                        <div class="half_block">Защита Вашего устройства<br>Подставка для Вашего устройства</div>
-                                        <h2 class="half_header">Технические характеристики</h2>
-                                        <div class="half_block">
-                                            Материал: PU (Eco-кожа), пластик
-                                            <br>Слайд-механизм
-                                            <br>Наличие функции подставки
-                                            <br>Возможно многоразовое использование
-                                            <br>Подходит для смартфонов с любым расположением камеры
+                                    <div class="right">
+                                        <div class="block">
+                                            <h2>
+                                                КОНТРОЛИРУЕМ КАЧЕСТВО
+                                            </h2>
+                                            <p>Производство сертифицировано по стандарту ISO-9001, что подтверждает его соответствие международным требованиям по качеству. Каждая партия подвергается механическому тесту на прочность в лаборатории предприятия. Работаем только с проверенными материалами: это касается и чехлов из поликарбоната, и детальной подборки лака для финишных покрытий. Мы отобрали лучшее сырье европейских производителей, смешали множество химических составов и испытали разные способы сушки, чтобы найти самую надежную технологию нанесения финишного покрытия.
+                                            </p>
                                         </div>
-                                        <h2 class="half_header">Комплект</h2>
-                                        <div class="half_block">Чехол-подставка</div>
-                                        <h2 class="half_header">Совместимость</h2>
-                                        <div class="half_block">Apple iPhone 6, Samsung Galaxy S6, Samsung Galaxy S6 edge, Lenovo A6000, HTC One M9, Sony Xperia Z4 и другие смартфоны с диагональю 4.3"-5.5"</div>
-                                        <div class="order_tovar_block">
-                                            <div class="price_tovar">
-                                                1200 руб.
-                                            </div>
-                                            <a href="#" class="order_button">Купить</a>
-                                        </div> 
-                                        <div class="in_stock yes_tovar">
-                                            в наличии
+                                        <div class="block">
+                                            <h2>ПОЛУЧАЕМ УДОВОЛЬСТВИЕ</h2>
+                                            <p>Каждый новый принт – это всегда интересная задача для всей команды. Мы с удовольствием принимаем вызовы и ищем новые технологические решения.
+                                            </p>
                                         </div>
-                                        <a href="#" class="order_by_phone">Оформить по телефону</a>
-                                        <div class="color_photos">
-                                            <!--TBegin:http://deppa.ru/uploads/posts/2015-01/1422020359_dlya-sayta-produkt-m-84049.jpg|left-->
-                                            <a href="css/img/1422020359_dlya-sayta-produkt-m-84049.jpg" onclick="return hs.expand(this)">
-                                                <img src="css/img/1422020359_dlya-sayta-produkt-m-84049.jpg" style="float:left;" alt='Чехол-подставка Wallet Slide М' title='Чехол-подставка Wallet Slide М' />
-                                            </a>
-                                            <!--TEnd-->
-                                            <br>
-                                            <!--TBegin:http://deppa.ru/uploads/posts/2015-01/1422020390_dlya-sayta-produkt-m-84048.jpg|left-->
-                                            <a href="css/img/1422020390_dlya-sayta-produkt-m-84048.jpg" onclick="return hs.expand(this)">
-                                                <img src="css/img/1422020390_dlya-sayta-produkt-m-84048.jpg" style="float:left;" alt='Чехол-подставка Wallet Slide М' title='Чехол-подставка Wallet Slide М' />
-                                            </a>
-                                            <!--TEnd-->
-                                            <br>
-                                            <!--TBegin:http://deppa.ru/uploads/posts/2015-07/1437751543_dlya-sayta-produkt-m-84083.jpg|left-->
-                                            <a href="http://deppa.ru/uploads/posts/2015-07/1437751543_dlya-sayta-produkt-m-84083.jpg" onclick="return hs.expand(this)">
-                                                <img src="css/img/thumbs/1437751543_dlya-sayta-produkt-m-84083.jpg" style="float:left;" alt='Чехол-подставка Wallet Slide М' title='Чехол-подставка Wallet Slide М' />
-                                            </a>
-                                            <!--TEnd-->
-                                            <br>
-                                            <!--TBegin:http://deppa.ru/uploads/posts/2015-01/1422020438_dlya-sayta-produkt-m-84047.jpg|left-->
-                                            <a href="css/img/1422020438_dlya-sayta-produkt-m-84047.jpg" onclick="return hs.expand(this)">
-                                                <img src="css/img/1422020438_dlya-sayta-produkt-m-84047.jpg" style="float:left;" alt='Чехол-подставка Wallet Slide М' title='Чехол-подставка Wallet Slide М' />
-                                            </a>
-                                            <!--TEnd-->
-                                            <br>
-                                            <!--TBegin:http://deppa.ru/uploads/posts/2015-01/1422020456_dlya-sayta-produkt-m-84046.jpg|left-->
-                                            <a href="css/img/1422020456_dlya-sayta-produkt-m-84046.jpg" onclick="return hs.expand(this)">
-                                                <img src="css/img/1422020456_dlya-sayta-produkt-m-84046.jpg" style="float:left;" alt='Чехол-подставка Wallet Slide М' title='Чехол-подставка Wallet Slide М' />
-                                            </a>
-                                            <!--TEnd-->
-                                            <br>
-                                            <!--TBegin:http://deppa.ru/uploads/posts/2015-01/1422020443_dlya-sayta-produkt-m-84045.jpg|left-->
-                                            <a href="css/img/1422020443_dlya-sayta-produkt-m-84045.jpg" onclick="return hs.expand(this)">
-                                                <img src="css/img/1422020443_dlya-sayta-produkt-m-84045.jpg" style="float:left;" alt='Чехол-подставка Wallet Slide М' title='Чехол-подставка Wallet Slide М' />
-                                            </a>
-                                            <!--TEnd-->
-                                        </div>
-                                        <div class="color_links"></div>
-                                        <script>
-                                        links = '';
-                                        colors = '#f57998,#6E00B5,#eb0028,#868686,white,black';
-
-                                        colors = colors.split(',');
-                                        active = 'active';
-                                        var length = colors.length;
-                                        for (var i = 0; i < length; i++) {
-                                            white = '';
-                                            if ((colors[i] == 'white') || (colors[i] == 'beige')) white = 'white-border';
-                                            links = links + '<div class="color_border ' + active + '"><a href="#" rel="' + (i) + '" class="color-link ' + white + '" style="background-color:' + colors[i] + ';">' + colors[i] + '</a></div>';
-                                            active = '';
-                                        }
-                                        $(".content_main_right div.color_links").html('' + links + '<div class="clr"></div>');
-
-                                        $(".content_main_right a.color-link").click(function(event) {
-                                            event.preventDefault();
-                                            //                  $('#big_img').attr('src',$('.color_photos a:nth-child(' + $(this).attr('rel')  + ')').attr('href'));
-                                            $('#big_img').attr('src', $('.color_photos a').eq($(this).attr('rel')).attr('href'));
-                                            $(".content_main_right div.color_border").removeClass('active');
-                                            $(this).parent().addClass('active');
-                                            $('div.art > div').hide();
-                                            $('div.art > div').eq($(this).parent().index()).show();
-                                        });
-                                        </script>
-                                        <div class="art">Арт. 84049, 84048, 84083, 84047, 84046, 84045</div>
                                     </div>
                                     <div class="clr"></div>
-                                    <div class="info-menu">
-                                        <script type="text/javascript">
-                                        (function() {
-                                            if (window.pluso)
-                                                if (typeof window.pluso.start == "function") return;
-                                            if (window.ifpluso == undefined) {
-                                                window.ifpluso = 1;
-                                                var d = document,
-                                                    s = d.createElement('script'),
-                                                    g = 'getElementsByTagName';
-                                                s.type = 'text/javascript';
-                                                s.charset = 'UTF-8';
-                                                s.async = true;
-                                                s.src = ('https:' == window.location.protocol ? 'https' : 'http') + '://share.pluso.ru/pluso-like.js';
-                                                var h = d[g]('body')[0];
-                                                h.appendChild(s);
-                                            }
-                                        })();
-                                        </script>
-                                        <div class="pluso" data-background="transparent" data-options="medium,round,line,horizontal,counter,theme=06" data-services="facebook,vkontakte,twitter"></div>
-                                        <div class="tovar_tabs">
-                                            <a href="#" class="overview sel" onclick="$('.ex-info').hide();$('.info-menu a').removeClass('sel');$(this).addClass('sel');$('#overview').show();return false;">Обзор</a>
-                                            <a href="#" class="specs" onclick="$('.ex-info').hide();$('.info-menu a').removeClass('sel');$(this).addClass('sel');$('#tech_specs').show();return false;">Спецификация</a>
-                                            <a href="#" class="pres" onclick="$('.ex-info').hide();$('.info-menu a').removeClass('sel');$(this).addClass('sel');$('#pres').show();return false;">Презентация</a>
-                                            <a href="#" class="recalls" onclick="$('.ex-info').hide();$('.info-menu a').removeClass('sel');$(this).addClass('sel');$('#recalls').show();return false;">ОТЗЫВЫ (3)</a>
-                                            <a href="#" class="download" onclick="$('.ex-info').hide();$('.info-menu a').removeClass('sel');$(this).addClass('sel');$('#download').show();return false;">Скачать Фото/PDF</a>
-                                        </div>
-                                        
-                                    </div>
-                                    <div id="tech_specs" class="ex-info">
-                                        <div>
-                                            <img src="css/img/1437753252_specifikaciya-wallet-m-universalnyy-1.jpg" width="940" align="center" />
-                                        </div>
-                                    </div>
-                                    <script>
-                                    $(function() {
-                                        if ($('div.specs-table.hidden').length) {
-                                            var lines = [],
-                                                out = '';
-                                            $.each($('div.specs-table.hidden').html().split('<br><br>'), function(i, line) {
-                                                if (line) {
-                                                    out += '<table>';
-                                                    $.each(line.split('<br>'), function(i, str) {
-                                                        if (str) {
-                                                            out += '<tr>';
-                                                            $.each(str.split('||'), function(i, td) {
-                                                                if (td) {
-                                                                    out += '<td>';
-                                                                    out += td;
-                                                                    out += '</td>';
-                                                                }
-                                                            });
-                                                            out += '</tr>';
-                                                        }
-                                                    });
-                                                    out += '</table>';
-                                                }
-                                            });
-                                            //      console.log(lines);
-                                            //          console.log(out);
-                                            $('div.specs-table.hidden').html(out);
-                                            $('div.specs-table.hidden').removeClass('hidden');
-                                        }
-                                    });
-                                    </script>
-                                    <div id="overview" class="ex-info" style="display:block;">
-                                        <div class="obzor_anim">
-                                        </div>
-                                        <br>
-                                        <!--dle_image_begin:http://deppa.ru/uploads/posts/2015-06/1435067460_obzor-wallet-slide-proporcii-kadrov-pod-a4_01.jpg|left-->
-                                        <img src="css/img/1435067460_obzor-wallet-slide-proporcii-kadrov-pod-a4_01.jpg" style="float:left;" alt="Чехол-подставка Wallet Slide М" title="Чехол-подставка Wallet Slide М" />
-                                        <!--dle_image_end-->
-                                        <br>
-                                        <!--dle_image_begin:http://deppa.ru/uploads/posts/2015-06/1435067491_obzor-wallet-slide-proporcii-kadrov-pod-a4_02.jpg|left-->
-                                        <img src="css/img/1435067491_obzor-wallet-slide-proporcii-kadrov-pod-a4_02.jpg" style="float:left;" alt="Чехол-подставка Wallet Slide М" title="Чехол-подставка Wallet Slide М" />
-                                        <!--dle_image_end-->
-                                    </div>
-                                    <div id="instruction" class="ex-info">
-                                    </div>
-                                    <div id="pres" class="ex-info">
-                                        <br>
-                                        <!--dle_image_begin:http://deppa.ru/uploads/posts/2015-08/1440425078_new-wallet-slide-all-site_01-3.jpg|left-->
-                                        <img src="css/img/1440425078_new-wallet-slide-all-site_01-3.jpg" style="float:left;" alt="Чехол-подставка Wallet Slide М" title="Чехол-подставка Wallet Slide М" />
-                                        <!--dle_image_end-->
-                                        <br>
-                                        <!--dle_image_begin:http://deppa.ru/uploads/posts/2015-08/1440425053_new-wallet-slide-all-site_02-3.jpg|left-->
-                                        <img src="css/img/1440425053_new-wallet-slide-all-site_02-3.jpg" style="float:left;" alt="Чехол-подставка Wallet Slide М" title="Чехол-подставка Wallet Slide М" />
-                                        <!--dle_image_end-->
-                                        <br>
-                                        <!--dle_image_begin:http://deppa.ru/uploads/posts/2015-08/1440425036_new-wallet-slide-all-site_03-3.jpg|left-->
-                                        <img src="css/img/1440425036_new-wallet-slide-all-site_03-3.jpg" style="float:left;" alt="Чехол-подставка Wallet Slide М" title="Чехол-подставка Wallet Slide М" />
-                                        <!--dle_image_end-->
-                                        <br>
-                                        <!--dle_image_begin:http://deppa.ru/uploads/posts/2015-08/1440425067_new-wallet-slide-all-site_04-3.jpg|left-->
-                                        <img src="css/img/1440425067_new-wallet-slide-all-site_04-3.jpg" style="float:left;" alt="Чехол-подставка Wallet Slide М" title="Чехол-подставка Wallet Slide М" />
-                                        <!--dle_image_end-->
-                                        <br>
-                                        <!--dle_image_begin:http://deppa.ru/uploads/posts/2015-08/1440425113_new-wallet-slide-all-site_05-3.jpg|left-->
-                                        <img src="css/img/1440425113_new-wallet-slide-all-site_05-3.jpg" style="float:left;" alt="Чехол-подставка Wallet Slide М" title="Чехол-подставка Wallet Slide М" />
-                                        <!--dle_image_end-->
-                                        <br>
-                                        <!--dle_image_begin:http://deppa.ru/uploads/posts/2015-08/1440425120_new-wallet-slide-all-site_06-3.jpg|left-->
-                                        <img src="css/img/1440425120_new-wallet-slide-all-site_06-3.jpg" style="float:left;" alt="Чехол-подставка Wallet Slide М" title="Чехол-подставка Wallet Slide М" />
-                                        <!--dle_image_end-->
-                                        <br>
-                                        <!--dle_image_begin:http://deppa.ru/uploads/posts/2015-08/1440425097_new-wallet-slide-all-site_07-3.jpg|left-->
-                                        <img src="css/img/1440425097_new-wallet-slide-all-site_07-3.jpg" style="float:left;" alt="Чехол-подставка Wallet Slide М" title="Чехол-подставка Wallet Slide М" />
-                                        <!--dle_image_end-->
-                                    </div>
-                                    <div id="recalls" class="recalls_block ex-info">
-                                        <div class="recall_head">
-                                            <div class="rating">
-                                                <div class="star-rating">
-                                                    <div class="star-rating__wrap disabled">
-                                                        <input class="star-rating__input fa" id="star2-rating-5" type="radio" name="rating2" disabled value="5">
-                                                        <label for="star2-rating-5" class="label_star"></label>
-                                                        <input class="star-rating__input fa" id="star2-rating-4" type="radio" name="rating2" disabled value="4" checked>
-                                                        <label for="star2-rating-4" class="label_star"></label>
-                                                        <input class="star-rating__input fa" id="star2-rating-3" type="radio" name="rating2" disabled value="3">
-                                                        <label for="star2-rating-3" class="label_star"></label>
-                                                        <input class="star-rating__input fa" id="star2-rating-2" type="radio" name="rating2" disabled value="2">
-                                                        <label for="star2-rating-2" class="label_star"></label>
-                                                        <input class="star-rating__input fa" id="star2-rating-1" type="radio" name="rating2" disabled value="1">
-                                                        <label for="star2-rating-1" class="label_star"></label>
-                                                    </div>
-                                                </div>
-                                                <span>Основано на 3-х отзывах</span>
-                                            </div>
-                                            <a href="#" class="give_recall">Оставить отзыв</a>
-                                        </div>
-                                        <div class="recall_list">
-                                            <div class="recall_item">
-                                                <div class="comment">
-                                                    <div class="comment_pers">
-                                                        <div class="rating">
-                                                            <div class="star-rating">
-                                                                <div class="star-rating__wrap disabled">
-                                                                    <input class="star-rating__input fa" id="star3-rating-5" type="radio" name="rating3" disabled value="5">
-                                                                    <label for="star3-rating-5" class="label_star"></label>
-                                                                    <input class="star-rating__input fa" id="star3-rating-4" type="radio" name="rating3" disabled value="4" checked>
-                                                                    <label for="star3-rating-4" class="label_star"></label>
-                                                                    <input class="star-rating__input fa" id="star3-rating-3" type="radio" name="rating3" disabled value="3">
-                                                                    <label for="star3-rating-3" class="label_star"></label>
-                                                                    <input class="star-rating__input fa" id="star3-rating-2" type="radio" name="rating3" disabled value="2">
-                                                                    <label for="star3-rating-2" class="label_star"></label>
-                                                                    <input class="star-rating__input fa" id="star3-rating-1" type="radio" name="rating3" disabled value="1">
-                                                                    <label for="star3-rating-1" class="label_star"></label>
-                                                                </div>
-                                                            </div>
-                                                            <span><b>Валерия</b> ·14 апреля 2015</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="comment_text">
-                                                        Тонкий, легкий, надежный чехольчик! Мне очень нравится что он яркий. Крышка у чехла складывается. Можно использовать как подставку и смотреть киношки, ролики или читать. Очень устойчив когда стоит на крышке. На айпаде моем сидит хорошо, не елозит. Разъем под камеру совпадает с ней, снимать не мешает. В общем все супер, я рекомендую такие чехлы для всех!
-                                                    </div>
-                                                </div>
-                                                <div class="answer">
-                                                    <div class="answer_name">
-                                                        DEPPA
-                                                    </div>
-                                                    <div class="answer_text">
-                                                        Валерия, спасибо за отзыв! Качество ― продуктов, сервиса, коммуникаций ― это наш приоритет. 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="recall_item">
-                                                <div class="comment">
-                                                    <div class="comment_pers">
-                                                        <div class="rating">
-                                                            <div class="star-rating">
-                                                                <div class="star-rating__wrap disabled">
-                                                                    <input class="star-rating__input fa" id="star4-rating-5" type="radio" name="rating4" disabled value="5">
-                                                                    <label for="star4-rating-5" class="label_star"></label>
-                                                                    <input class="star-rating__input fa" id="star4-rating-4" type="radio" name="rating4" disabled value="4" checked>
-                                                                    <label for="star4-rating-4" class="label_star"></label>
-                                                                    <input class="star-rating__input fa" id="star4-rating-3" type="radio" name="rating4" disabled value="3">
-                                                                    <label for="star4-rating-3" class="label_star"></label>
-                                                                    <input class="star-rating__input fa" id="star4-rating-2" type="radio" name="rating4" disabled value="2">
-                                                                    <label for="star4-rating-2" class="label_star"></label>
-                                                                    <input class="star-rating__input fa" id="star4-rating-1" type="radio" name="rating4" disabled value="1">
-                                                                    <label for="star4-rating-1" class="label_star"></label>
-                                                                </div>
-                                                            </div>
-                                                            <span><b>Владимир</b> ·10 февраля 2015</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="comment_text">
-                                                        Яркий и красивый, сразу бросается в глаза) голубой мой любимый цвет! Летний такой, когда за окном серая погода я просто радуюсь от одного его вида!
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="recall_item">
-                                                <div class="comment">
-                                                    <div class="comment_pers">
-                                                        <div class="rating">
-                                                            <div class="star-rating">
-                                                                <div class="star-rating__wrap disabled">
-                                                                    <input class="star-rating__input fa" id="star5-rating-5" type="radio" name="rating5" disabled value="5">
-                                                                    <label for="star5-rating-5" class="label_star"></label>
-                                                                    <input class="star-rating__input fa" id="star5-rating-4" type="radio" name="rating5" disabled value="4" checked>
-                                                                    <label for="star5-rating-4" class="label_star"></label>
-                                                                    <input class="star-rating__input fa" id="star5-rating-3" type="radio" name="rating5" disabled value="3">
-                                                                    <label for="star5-rating-3" class="label_star"></label>
-                                                                    <input class="star-rating__input fa" id="star5-rating-2" type="radio" name="rating5" disabled value="2">
-                                                                    <label for="star5-rating-2" class="label_star"></label>
-                                                                    <input class="star-rating__input fa" id="star5-rating-1" type="radio" name="rating5" disabled value="1">
-                                                                    <label for="star5-rating-1" class="label_star"></label>
-                                                                </div>
-                                                            </div>
-                                                            <span><b>Ольга</b> ·10 февраля 2015</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="comment_text">
-                                                        Тонкий, легкий, надежный чехольчик! Мне очень нравится что он яркий. Крышка у чехла складывается. Можно использовать как подставку и смотреть киношки, ролики или читать. Очень устойчив когда стоит на крышке. 
-                                                    </div>
-                                                </div>
+                                    <div class="event-body case">
+                                        <div class="wide-slider-wrap">
+                                            <div class="wide-slider-left"></div>
+                                            <div class="wide-slider-right"></div>
+                                            <div class="wide-slider">
+                                                <img src="css/img/Artcase-pics-1.jpg" class="event-wide" />
+                                                <img src="css/img/Artcase-pics-2.jpg" class="event-wide" />
+                                                <img src="css/img/Artcase-pics-3.jpg" class="event-wide" />
                                             </div>
                                         </div>
-                                    </div>
-                                    <div id="download" class="ex-info">
-                                        <div class="item pdf">
-                                            <span class="attachment">
-                                                <a href="http://deppa.ru/engine/download.php?id=180">Prezentaciya-universalnyh-chehlov-Slide.pdf</a> [1,32 Mb] (cкачиваний: 11)</span>
-                                            <a class="link" href="#" onclick="location.href = $(this).parent().find('span.attachment a').attr('href');return false;">Скачать</a>
-                                        </div>
-                                        <div class="item zip">
-                                            <span>Все фото данной модели</span>
-                                            <a class="link" href="http://deppa.ru/download/681/?token=192109705456d032410a4552.22113634" target="_blank">Скачать</a>
-                                        </div>
-                                        <div class="item">
-                                            <img src="css/img/1422020359_dlya-sayta-produkt-m-84049.jpg" height="50" />
-                                            <span>1422020359_dlya-sayta-produkt-m-84049.jpg</span>
-                                            <a class="link" target="_blank" href="css/img/1422020359_dlya-sayta-produkt-m-84049.jpg" download>Скачать</a>
-                                        </div>
-                                        <div class="item">
-                                            <img src="css/img/1422449841_slide-rezhim-podstavki.jpg" height="50" />
-                                            <span>1422449841_slide-rezhim-podstavki.jpg</span>
-                                            <a class="link" target="_blank" href="css/img/1422449841_slide-rezhim-podstavki.jpg" download>Скачать</a>
-                                        </div>
-                                        <div class="item">
-                                            <img src="css/img/1421835216_dlya-sayta-upakovka-m84049.jpg" height="50" />
-                                            <span>1421835216_dlya-sayta-upakovka-m84049.jpg</span>
-                                            <a class="link" target="_blank" href="css/img/1421835216_dlya-sayta-upakovka-m84049.jpg" download>Скачать</a>
-                                        </div>
-                                        <div class="item">
-                                            <img src="css/img/1422020390_dlya-sayta-produkt-m-84048.jpg" height="50" />
-                                            <span>1422020390_dlya-sayta-produkt-m-84048.jpg</span>
-                                            <a class="link" target="_blank" href="css/img/1422020390_dlya-sayta-produkt-m-84048.jpg" download>Скачать</a>
-                                        </div>
-                                        <div class="item">
-                                            <img src="http://deppa.ru/uploads/posts/2015-07/1437751543_dlya-sayta-produkt-m-84083.jpg" height="50" />
-                                            <span>1437751543_dlya-sayta-produkt-m-84083.jpg</span>
-                                            <a class="link" target="_blank" href="http://deppa.ru/uploads/posts/2015-07/1437751543_dlya-sayta-produkt-m-84083.jpg" download>Скачать</a>
-                                        </div>
-                                        <div class="item">
-                                            <img src="css/img/1422020438_dlya-sayta-produkt-m-84047.jpg" height="50" />
-                                            <span>1422020438_dlya-sayta-produkt-m-84047.jpg</span>
-                                            <a class="link" target="_blank" href="css/img/1422020438_dlya-sayta-produkt-m-84047.jpg" download>Скачать</a>
-                                        </div>
-                                        <div class="item">
-                                            <img src="css/img/1422020456_dlya-sayta-produkt-m-84046.jpg" height="50" />
-                                            <span>1422020456_dlya-sayta-produkt-m-84046.jpg</span>
-                                            <a class="link" target="_blank" href="css/img/1422020456_dlya-sayta-produkt-m-84046.jpg" download>Скачать</a>
-                                        </div>
-                                        <div class="item">
-                                            <img src="css/img/1422020443_dlya-sayta-produkt-m-84045.jpg" height="50" />
-                                            <span>1422020443_dlya-sayta-produkt-m-84045.jpg</span>
-                                            <a class="link" target="_blank" href="css/img/1422020443_dlya-sayta-produkt-m-84045.jpg" download>Скачать</a>
-                                        </div>
-                                    </div>
-                                    <div id="big_photos">
-                                        <ul>
-                                            <li>
-                                                <img src="css/img/1422020359_dlya-sayta-produkt-m-84049.jpg" />
-                                            </li>
-                                            <li>
-                                                <img src="css/img/1422449841_slide-rezhim-podstavki.jpg" />
-                                            </li>
-                                            <li>
-                                                <img src="css/img/1421835216_dlya-sayta-upakovka-m84049.jpg" />
-                                            </li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -1715,7 +1303,7 @@
                     <!--ul>
             <li class="fav">
         У вас нет избранного
-        <br><br>
+        <br /><br />
 
             </li>        
         </ul-->

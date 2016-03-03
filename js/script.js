@@ -31,6 +31,9 @@ $(document).ready(function() {
         if ($(this).text() != 'Скрыть') $(this).text('Скрыть');
         else $(this).text('Показать все товары');
     });
+    $('.add_article_link').click(function() {
+        $('.article_form').fadeToggle();
+    });
     // Change size in basket
     $('.minus').click(function (e) {
         e.preventDefault();

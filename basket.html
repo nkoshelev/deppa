@@ -921,6 +921,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="clear"></div>
                                                     <a href="#" class="delete_tovar">Удалить</a>
                                                 </div>
                                                 <div class="basket_item">
@@ -957,6 +958,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="clear"></div>
                                                     <a href="#" class="delete_tovar">Удалить</a>
                                                 </div>
                                             </div>
@@ -965,11 +967,32 @@
                                     <div class="add_actions">
                                         <div class="add_article">
                                             <a href="#" class="add_article_link">Добавить в заказ товар по артикулу</a>
+                                            <div class="article_form">
+                                                <input type="text" name="article" id="article" class="input_form">
+                                                <input type="submit" class="article_submit my_button" value="Добавить">
+                                                <p>Можно добавить сразу несколько, введя артикул через запятую</p>
+                                            </div>
                                         </div>
                                         <div class="coupon_block">
                                             <p>Применить купон на скидку</p>
-                                            <input type="text" name="coupon" id="coupon" placeholder="Введите номер купона">
+                                            <input type="text" name="coupon" id="coupon" class="input_form" placeholder="Введите номер купона">
                                             <input type="submit" class="counted my_button" value="Пересчитать">
+                                        </div>
+                                    </div>
+                                    <div class="itog">
+                                        <div class="itog_actions">
+                                            <div class="itog_actions_block">
+                                                <div class="itog_sum">
+                                                    <p>Итоговая стоимость:</p>
+                                                    <div class="sum">
+                                                        2700 руб.
+                                                    </div>
+                                                </div>
+                                                <input type="submit" class="checkout" value="Оформить заказ"  />
+                                            </div>
+                                        </div>
+                                        <div class="itog_text">
+                                            Стоимость без учета доставки, доставка будет рассчитана и согласована после оформления заказа
                                         </div>
                                     </div>
                                 </form>

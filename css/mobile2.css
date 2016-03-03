@@ -1,3 +1,6 @@
+.clear {
+  clear: both;
+}
 @media (max-width: 1650px) {
   .h-menu > .menu > a {
     font-size: 0.95em;
@@ -370,6 +373,42 @@
   }
   .recalls_block .recall_list .recall_item .answer {
     width: 95%;
+  }
+}
+@media (max-width: 1060px) {
+  .basket_table .column1 {
+    width: 300px;
+    margin: 0 50px 0 0;
+  }
+  .basket_table .column2 {
+    width: 120px;
+    margin: 0 20px 0 0;
+  }
+  .basket_table .basket_table .column3 {
+    width: 140px;
+    margin: 0;
+  }
+  .basket_table .thead .column1 .title {
+    margin: 0 0 0 60px;
+  }
+  .basket_table .description .imgblock {
+    margin: 0 12px;
+  }
+  .basket_table .description .infoblock {
+    width: 196px;
+  }
+  .basket_page .add_actions .add_article {
+    float: none;
+    margin: 9px 0 30px;
+  }
+  .basket_page .add_actions .coupon_block {
+    float: none;
+  }
+  .basket_page .itog {
+    float: none;
+  }
+  .basket_page .itog .itog_actions .itog_actions_block {
+    float: none;
   }
 }
 @media (max-width: 767px) {
@@ -889,6 +928,67 @@
   }
   #content_main > div#download > .item > a.link {
     margin: 4px 0 0;
+  }
+  .basket_page .saving_orders,
+  .basket_page .save_order {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    display: table;
+  }
+  .basket_page .saving_orders {
+    margin: 0 0 20px;
+  }
+  .basket_page .add_actions .coupon_block > p {
+    float: none;
+    margin-right: 0;
+  }
+  .basket_page .add_actions .coupon_block .input_form {
+    margin: 10px 0 0;
+  }
+  .basket_page .add_actions .coupon_block .counted {
+    margin: 10px 0 0;
+  }
+  .basket_page .add_actions .add_article .article_form {
+    margin: 0;
+  }
+  .basket_page .add_actions .add_article .article_form .input_form {
+    margin: 10px 0 0;
+  }
+  .basket_page .add_actions .add_article .article_form .article_submit {
+    margin: 10px 0 0;
+  }
+  .basket_table {
+    margin: 26px 0 0;
+    border-top: 1px solid #d6d6d8;
+  }
+  .basket_table .thead {
+    display: none;
+  }
+  .basket_table .column1 {
+    width: 100%;
+    margin: 0;
+  }
+  .basket_table .column3 {
+    margin: 0;
+  }
+  .basket_table .description .imgblock {
+    margin: 0 12px 0 0;
+  }
+  .basket_table .description .infoblock {
+    width: 72%;
+  }
+  .basket_table .delete_tovar {
+    position: static;
+    margin: 20px 0 0;
+    display: block;
+  }
+  .about_page {
+    padding: 50px 0 0;
+  }
+  #right #dle-content .about-block {
+    padding: 35px 0 50px 0;
   }
 }
 @media (max-width: 620px) {
