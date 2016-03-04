@@ -18,6 +18,15 @@ $(document).ready(function() {
         asNavFor: '.tovar_text_slider',
         variableWidth: true
     });
+    $('.about_slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: '<button type="button" class="slick-prev-about"></button>',
+        nextArrow: '<button type="button" class="slick-next-about"></button>'
+    });
+    $('.mid_header.down').click(function() {
+        $(this).next().slideToggle();
+    });
     $(".small-pic").click(function() {
         $('.thumb_mini').removeClass('active');
         $(this).parents('.thumb_mini').addClass('active');

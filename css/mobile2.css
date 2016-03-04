@@ -374,6 +374,9 @@
   .recalls_block .recall_list .recall_item .answer {
     width: 95%;
   }
+  #right div#dle-content .news-body {
+    margin: 0 16px 23px 0;
+  }
 }
 @media (max-width: 1060px) {
   .basket_table .column1 {
@@ -409,6 +412,15 @@
   }
   .basket_page .itog .itog_actions .itog_actions_block {
     float: none;
+  }
+  #right div#dle-content .news-body {
+    margin: 0 30px 23px 0;
+  }
+  #right div#dle-content .news-body:nth-child(3n) {
+    margin: 0 30px 23px 0;
+  }
+  #right div#dle-content .news-body:nth-child(2n) {
+    margin: 0 0 23px;
   }
 }
 @media (max-width: 767px) {
@@ -989,6 +1001,12 @@
   }
   #right #dle-content .about-block {
     padding: 35px 0 50px 0;
+  }
+  #right div#dle-content .news-body .pic-cont a {
+    width: auto;
+  }
+  .news_vn_page .event-body .event-text {
+    margin-bottom: 40px;
   }
 }
 @media (max-width: 620px) {

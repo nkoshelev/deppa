@@ -846,39 +846,6 @@
                     <div id="right">
                         <div id='dle-content'>
                             <div class="about_page">
-                                <script>
-                                $(window).load(function() {
-                                    $.each($('.wide-slider'), function() {
-                                        var tab = $(this);
-                                        $(this).carouFredSel({
-                                            start: 0,
-                                            items: 1,
-                                            direction: "left",
-
-                                            prev: {
-                                                button: function() {
-                                                    return tab.parent().parent().find('.wide-slider-left');
-                                                }
-                                            },
-                                            next: {
-                                                button: function() {
-                                                    return tab.parent().parent().find('.wide-slider-right');
-                                                }
-                                            },
-                                            scroll: {
-                                                items: 1,
-                                                duration: 500,
-                                                easing: 'linear'
-                                            },
-                                            auto: {
-                                                play: false
-
-                                            }
-
-                                        });
-                                    });
-                                });
-                                </script>
                                 <div class="news-menu">
                                     <a href="#" class="sel">О нас</a>
                                     <a href="#">DEPPALIFE</a>
