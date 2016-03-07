@@ -97,6 +97,15 @@ $(document).ready(function() {
        $(".tab-content").not(tab).css("display", "none");
        $(tab).fadeIn();
     });
+    $('.eye').click(function(){
+        if($(this).prev().is( "[type=password]" )) {
+            $(this).prev().prop("type", "text");
+            $(this).addClass('active');
+        }else{
+            $(this).prev().prop("type", "password");
+            $(this).removeClass('active');
+        }
+    });
     if($('.cont-tri .info').length) {
         ymaps.ready(init);
         var myMap, 

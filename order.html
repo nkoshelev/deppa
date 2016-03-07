@@ -1,0 +1,1423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Deppa</title>
+    <meta name="description" content="Deppa" />
+    <meta name="keywords" content="Deppa" />
+    <link rel="search" type="application/opensearchdescription+xml" href="http://deppa.ru/engine/opensearch.php" title="Deppa" />
+    <link rel="alternate" type="application/rss+xml" title="Deppa" href="http://deppa.ru/rss.xml" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jqueryui.js"></script>
+    <script type="text/javascript" src="js/dle_js.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+    <!-- <script type="text/javascript" src="/engine/editor/scripts/webfont.js"></script> -->
+    <link media="screen" href="css/default.css" type="text/css" rel="stylesheet" />
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="css/slick.css" type="text/css" charset="utf-8" />
+    <link href="css/style2.css" rel="stylesheet" type="text/css" />
+    <link href="css/mobile2.css" rel="stylesheet" type="text/css" />
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script-->
+    <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?52"></script>
+    <script type="text/javascript">
+    VK.init({
+        apiId: 3144533,
+        onlyWidgets: true
+    });
+    </script>
+    <link href="css/screen.css" rel="stylesheet" type="text/css" />
+    <link href="css/superslides.css" rel="stylesheet" type="text/css" />
+    <script src="js/main.js"></script>
+    <script src="js/jquery.slides.min.js"></script>
+    <script src="js/easySlider1.7.js"></script>
+    <script src="js/jquery.carouFredSel-6.2.0-packed.js"></script>
+    <script src="js/jquery.superslides.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.touchwipe.min.js"></script>
+    <script src="js/jquery.mmenu.min.js" type="text/javascript"></script>
+    <link href="css/jquery.mmenu.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript">
+    $.ajax({
+        type: "POST",
+        url: "/engine/ajax/_autolang.php",
+        data: "",
+        dataType: "text",
+        success: function(msg) {
+            if (msg == '1') {
+                console.log('ok');
+                location.href = 'http://deppa.ru/eng/';
+            }
+        }
+    });
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            bound = $('#footer_cont'),
+                st = $(window).scrollTop(),
+                wh = $(window).height(),
+                dh = $(document).height(),
+                fh = $('#footer_cont').height();
+            if ($(this).scrollTop() != 0) {
+                $('#toTop').fadeIn();
+                $('#toTop2').fadeIn();
+            } else {
+                $('#toTop').fadeOut();
+                $('#toTop2').fadeOut();
+            }
+            if (st > dh - (wh + fh)) {
+                $('#toTop2').addClass('white');
+            } else {
+                $('#toTop2').removeClass('white');
+            }
+        });
+
+        $('#toTop').click(function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+        });
+
+        $('#toTop2').click(function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+        });
+
+        $('.h-menu > .menu > a.prod').hover(function() {
+                $('.h-menu-drop-wrap .h-menu-drop.device').hide();
+                $('.h-menu-drop-wrap .h-menu-drop').hide();
+                $('.h-menu-drop-wrap .h-menu-drop.cats').show();
+                $('.h-menu-drop-wrap').slideDown();
+            }, function() {
+                //      $('.h-menu-drop-wrap').hide();
+            }
+
+        );
+
+        $('.h-menu > .menu > a.device').hover(function() {
+                $('.h-menu-drop-wrap .h-menu-drop').hide();
+                $('.h-menu-drop-wrap .h-menu-drop.cats').hide();
+                $('.h-menu-drop-wrap .h-menu-drop.device').show();
+                $('.h-menu-drop-wrap').slideDown();
+            }, function() {
+                //      $('.h-menu-drop-wrap').hide();
+            }
+
+        );
+
+        $('.h-menu .fav').hover(function() {
+                $('.h-menu-drop-wrap .h-menu-drop').hide();
+                $('.h-menu-drop-wrap .h-menu-drop.cats').hide();
+                $('.h-menu-drop-wrap .h-menu-drop.device').hide();
+                $('.h-menu-drop-wrap .h-menu-drop.fav').show();
+                $('.h-menu-drop-wrap').slideDown();
+
+            }, function() {
+
+            }
+
+        );
+        $('.h-menu-drop-wrap').hover(function() {
+                clearTimeout(setTimeoutConst);
+                $('.h-menu-drop-wrap').show();
+            }, function() {
+                setTimeoutConst = setTimeout(function() {
+                    $('.h-menu-drop-wrap').slideUp();
+                }, 100);
+            }
+
+        );
+
+        $(document).click(function(e) {
+            if ($(e.target).closest(".h-menu-drop-wrap").length > 0) {
+                //   return false;
+            } else $('.h-menu-drop-wrap').slideUp('fast');
+        });
+        $('.h-menu-drop.device > ul li a').click(function() {
+            $('.h-menu-drop.device > div.hid').hide();
+            $('.h-menu-drop.device > div.hid.' + $(this).attr('rel')).fadeIn();
+            $('.h-menu-drop.device > ul li a').removeClass('sel');
+            $(this).addClass('sel');
+        });
+
+        if (mobilecheck()) {
+            //  $('.h-slider.fw .slides .slides-container').append('<li><div class="ban-text">' + $('.h-slider.fw .slides .slides-container li .ban-text').eq(0).html() + '</div><img src="css/img/stop-cadr.jpg" alt=""></li>');
+            //  $('.h-slider.fw .slides .slides-container li').eq(0).remove();
+        }
+        anim_s = 'fade';
+        if (mobilecheck()) anim_s = 'slide';
+
+        $('.h-slider.fw .slides').superslides({
+            play: 15000,
+            pagination: true,
+            animation: anim_s
+        });
+
+        $('.h-slider.fw .slides').touchwipe({
+            wipeLeft: function() {
+
+                $('.h-slider.fw .slides').superslides('animate', 'next')
+
+
+            },
+            wipeRight: function() {
+                $('.h-slider.fw .slides').superslides('animate', 'prev')
+            },
+            min_move_x: 20,
+            min_move_y: 20,
+            preventDefaultEvents: false
+        });
+
+
+        $('.banners > .block > a').hover(function() {
+            if ($(this).find('img').attr('title') != '') {
+                old = $(this).find('img').attr('src');
+                $(this).find('img').attr('src', $(this).find('img').attr('title'));
+                $(this).find('img').attr('title', old);
+            }
+        }, function() {
+            if ($(this).find('img').attr('title') != '') {
+                old = $(this).find('img').attr('src');
+                $(this).find('img').attr('src', $(this).find('img').attr('title'));
+                $(this).find('img').attr('title', old);
+            }
+        });
+
+        setTimeout(function() {
+            var video1 = $('.slides ul li video').get(0);
+
+            function playVideo() {
+                video1.play();
+            }
+
+            video1.onload = playVideo();
+        }, 50);
+
+
+        $(".h-popular.fw > .banners").jcarousel({
+            list: '.banners_wrap',
+            items: '.banner',
+            wrap: 'both'
+        });
+        $('.jc-prev').click(function() {
+            $(".h-popular.fw > .banners").jcarousel('scroll', '-=1');
+        });
+
+        $('.jc-next').click(function() {
+            $(".h-popular.fw > .banners").jcarousel('scroll', '+=1');
+        });
+
+        $('.h-popular > .banners .banner').width($(window).width());
+        $(window).resize(function() {
+            $('.h-popular > .banners .banner').width($(window).width())
+        });
+    });
+
+    // фильтры JS
+    $(document).ready(function() {
+        $('#main_cont ul.js-filter > li a.f1-act').click(function(event) {
+            event.preventDefault();
+            id = $(this).attr('rel');
+
+            $('#main_cont #right .f1-hdr').hide();
+            $('#main_cont #right .f2-hdr').hide();
+            $('#main_cont #right .f2-list').hide();
+            $('#main_cont #right .f2-prnt-' + id).show();
+            $('#main_cont #right .f3-prnt-' + id).show();
+            $('#main_cont #right .f1-list').hide();
+            $('#main_cont #right .f1-list-' + id).show();
+            if ($(this).hasClass('f1-sub')) {
+                $('#main_cont ul.js-filter > li > ul a').removeClass('sel');
+                $(this).addClass('sel');
+            } else {
+                $('#main_cont ul.js-filter > li > a').removeClass('sel');
+                $(this).addClass('sel');
+                $('#main_cont ul.js-filter > li > ul').hide();
+                $(this).parent().find('ul').show();
+            }
+
+        });
+
+        $('#main_cont ul.js-filter a.f2-act').click(function(event) {
+            event.preventDefault();
+            id = $(this).attr('rel');
+            //      alert(id);
+            $('#main_cont #right .f1-hdr').hide();
+            $('#main_cont #right .f2-hdr').hide();
+            $('#main_cont #right .f1-list').hide();
+            $('#main_cont #right .f2-list').hide();
+            $('#main_cont #right .f2-list-' + id).show();
+
+            $('#main_cont ul.js-filter > li > ul a').removeClass('sel');
+            $(this).addClass('sel');
+
+            //      $('#main_cont #right br').hide();   
+        });
+
+        $('#main_cont ul.js-filter a.f0-act').click(function(event) {
+            event.preventDefault();
+            id = $(this).attr('rel');
+            $('#main_cont #right .f0-hdr').hide();
+            $('#main_cont #right .f0-list').hide();
+            $('#main_cont #right .cat' + id).show();
+            $('#main_cont ul.js-filter > li a').removeClass('sel');
+            $(this).addClass('sel');
+        });
+
+
+        $('#main_cont ul.js-filter a.all').click(function(event) {
+            event.preventDefault();
+            $('#main_cont #right .f0-hdr').show();
+            $('#main_cont #right .f0-list').show();
+            $('#main_cont #right .f1-hdr').show();
+            $('#main_cont #right .f2-hdr').show();
+            $('#main_cont #right .f2-list').show();
+            $('#main_cont #right .f1-list').show();
+            $('#main_cont ul.js-filter > li > ul').hide();
+            $('#main_cont ul.js-filter > li a').removeClass('sel');
+            $(this).addClass('sel');
+
+            return false;
+        });
+
+
+        if ($('a.f0-act').length) {
+            $('a.f0-act').hide();
+            $('a.f0-act').each(function(i, link) {
+                if ($('.cat' + $(link).attr('rel')).length) $(link).show();
+            });
+        }
+
+
+        $('.tovar_block img.fav').click(function() {
+            act = 'plus';
+            if ($(this).hasClass('fav-on')) act = 'minus';
+            img = $(this);
+
+            $.ajax({
+                type: "POST",
+                url: "/engine/ajax/fav.php",
+                data: "action=" + act + "&fav_id=" + $(this).attr('alt') + "&skin=" + dle_skin,
+                dataType: "json",
+                success: function(msg) {
+                    if (msg['status'] == 'ok') {
+                        $('.h-menu-drop.fav').html(msg['html']);
+                        if (act == 'minus') {
+                            img.attr('src', 'css/img/fav.png');
+                            $('.h-menu div.fav > span > i').text(parseInt($('.h-menu div.fav > span > i').text()) - 1);
+                        } else {
+                            img.attr('src', 'css/img/fav-on.png');
+                            img.addClass('fav-on');
+                            $('.h-menu div.fav > span > i').text(parseInt($('.h-menu div.fav > span > i').text()) + 1);
+                        }
+
+                        $('.h-menu-drop.fav a.clear').click(function() {
+                            $.ajax({
+                                type: "POST",
+                                url: "/engine/ajax/fav.php",
+                                data: "action=clear&fav_id=1&skin=" + dle_skin,
+                                dataType: "json",
+                                success: function(msg) {
+                                    if (msg['status'] == 'ok') {
+                                        $('.h-menu-drop.fav').html(msg['html']);
+                                        $('.h-menu div.fav > span > i').text('0');
+                                        $('#content_main_static .favs').html('');
+                                    }
+                                }
+                            });
+
+                        });
+                    }
+                }
+            });
+        });
+        $('.fav .tovar_block img.close').click(function() {
+            act = 'minus';
+            img = $(this);
+
+            $.ajax({
+                type: "POST",
+                url: "/engine/ajax/fav.php",
+                data: "action=" + act + "&fav_id=" + $(this).attr('alt') + "&skin=" + dle_skin,
+                dataType: "json",
+                success: function(msg) {
+                    if (msg['status'] == 'ok') {
+                        $('.h-menu-drop.fav').html(msg['html']);
+                        if (act == 'minus') {
+                            $(this).parent().remove();
+                            $('.h-menu div.fav > span > i').text(parseInt($('.h-menu div.fav > span > i').text()) - 1);
+                        }
+                    }
+                }
+            });
+        });
+        $.ajax({
+            type: "POST",
+            url: "/engine/ajax/fav.php",
+            data: "action=update&fav_id=1&skin=" + dle_skin,
+            dataType: "json",
+            success: function(msg) {
+                if (msg['status'] == 'ok') {
+                    $('.h-menu-drop.fav').html(msg['html']);
+                    $('#my-menu li.fav').html(msg['html']);
+
+                    $('.h-menu-drop.fav a.clear').click(function() {
+                        $.ajax({
+                            type: "POST",
+                            url: "/engine/ajax/fav.php",
+                            data: "action=clear&fav_id=1&skin=" + dle_skin,
+                            dataType: "json",
+                            success: function(msg) {
+                                if (msg['status'] == 'ok') {
+                                    $('.h-menu-drop.fav').html(msg['html']);
+                                    $('.h-menu div.fav > span > i').text('0');
+
+                                }
+                            }
+                        });
+
+                    });
+
+
+                }
+            }
+        });
+
+        $('.sub_cat_section .show-more').click(function() {
+            $(this).parent().find('.hidden').slideToggle();
+            $(this).toggleClass('active');
+            var title = $(this).data('name');
+            if ($(this).text() != 'Скрыть') $(this).text('Скрыть');
+            else $(this).text('Показать еще '+title);
+
+        });
+
+
+
+    });
+
+
+    function delfav(img) {
+
+        act = 'minus';
+
+        $.ajax({
+            type: "POST",
+            url: "/engine/ajax/fav.php",
+            data: "action=" + act + "&fav_id=" + img.attr('alt') + "&skin=" + dle_skin,
+            dataType: "json",
+            success: function(msg) {
+                if (msg['status'] == 'ok') {
+                    $('.h-menu-drop.fav').html(msg['html']);
+                    if (act == 'minus') {
+                        img.parent().remove();
+                        $('.h-menu div.fav > span > i').text(parseInt($('.h-menu div.fav > span > i').text()) - 1);
+                    }
+                }
+            }
+        });
+
+    }
+    </script>
+    <script>
+    $(function() {
+
+
+        $('.tovar_block .sel_color .color-link').click(function(event) {
+            event.preventDefault();
+            $(this).parent().parent().find('a > img').attr('src', $(this).attr('rel'));
+
+        });
+
+        $('.tovar_block .sel_color .color-link').hover(
+            function(event) {
+                event.preventDefault();
+                $(this).parent().parent().find('a > img').attr('src', $(this).attr('rel'));
+            },
+            function() {}
+        );
+    });
+    </script>
+</head>
+
+<body>
+    <div id="_wrap_mmenu">
+        <div id="loading-layer" style="display:none">
+            <div id="loading-layer-text">Загрузка. Пожалуйста, подождите...</div>
+        </div>
+        <script type="text/javascript">
+        <!--
+        var dle_root = '/';
+        var dle_admin = '';
+        var dle_login_hash = '';
+        var dle_group = 5;
+        var dle_skin = 'ENG_D2015';
+        var dle_wysiwyg = 'no';
+        var quick_wysiwyg = '0';
+        var dle_act_lang = ["Да", "Нет", "Ввод", "Отмена", "Сохранить"];
+        var menu_short = 'Быстрое редактирование';
+        var menu_full = 'Полное редактирование';
+        var menu_profile = 'Просмотр профиля';
+        var menu_send = 'Отправить сообщение';
+        var menu_uedit = 'Админцентр';
+        var dle_info = 'Информация';
+        var dle_confirm = 'Подтверждение';
+        var dle_prompt = 'Ввод информации';
+        var dle_req_field = 'Заполните все необходимые поля';
+        var dle_del_agree = 'Вы действительно хотите удалить? Данное действие невозможно будет отменить';
+        var dle_complaint = 'Укажите текст вашей жалобы для администрации:';
+        var dle_big_text = 'Выделен слишком большой участок текста.';
+        var dle_orfo_title = 'Укажите комментарий для администрации к найденной грамматической ошибке';
+        var dle_p_send = 'Отправить';
+        var dle_p_send_ok = 'Уведомление успешно отправлено';
+        var dle_save_ok = 'Изменения успешно сохранены. Обновить страницу?';
+        var dle_del_news = 'Удалить статью';
+        var allow_dle_delete_news = false;
+        //-->
+        </script>
+        <div class="h-menu-wrap fw">
+            <div class="h-menu">
+                <img src="css/img/deppa-logo.png" class="logo" onclick="location.href='/';" />
+                <div class="menu">
+                    <a href="#" class="prod" onclick="$('.h-menu-drop-wrap').slideDown();">Продукты</a>
+                    <a href="#" class="device" onclick="$('.h-menu-drop-wrap').slideDown();">Ваше устройство</a>
+                    <a href="/wherebuy.html" class="wheretobuy">Где купить</a>
+                    <!--a href="/vac_new.html" class="vacancy">Вакансии <span>1</span></a-->
+                    <!--a href="#">B2B</a-->
+                </div>
+                <div class="actions">
+                    <div class="menu_icon">
+                        <div class="fav">
+                            <img src="css/img/menu_fav.png" />
+                            <span>11</span>
+                        </div>
+                        <div class="cart">
+                            <img src="css/img/menu_cart.png" />
+                            <span>2</span>
+                        </div>
+                    </div>
+                    <div class="search_adaptive"></div>
+                    <form action="/search.html" name="searchform" method="post">
+                        <input type="hidden" name="do" value="search">
+                        <input type="hidden" name="subaction" value="search">
+                        <input type="text" name="story" id="search-site" />
+                    </form>
+                    <div class="lang">
+                        <a href="#" class="sel">rus</a> |
+                        <a href="/eng/">eng</a>
+                    </div>
+                    <a href="#my-menu" class="burger"></a>
+                    <a href="#" class="auth_link"></a>
+                </div>
+            </div>
+        </div>
+        <div class="h-menu-drop-wrap">
+            <div class="h-menu-drop cats">
+                <div>
+                    <a href="/covers-cases-bumpers/">Чехлы, кейсы, бамперы</a>
+                    <a href="/glasses/">Защитные стекла и пленки</a>
+                    <a href="/chargers-adapters/">Зарядные устройства и адаптеры питания</a>
+                    <a href="/data-aux-cables/">Дата-кабели и AUX-кабели</a>
+                    <a href="/adapters-cardreaders/">Адаптеры и картридеры</a>
+                </div>
+                <div>
+                    <a href="/holders/">Держатели</a>
+                    <a href="/selfie_monopods/">Моноподы для селфи</a>
+                    <a href="/accums/">Внешние аккумуляторы</a>
+                    <a href="/headphones/">Наушники и стереогарнитуры</a>
+                    <a href="/styluses/">Стилусы</a>
+                </div>
+                <div>
+                    <a href="/new/">Новинки [76]</a>
+                    <a href="/soon/">Скоро в продаже [9]</a>
+                </div>
+            </div>
+            <div class="h-menu-drop device">
+                <ul>
+                    <li>
+                        <a href="#" rel="m-apple" class="sel">Apple</a>
+                    </li>
+                    <li>
+                        <a href="#" rel="m-samsung">Samsung</a>
+                    </li>
+                    <li>
+                        <a href="#" rel="m-sony">Sony</a>
+                    </li>
+                    <li>
+                        <a href="#" rel="m-others">Другие</a>
+                    </li>
+                </ul>
+                <div class="hid m-apple">
+                    <ul>
+                        <li>
+                            <a href="/iphone/" class="bold">iPhone</a>
+                            <ul>
+                                <li>
+                                    <a href="/iphone-6s/">iPhone 6S</a>
+                                </li>
+                                <li>
+                                    <a href="/iphone-6s-plus/">iPhone 6S Plus</a>
+                                </li>
+                                <li>
+                                    <a href="/iphone-6/">iPhone 6</a>
+                                </li>
+                                <li>
+                                    <a href="/iphone-6-plus/">iPhone 6 Plus</a>
+                                </li>
+                                <li>
+                                    <a href="/iphone-5/">iPhone 5/5S</a>
+                                </li>
+                                <li>
+                                    <a href="/iphone-5c/">iPhone 5C</a>
+                                </li>
+                                <li>
+                                    <a href="/iphone-4/">iPhone 4/4S</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/ipad/" class="bold">iPad</a>
+                            <ul>
+                                <li>
+                                    <a href="/ipad-pro/">iPad Pro</a>
+                                </li>
+                                <li>
+                                    <a href="/ipad-air-2/">iPad Air 2</a>
+                                </li>
+                                <li>
+                                    <a href="/ipad-air/">iPad Air</a>
+                                </li>
+                                <li>
+                                    <a href="/ipad-4/">iPad 4</a>
+                                </li>
+                                <li>
+                                    <a href="/ipad-3/">iPad 3</a>
+                                </li>
+                                <li>
+                                    <a href="/ipad-2/">iPad 2</a>
+                                </li>
+                                <li>
+                                    <a href="/ipad-mini-4/">iPad mini 4</a>
+                                </li>
+                                <li>
+                                    <a href="/ipad-mini-3/">iPad mini 3</a>
+                                </li>
+                                <li>
+                                    <a href="/ipad-mini-2/">iPad mini 2</a>
+                                </li>
+                                <li>
+                                    <a href="/ipad-mini/">iPad mini</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/ipod/" class="bold">iPod</a>
+                            <ul>
+                                <li>
+                                    <a href="/ipod-touch-5/">iPod touch 5th Gen</a>
+                                </li>
+                                <li>
+                                    <a href="/ipod-nano-7/">iPod nano 7th Gen</a>
+                                </li>
+                                <li>
+                                    <a href="/ipod-classic/">iPod classic</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/mac/" class="bold">Mac</a>
+                            <ul>
+                                <li>
+                                    <a href="/macbook-12/">MacBook 12 (2015) </a>
+                                </li>
+                                <li>
+                                    <a href="/macbook-pro-13/">MacBook Pro 13</a>
+                                </li>
+                                <li>
+                                    <a href="/macbook-pro-15-retina/">MacBook Pro 15 with Retina display</a>
+                                </li>
+                                <li>
+                                    <a href="/macbook-air-13-2012/">MacBook Air 13 (Mid 2012)</a>
+                                </li>
+                                <li>
+                                    <a href="/macbook-air-11/">MacBook Air 11</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hid m-samsung">
+                    <ul>
+                        <li>
+                            <a href="/samsung/" class="bold">Смартфоны Samsung</a>
+                            <ul>
+                                <li>
+                                    <a href="/galaxy_a7_2016/">Galaxy A7 (2016)</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy_a5_2016/">Galaxy A5 (2016)</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy_a3_2016/">Galaxy A3 (2016)</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-s6-edge-plus/">Galaxy S6 edge+</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-s6/">Galaxy S6</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-s6-edge/">Galaxy S6 edge</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-s5/">Galaxy S5</a>
+                                </li>
+                                <li>
+                                    <a href="/s5-mini/">Galaxy S5 mini</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-s4/">Galaxy S4</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-s4-mini/">Galaxy S4 mini</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-s4-active/">Galaxy S4 Active</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-s4-zoom/">Galaxy S4 Zoom</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-s3/">Galaxy S3</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-s3-mini/">Galaxy S3 mini</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-s3-neo/">Galaxy S3 Neo</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-a7/">Galaxy A7</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-a5/">Galaxy A5</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-a3/">Galaxy A3</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-alpha/">Galaxy Alpha</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-note5/">Galaxy Note5</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-note-4/">Galaxy Note 4</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-note-3/">Galaxy Note 3</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-note-3-neo/">Galaxy Note 3 Neo</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-note-2/">Galaxy Note 2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/samsung-tablets/" class="bold">Планшеты Samsung</a>
+                            <ul>
+                                <li>
+                                    <a href="/galaxy-tab-4-10/">Galaxy Tab 4, 10.1</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-tab-4-8/">Galaxy Tab 4, 8.0</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-tab-4-7/">Galaxy Tab 4, 7.0</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-tab-3-10/">Galaxy Tab 3, 10.1</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-tab-3-8/">Galaxy Tab 3, 8.0</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-tab-3-7/">Galaxy Tab 3, 7.0</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-tab-3-lite-7/">Galaxy Tab 3 Lite, 7.0</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-tab-s/">Galaxy Tab S</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-tab-s-8/">Galaxy Tab S 8.4</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-tab-pro/">Galaxy Tab Pro</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-tab-pro-8/">Galaxy Tab Pro 8.4</a>
+                                </li>
+                                <li>
+                                    <a href="/galaxy-tab-pro-note-112/">Galaxy Tab Pro/Note Pro 12.2</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hid m-sony">
+                    <ul>
+                        <li>
+                            <a href="/sony/" class="bold">Смартфоны Sony</a>
+                            <ul>
+                                <li>
+                                    <a href="/xperia-z5-premium/">Xperia Z5 Premium</a>
+                                </li>
+                                <li>
+                                    <a href="/xperia-z5/">Xperia Z5</a>
+                                </li>
+                                <li>
+                                    <a href="/xperia-z5-compact/">Xperia Z5 Compact</a>
+                                </li>
+                                <li>
+                                    <a href="/xperia-m5/">Xperia M5</a>
+                                </li>
+                                <li>
+                                    <a href="/m4-aqua/">Xperia M4 Aqua</a>
+                                </li>
+                                <li>
+                                    <a href="/sony-xperia-z3/">Xperia Z3+</a>
+                                </li>
+                                <li>
+                                    <a href="/xperia-z3/">Xperia Z3</a>
+                                </li>
+                                <li>
+                                    <a href="/xperia-z3c/">Xperia Z3 Compact</a>
+                                </li>
+                                <li>
+                                    <a href="/xperia-z2/">Xperia Z2</a>
+                                </li>
+                                <li>
+                                    <a href="/xperia-z1/">Xperia Z1</a>
+                                </li>
+                                <li>
+                                    <a href="/xperia-z1c/">Xperia Z1 Compact</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/tablets-sony/" class="bold">Планшеты Sony</a>
+                            <ul>
+                                <li>
+                                    <a href="/xperia-z4-tablet/">Xperia Z4 Tablet</a>
+                                </li>
+                                <li>
+                                    <a href="/xperia-z3-tablet-compact/">Xperia Z3 Tablet Compact</a>
+                                </li>
+                                <li>
+                                    <a href="/xperia-tablet-z2/">Xperia Tablet Z2</a>
+                                </li>
+                                <li>
+                                    <a href="/xperia-tablet-z/">Xperia Tablet Z</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hid m-others">
+                    <a href="/acer/">Acer</a>
+                    <a href="/asus/">Asus</a>
+                    <a href="/htc/">HTC</a>
+                    <a href="/huawei/">Huawei</a>
+                    <a href="/lenovo/">Lenovo</a>
+                    <a href="/lg/">LG</a>
+                    <a href="/nexus/">Nexus</a>
+                    <a href="/nokia/">Nokia</a>
+                </div>
+            </div>
+            <div class="h-menu-drop fav">
+                <a href="#" class="clear">ОЧИСТИТЬ</a>
+                <br />
+                <br /> У вас нет избранного
+                <br />
+                <br />
+            </div>
+        </div>
+        <div class="h-cat-wrap fw">
+            <div class="h-cat">
+                <h1>
+                    Оформление заказа
+                </h1>
+            </div>
+        </div>
+        <div id="main_cont">
+            <div id="main">
+                <div id="content">
+                    <div id="right">
+                        <div id='dle-content'>
+                            <div class="order_page">
+                                <form class="order_form">
+                                    <div class="steps step1">
+                                        <div class="step_title">
+                                            1. Регистрация
+                                        </div>
+                                        <div class="steps_body">
+                                            <div class="path">
+                                                <span>Шаг</span>
+                                                <div class="step_number selected">1</div>
+                                                <div class="step_number">2</div>
+                                                <div class="step_number">3</div>
+                                            </div>
+                                            <ul class="order_tabs tabs-menu">
+                                                <li class="current"><a href="#tab1-1">Я частное лицо</a></li>
+                                                <li><a href="#tab1-2" class="member">
+                                                    Я представитель организации
+                                                    <i class="sign">
+                                                        <img src="css/img/sign.png" alt="">
+                                                        <span class="tooltip">
+                                                            Отмечаю эту опцию при регистрации, Вы подаете заявку на работу с нами на оптовых условиях. Заявка будет рассмотрена в течение 3-х рабочих дней. В случае одобрения, Вы получите уведомление по указанной при регистрации электронной почте с дальнейшими инструкциями.
+                                                        </span>
+                                                    </i>
+                                                </a></li>
+                                            </ul>
+                                            <div class="tab">
+                                                <div id="tab1-1" class="tab-content">
+                                                    <div class="reg_form template_form">
+                                                        <div class="inputs_block">
+                                                            <div class="form_element">
+                                                                <label>Имя*</label>
+                                                                <input type="text" name="pers_name" id="pers_name">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Фамилия <span>(опционально)</span></label>
+                                                                <input type="text" name="pers_surname" id="pers_surname">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>E-mail* <span>(логин)</span></label>
+                                                                <input type="email" name="pers_email" id="pers_email">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Телефон*</label>
+                                                                <input type="text" name="pers_phone" id="pers_phone" class="phone_input" placeholder="+7 (___) ___ - __ - __">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Придумайте пароль</label>
+                                                                <input type="password" name="pers_passwd" id="pers_passwd" class="check_passwd">
+                                                                <div class="eye"></div>
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Пароль еще раз</label>
+                                                                <input type="password" name="pers_passwd2" id="pers_passwd2" class="check_passwd">
+                                                                <div class="eye"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="inputs_submit">
+                                                            <input type="submit" class="input_submit" value="Зарегистрироватьтся">
+                                                            <div class="subscribe_block">
+                                                                <div class="checkbox_block">
+                                                                    <input type="checkbox" id="register_subscribe" name="register_subscribe" value="1">
+                                                                    <label for="register_subscribe" class="subscribe">
+                                                                        Подписаться<br>на рассылку о новинках
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="terms_use">
+                                                            Нажимая кнопку «Зарегестрироваться», Вы принимаете настоящее <a href="#">Пользовательское соглашение</a> и соглашаетесь на обработку Ваших персональных данных
+                                                        </div>
+                                                    </div>
+                                                    <div class="reg_question">
+                                                        Уже регестрировались? <a href="#">Войдите</a><br>или <a href="#">продолжите без регистрации</a>
+                                                    </div>
+                                                </div>
+                                                <div id="tab1-2" class="tab-content">
+                                                    <div class="reg_form template_form">
+                                                        <div class="inputs_block">
+                                                            <div class="form_element">
+                                                                <label>Имя*</label>
+                                                                <input type="text" name="pers_name" id="pers_name">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Фамилия <span>(опционально)</span></label>
+                                                                <input type="text" name="pers_surname" id="pers_surname">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>E-mail* <span>(логин)</span></label>
+                                                                <input type="email" name="pers_email" id="pers_email">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Телефон*</label>
+                                                                <input type="text" name="pers_phone" id="pers_phone" class="phone_input" placeholder="+7 (___) ___ - __ - __">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Придумайте пароль</label>
+                                                                <input type="password" name="pers_passwd" id="pers_passwd" class="check_passwd">
+                                                                <div class="eye"></div>
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Пароль еще раз</label>
+                                                                <input type="password" name="pers_passwd2" id="pers_passwd2" class="check_passwd">
+                                                                <div class="eye"></div>
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Название организации</label>
+                                                                <input type="text" name="pers_organiz" id="pers_organiz">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>ИНН</label>
+                                                                <input type="text" name="pers_inn" id="pers_inn">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>КПП</label>
+                                                                <input type="text" name="pers_kpp" id="pers_kpp">
+                                                            </div>
+                                                        </div>
+                                                        <div class="inputs_submit">
+                                                            <input type="submit" class="input_submit" value="Зарегистрироватьтся">
+                                                            <div class="subscribe_block">
+                                                                <div class="checkbox_block">
+                                                                    <input type="checkbox" id="register_subscribe" name="register_subscribe" value="1" checked>
+                                                                    <label for="register_subscribe" class="subscribe">
+                                                                        Подписаться<br>на рассылку о новинках
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="terms_use">
+                                                            Нажимая кнопку «Зарегестрироваться», Вы принимаете настоящее <a href="#">Пользовательское соглашение</a> и соглашаетесь на обработку Ваших персональных данных
+                                                        </div>
+                                                    </div>
+                                                    <div class="reg_question">
+                                                        Уже регестрировались? <a href="#">Войдите</a><br>или <a href="#">продолжите без регистрации</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+            </div>
+        </div>
+        <div id="footer_cont">
+            <div id="footer">
+                <div class="menu_foo">
+                    <b>Компания</b>
+                    <a href="/about.html">О нас</a>
+                    <a href="/about.html#artcase">Artcase</a>
+                    <a href="/about.html#lamel">Lamel SPb</a>
+                    <a href="/contacts.html">Контакты</a>
+                    <!--a href="/events/">Deppa Life</a-->
+                    <!--a href="/vac.html">Вакансии</a-->
+                </div>
+                <!-- <div class="menu_foo"> -->
+                <!--b>Каталог</b>
+             <a href="/smart/">Подбор по категории</a>
+             <a href="/smart/">Подбор по устройству</a//-->
+                <!-- </div> -->
+                <div class="menu_foo">
+                    <b>Поддержка</b>
+                    <a href="/sertif.html">Сертификаты</a>
+                    <a href="/wherebuy.html">Где купить</a>
+                    <a href="/download.html">Скачать материалы</a>
+                    <a href="/files/1451310835_posm-by-deppa.pdf">POSM и оборудование</a>
+                </div>
+                <div class="menu_foo">
+                    <b>Новости</b>
+                    <a href="/news/">Все новости</a>
+                    <a href="/news/#new">Новые продукты</a>
+                    <!--a href="/news/#reviews">Обзоры в прессе</a-->
+                    <a href="/news/#events">События</a>
+                    <a href="/news/#drive">Deppa Life</a>
+                </div>
+                <div class="menu_foo">
+                    <b>Медиа</b>
+                    <a href="https://www.facebook.com/pages/Deppa/299338476879857?fref=ts">Facebook</a>
+                    <a href="http://www.youtube.com/channel/UCNs2_Jdo4vVwPnty4HBO3LQ">YouTube</a>
+                    <a href="https://instagram.com/deppa_accessories/">Instagram</a>
+                </div>
+                <div class="menu_foo">
+                    <b>Обратная связь</b>
+                    <a href="/contacts.html">Контакты</a>
+                    <a href="#" onclick="$('.h-foo.fw > .h-foo > div.reklam').find('div.hid').slideDown();return false;">Рекламации</a>
+                    <a href="#" onclick="$('.h-foo.fw > .h-foo > div.writeus').find('div.hid').slideDown();return false;">Отзывы и предложения</a>
+                </div>
+                <div class="menu_foo">
+                </div>
+                <div class="clr"></div>
+            </div>
+            <div class="footer_bottom container">
+                <div class="copyright">
+                    © 2016 Deppa. Все права защищены.
+                </div>
+                <div class="social">
+                    <span>Присоединяйтесь к нам!</span>
+                    <a href="https://www.facebook.com/pages/Deppa/299338476879857?fref=ts" class="fb-link">
+                        <img src="css/img/fb-icon.png">
+                    </a>
+                    <a href="https://instagram.com/deppa_accessories/" class="fb-link">
+                        <img src="css/img/insta-icon.png">
+                    </a>
+                    <a href="http://www.youtube.com/channel/UCNs2_Jdo4vVwPnty4HBO3LQ" class="fb-link">
+                        <img src="css/img/youtube-ico.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+        (function(d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter24621191 = new Ya.Metrika({
+                        id: 24621191,
+                        webvisor: true,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true
+                    });
+                } catch (e) {}
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function() {
+                    n.parentNode.insertBefore(s, n);
+                };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else {
+                f();
+            }
+        })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript>
+            <div>
+                <img src="//mc.yandex.ru/watch/24621191" style="position:absolute; left:-9999px;" alt="" />
+            </div>
+        </noscript>
+        <!-- /Yandex.Metrika counter -->
+        <nav id="my-menu">
+            <ul>
+                <li class="search">
+                    <form action="/search.html" name="searchform" method="post">
+                        <input type="hidden" name="do" value="search">
+                        <input type="hidden" name="subaction" value="search">
+                        <input type="text" name="story" id="search-site" />
+                    </form>
+                </li>
+                <li>
+                    <a href="#">Продукты</a>
+                    <ul>
+                        <li>
+                            <a href="/covers-cases-bumpers/">Чехлы, кейсы, бамперы</a>
+                            <ul>
+                                <li>
+                                    <a href="#">Для смартфонов</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">Чехлы</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Wallet Tablet Fold</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Flip Fold</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Wallet Slide</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Flip Slide</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Кейсы</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Wallet Tablet Fold</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Flip Fold</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Wallet Slide</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Flip Slide</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Кейсы Art</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Wallet Tablet Fold</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Flip Fold</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Wallet Slide</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Flip Slide</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Бамперы</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Wallet Tablet Fold</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Flip Fold</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Wallet Slide</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Flip Slide</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Для планшетов</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">Чехлы</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Wallet Tablet Fold</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Flip Fold</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Wallet Slide</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Flip Slide</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Кейсы</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Wallet Tablet Fold</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Flip Fold</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Wallet Slide</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Flip Slide</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Кейсы Art</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Wallet Tablet Fold</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Flip Fold</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Wallet Slide</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Flip Slide</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Бамперы</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Wallet Tablet Fold</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Flip Fold</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Wallet Slide</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Универсальные чехлы Flip Slide</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/glasses/">Защитные стекла и пленки</a>
+                            <ul>
+                                <li>
+                                    <a href="#">Стекла для смартфонов</a>
+                                </li>
+                                <li>
+                                    <a href="#">Стекла для планшетов</a>
+                                </li>
+                                <li>
+                                    <a href="#">Пленки для смартфонов</a>
+                                </li>
+                                <li>
+                                    <a href="#">Пленки для планшетов</a>
+                                </li>
+                                <li>
+                                    <a href="#">Пленки универсальные</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/chargers-adapters/">Зарядные устройства и адаптеры питания</a>
+                        </li>
+                        <li>
+                            <a href="/data-aux-cables/">Дата-кабели и AUX-кабели</a>
+                        </li>
+                        <li>
+                            <a href="/adapters-cardreaders/">Адаптеры и картридеры</a>
+                        </li>
+                        <li>
+                            <a href="/holders/">Держатели</a>
+                        </li>
+                        <li>
+                            <a href="/accums/">Внешние аккумуляторы</a>
+                        </li>
+                        <li>
+                            <a href="/headphones/">Наушники и стереогарнитуры</a>
+                        </li>
+                        <li>
+                            <a href="/styluses/">Стилусы</a>
+                        </li>
+                        <li>
+                            <a href="/new/">Новинки [76]</a>
+                        </li>
+                        <li>
+                            <a href="/soon/">Скоро в продаже [9]</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Подбор по устройству</a>
+                    <ul>
+                        <li>
+                            <a href="#">Apple</a>
+                            <ul id="devs-apple"></ul>
+                        </li>
+                        <li>
+                            <a href="#">Samsung</a>
+                            <ul id="devs-samsung"></ul>
+                        </li>
+                        <li>
+                            <a href="#">Sony</a>
+                            <ul id="devs-sony"></ul>
+                        </li>
+                        <li>
+                            <a href="#">Другие</a>
+                            <ul id="devs-others"></ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/wherebuy.html">Где купить</a>
+                </li>
+                <li>
+                    <a href="#">Новости</a>
+                    <ul>
+                        <li>
+                            <a href="#">Все новости</a>
+                        </li>
+                        <li>
+                            <a href="#">Новые продукты</a>
+                        </li>
+                        <li>
+                            <a href="#">События</a>
+                        </li>
+                        <li>
+                            <a href="#">Deppa Life</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/contacts.html">Контакты</a>
+                </li>
+                <li>
+                    <a href="/fav.html">Избранное</a>
+                    <!--ul>
+            <li class="fav">
+        У вас нет избранного
+        <br /><br />
+
+            </li>        
+        </ul-->
+                </li>
+                <li>
+                    <a href="#">Язык</a>
+                    <ul>
+                        <li>
+                            <a href="/rus/">Русский</a>
+                        </li>
+                        <li>
+                            <a href="/eng/">Английский</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="mmenu_icons">
+                    <a href="#" class="cart">
+                        <span class="img">
+                            <img src="css/img/m_cart.png">
+                        </span>
+                        <span class="name">Корзина</span>
+                    </a>
+                    <a href="#" class="auth">
+                        <span class="img">
+                            <img src="css/img/m_auth.png">
+                        </span>
+                        <span class="name">Личный кабинет</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $('#devs-apple').html($('.hid.m-apple > ul').html());
+            $('#devs-samsung').html($('.hid.m-samsung > ul').html());
+            $('#devs-sony').html($('.hid.m-sony > ul').html());
+            $('#devs-others').html('<li>' + $('.hid.m-others').html() + '</li>');
+            $("#my-menu").mmenu();
+            $("#my-menu").find(".mm-subopen").addClass("mm-fullsubopen");
+        });
+        </script>
+        <div id="toTop2"></div>
+    </div>
+</body>
+
+</html>
+<!-- DataLife Engine Copyright SoftNews Media Group (http://dle-news.ru)  -->
