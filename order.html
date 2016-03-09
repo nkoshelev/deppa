@@ -42,6 +42,7 @@
     <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script type="text/javascript">
     $.ajax({
         type: "POST",
@@ -865,7 +866,7 @@
                         <div id='dle-content'>
                             <div class="order_page">
                                 <form class="order_form">
-                                    <div class="steps step1">
+                                    <div class="steps step1 display_none">
                                         <div class="step_title">
                                             1. Регистрация
                                         </div>
@@ -999,6 +1000,185 @@
                                                         Уже регестрировались? <a href="#">Войдите</a><br>или <a href="#">продолжите без регистрации</a>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="steps step2">
+                                        <div class="step_title">
+                                            2. Оплата и доставка
+                                        </div>
+                                        <div class="steps_body">
+                                            <div class="path">
+                                                <span>Шаг</span>
+                                                <div class="step_number">1</div>
+                                                <div class="step_number selected">2</div>
+                                                <div class="step_number">3</div>
+                                            </div>
+                                            <ul class="order_tabs tabs-menu">
+                                                <li class="current"><a href="#tab2-1">Доставка курьером</a></li>
+                                                <li><a href="#tab2-2">Самовывоз</a></li>
+                                            </ul>
+                                            <div class="tab">
+                                                <div id="tab2-1" class="tab-content">
+                                                    <div class="sub_title">
+                                                        Адрес доставки:
+                                                    </div>
+                                                    <div class="delivery_form template_form">
+                                                        <div class="inputs_block">
+                                                            <div class="form_element">
+                                                                <label>Город*</label>
+                                                                <input type="text" name="pers_city" id="pers_city">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Улица*</label>
+                                                                <input type="text" name="pers_street" id="pers_street">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Дом</label>
+                                                                <input type="text" name="pers_house" id="pers_house">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Строение (если есть)</label>
+                                                                <input type="text" name="pers_build" id="pers_build">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Номер квартиры (если есть)</label>
+                                                                <input type="text" name="pers_flat" id="pers_flat">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Индекс</label>
+                                                                <input type="text" name="pers_index" id="pers_index">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="delivery_block">
+                                                        <div class="sub_title">
+                                                            Курьерская служба:
+                                                        </div>
+                                                        <ul class="delivery_select selectbox">
+                                                            <li class="radio_block">
+                                                                <input type="radio" id="delivery1" name="delivery" value="1" checked>
+                                                                <label for="delivery1" class="delivery_radio">
+                                                                    <span>DHL</span><br>1-2 дня, 250 руб.
+                                                                </label>
+                                                            </li>
+                                                            <li class="radio_block">
+                                                                <input type="radio" id="delivery2" name="delivery" value="2">
+                                                                <label for="delivery2" class="delivery_radio">
+                                                                    <span>Pony Express</span><br>завтра, 300 руб.
+                                                                </label>
+                                                            </li>    
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div id="tab2-2" class="tab-content">
+                                                    <div class="pickup_block">
+                                                        <div class="sub_title">
+                                                            Выберите пункт самовывоза:
+                                                        </div>
+                                                        <div class="pickup_maps">
+                                                            <ul class="pickup_list">
+                                                                <li class="active" data-coord="[55.753559,37.609218]" data-number="1">г. Москва<br>ул. Третья строителей, д.13</li>
+                                                                <li data-coord="[59.938531,30.313497]" data-number="2">г. Санкт-Петербург<br>ул. Третья строителей, д.13</li>
+                                                                <li data-coord="[56.8297408,60.617435]" data-number="3">г. Ульяновск<br>ул. Гагарина, д. 8, корпус 6</li>
+                                                                <li data-coord="[46.466444,30.7058]" data-number="4">г. Санкт-Петербург<br>ул. Третья строителей, д.99</li>
+                                                            </ul>
+                                                            <div class="map_points" id="map_points"></div>
+                                                            <input type="hidden" class="current_point" value="1">
+                                                        </div>
+                                                        <script>
+                                                            ymaps.ready(init);
+                                                            function init(){ 
+                                                                var centerCoord = $('.pickup_list li:first-child').data('coord');
+                                                                var map = new ymaps.Map("map_points", {
+                                                                    center: centerCoord,
+                                                                    zoom: 10,
+                                                                    controls: []
+                                                                });
+                                                                $('.pickup_list li').each(function(){
+                                                                    var coord = $(this).data('coord'),
+                                                                        content = $(this).html();
+                                                                    var myPlacemark = new ymaps.Placemark(coord, {
+                                                                        hintContent: content
+                                                                    });
+                                                                    map.geoObjects.add(myPlacemark);
+                                                                });
+                                                                $('.pickup_list li').bind('click', function(){
+                                                                    $('.pickup_list li').removeClass('active');
+                                                                    $(this).addClass('active');
+                                                                    var coord = $(this).data('coord'),
+                                                                        number = $(this).data('number');
+                                                                        $('.current_point').val(number);
+                                                                    map.panTo(coord, {flying: 0});
+                                                                });
+                                                            }
+                                                        </script>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="payment_block">
+                                                <div class="sub_title">
+                                                    Способы оплаты:
+                                                </div>
+                                                <ul class="payment_select selectbox">
+                                                    <li class="radio_block">
+                                                        <input type="radio" id="payment1" name="payment" value="1" checked>
+                                                        <label for="payment1" class="payment_radio">
+                                                            <div class="icon">
+                                                                <div class="img">
+                                                                    <img src="css/img/payment1.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name">
+                                                                Наличными<br>при получении
+                                                            </div>
+                                                        </label>
+                                                    </li>
+                                                    <li class="radio_block">
+                                                        <input type="radio" id="payment2" name="payment" value="2">
+                                                        <label for="payment2" class="payment_radio">
+                                                            <div class="icon">
+                                                                <div class="img">
+                                                                    <img src="css/img/payment2.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name">
+                                                                Картой Visa или MasterCard<br>при получении товаров
+                                                            </div>
+                                                        </label>
+                                                    </li>
+                                                    <li class="radio_block">
+                                                        <input type="radio" id="payment3" name="payment" value="3">
+                                                        <label for="payment3" class="payment_radio">
+                                                            <div class="icon">
+                                                                <div class="img">
+                                                                    <img src="css/img/payment3.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name">
+                                                                Картой Visa или MasterCard<br>сейчас на сайте
+                                                            </div>
+                                                        </label>
+                                                    </li>
+                                                    <li class="radio_block">
+                                                        <input type="radio" id="payment4" name="payment" value="4">
+                                                        <label for="payment4" class="payment_radio">
+                                                            <div class="icon">
+                                                                <div class="img">
+                                                                    <img src="css/img/payment4.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name">
+                                                                Yandex деньги<br>или Qiwi кошелек 
+                                                            </div>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                                <div class="sub_title">
+                                                    Комментарий к доставке <span>(необязательно для заполнения):</span>
+                                                </div>
+                                                <textarea name="comment" id="comment" class="comment_text"></textarea>
+                                                <button class="next_button input_submit">Продолжить</button>
                                             </div>
                                         </div>
                                     </div>

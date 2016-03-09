@@ -4450,9 +4450,6 @@ table.cont-block {
 .news_page .news-menu li:last-child {
   border-right: none !important;
 }
-#tab-1 {
-  display: block;
-}
 .news_vn_page {
   margin-top: 40px;
   padding: 0 0 20px;
@@ -4688,6 +4685,155 @@ table.cont-block {
 }
 .order_page .reg_question a:hover {
   opacity: 0.6;
+}
+.order_page .sub_title {
+  font-size: 1.125em;
+  color: #070706;
+  margin-bottom: 20px;
+}
+.order_page .sub_title span {
+  font-family: 'pf_beausans_prothin', sans-serif;
+}
+.order_page .delivery_form {
+  width: 580px;
+  margin-bottom: 21px;
+}
+.order_page .selectbox::before,
+.order_page .selectbox::after {
+  display: table;
+  content: "";
+}
+.order_page .selectbox::after {
+  clear: both;
+}
+.order_page .selectbox li {
+  list-style-type: none;
+  float: left;
+  margin: 0 50px 14px 0;
+}
+.order_page .selectbox li:nth-child(2n) {
+  margin: 0 0 14px;
+}
+.order_page .selectbox input[type="radio"] + label {
+  font-size: inherit;
+  color: #070706;
+  line-height: 20px;
+  font-family: 'pf_beausans_prothin', sans-serif;
+  padding: 17px 2px 18px 16px;
+  width: 270px;
+  box-sizing: border-box;
+}
+.order_page .selectbox input[type="radio"] + label:hover {
+  opacity: 0.7;
+}
+.order_page .selectbox input[type="radio"] + label span {
+  font-family: 'pf_beausans_proregular', sans-serif;
+}
+.order_page .selectbox input[type="radio"]:checked + label {
+  background: #e0e6ec;
+}
+.order_page .selectbox input[type="radio"]:checked + label:hover {
+  opacity: 1;
+}
+.order_page .payment_block,
+.order_page .delivery_block {
+  width: 590px;
+}
+.order_page .payment_block {
+  margin: 30px 0 0;
+}
+.order_page .delivery_select,
+.order_page .payment_select {
+  margin-top: -7px;
+}
+.order_page .payment_select {
+  margin-bottom: 25px;
+}
+.order_page .payment_select input[type="radio"] + label {
+  padding: 17px 0 18px 14px;
+}
+.order_page .payment_select input[type="radio"] + label .icon {
+  float: left;
+  margin-right: 8px;
+}
+.order_page .payment_select input[type="radio"] + label .icon .img {
+  width: 34px;
+  position: relative;
+  height: 37px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.order_page .payment_select input[type="radio"] + label .icon .img img {
+  width: auto;
+  margin: 0 auto;
+  display: block;
+  max-width: 34px;
+  max-height: 37px;
+}
+.order_page .payment_select input[type="radio"] + label .icon .img img {
+  width: auto;
+  margin: 0 auto;
+  display: block;
+  max-width: 34px;
+  max-height: 37px;
+}
+.order_page .payment_select input[type="radio"] + label .name {
+  float: left;
+  width: 206px;
+}
+.order_page .comment_text {
+  height: 100px;
+  resize: none;
+  border: 1px solid #a1a1a1;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  margin-bottom: 28px;
+  font-size: inherit;
+  font-family: 'pf_beausans_proregular', sans-serif;
+}
+.order_page .next_button {
+  width: 255px;
+  outline: none;
+}
+.order_page .pickup_maps {
+  margin-bottom: 44px;
+}
+.order_page .pickup_maps::before,
+.order_page .pickup_maps::after {
+  display: table;
+  content: "";
+}
+.order_page .pickup_maps::after {
+  clear: both;
+}
+.order_page .pickup_maps .pickup_list {
+  float: left;
+}
+.order_page .pickup_maps .pickup_list li {
+  font-family: 'pf_beausans_prothin', sans-serif;
+  padding: 11px 2px 12px 17px;
+  width: 280px;
+  box-sizing: border-box;
+  list-style-type: none;
+  cursor: pointer;
+  margin-bottom: 9px;
+  color: #070706;
+}
+.order_page .pickup_maps .pickup_list li:hover {
+  opacity: 0.7;
+}
+.order_page .pickup_maps .pickup_list li.active {
+  background: #e0e6ec;
+}
+.order_page .pickup_maps .pickup_list li.active:hover {
+  opacity: 1;
+}
+.order_page .pickup_maps .map_points {
+  height: 375px;
+  width: 665px;
+  float: left;
 }
 .template_form .inputs_block::before,
 .template_form .inputs_submit::before,

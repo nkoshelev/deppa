@@ -94,7 +94,7 @@ $(document).ready(function() {
        $(this).parent().addClass("current");
        $(this).parent().siblings().removeClass("current");
        var tab = $(this).attr("href");
-       $(".tab-content").not(tab).css("display", "none");
+       $(this).parents('.tabs-menu').next().find(".tab-content").not(tab).css("display", "none");
        $(tab).fadeIn();
     });
     $('.eye').click(function(){

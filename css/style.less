@@ -4901,9 +4901,6 @@ table.cont-block {
         }
     }
 }
-#tab-1 {
-    display: block;
-}
 .news_vn_page {
     margin-top: 40px;
     padding: 0 0 20px;
@@ -5117,6 +5114,125 @@ table.cont-block {
             &:hover {
                 opacity: 0.6;
             } 
+        }
+    }
+    .sub_title {
+        font-size: 1.125em;
+        color: #070706;
+        margin-bottom: 20px;
+        span {
+            font-family: 'pf_beausans_prothin', sans-serif;
+        }
+    }
+    .delivery_form {
+        width: 580px;
+        margin-bottom: 21px;
+    }
+    .selectbox {
+        .clearfix();
+        li {
+            list-style-type: none;
+            float: left;
+            margin: 0 50px 14px 0;
+            &:nth-child(2n) {
+                margin: 0 0 14px;
+            }   
+        }
+        input[type="radio"] + label {
+            font-size: inherit;
+            color: #070706;
+            line-height: 20px;
+            font-family: 'pf_beausans_prothin', sans-serif;
+            padding: 17px 2px 18px 16px;
+            width: 270px;
+            box-sizing: border-box;
+            &:hover {
+                opacity: 0.7;
+            }
+            span {
+                font-family: 'pf_beausans_proregular', sans-serif;
+            }
+        }
+        input[type="radio"]:checked + label {
+            background: #e0e6ec;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    .payment_block,
+    .delivery_block {
+        width: 590px;
+    }
+    .payment_block {
+        margin: 30px 0 0;
+    }
+    .delivery_select,
+    .payment_select {
+        margin-top: -7px;
+    }
+    .payment_select {
+        margin-bottom: 25px;
+        input[type="radio"] + label {
+            padding: 17px 0 18px 14px;
+            .icon {
+                float: left;
+                margin-right: 8px;
+                .img {
+                    .image_center(34px, 37px, 34px, 37px);
+                }
+            }
+            .name {
+                float: left;
+                width: 206px;
+            }
+        }
+    }
+    .comment_text {
+        height: 100px;
+        resize: none;
+        border: 1px solid #a1a1a1;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 16px;
+        margin-bottom: 28px;
+        font-size: inherit;
+        font-family: 'pf_beausans_proregular', sans-serif;
+    }
+    .next_button {
+        width: 255px;
+        outline: none;
+        padding: 10px 25px;
+    }
+    .pickup_maps {
+        .clearfix();
+        margin-bottom: 44px;
+        .pickup_list {
+            float: left;
+            li {
+                font-family: 'pf_beausans_prothin', sans-serif;
+                padding: 11px 2px 12px 17px;
+                width: 280px;
+                box-sizing: border-box;
+                list-style-type: none;
+                cursor: pointer;
+                margin-bottom: 9px;
+                color: #070706;
+                &:hover {
+                    opacity: 0.7;
+                }
+                &.active {
+                    background: #e0e6ec;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .map_points {
+            height: 375px;
+            width: 665px;
+            float: left;
         }
     }
 }
