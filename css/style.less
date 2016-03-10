@@ -5236,6 +5236,13 @@ table.cont-block {
             float: left;
         }
     }
+    .step2,
+    .step3 {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+        animation-delay: .6s;
+    }
     .step3 {
         .step_title {
             border-bottom: 1px solid #cfcfcf;
@@ -5247,13 +5254,15 @@ table.cont-block {
         }
         .personal_data {
             .clearfix();
+            columns: 2;
+            width: 886px;
             li {
-                float: left;
                 list-style-type: none;
                 width: 460px;
                 margin-bottom: 12px;
                 color: #070706;
                 margin-right: 10px;
+                .clearfix();
                 span {
                     color: #686868;
                 }
@@ -5401,4 +5410,72 @@ table.cont-block {
     &:hover {
         background: #add4e8;
     }
+}
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: hidden;
+  }
+}
+
+@keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: hidden;
+  }
+}
+
+.fadeOutLeft {
+  -webkit-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft;
+}
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+    visibility: visible;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+    visibility: visible;
+  }
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
 }

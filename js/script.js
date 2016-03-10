@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    // Mask Input
+    if($("#pers_phone").length){
+        $("#pers_phone").mask("+7 (999) 999 - 99 - 99");
+    }
     $('.search_adaptive').on('click', function() {
         $(this).toggleClass('active')
         $('.search_adaptive + form').toggleClass('active');
@@ -16,7 +20,9 @@ $(document).ready(function() {
         prevArrow: '<button type="button" class="slick-prev"></button>',
         nextArrow: '<button type="button" class="slick-next"></button>',
         asNavFor: '.tovar_text_slider',
-        variableWidth: true
+        variableWidth: true,
+        touchMove: false,
+        draggable: false
     });
     $('.about_slider').slick({
         slidesToShow: 1,
@@ -118,6 +124,20 @@ $(document).ready(function() {
             $(this).text('Редактировать');
             $(this).removeClass('active');
         }
+    });
+    $('.reg_form .inputs_submit .input_submit').click(function(){
+        $('.step1').addClass('animated fadeOutLeft');
+        setTimeout(function(){
+            $('.step1').addClass('display_none');
+        }, 500);
+        $('.step2').addClass('animated fadeInLeft');
+    });
+    $('.next_button').click(function(){
+        $('.step2').addClass('animated fadeOutLeft');
+        setTimeout(function(){
+            $('.step2').addClass('display_none');
+        }, 500);
+        $('.step3').addClass('animated fadeInLeft');
     });
     if($('.cont-tri .info').length) {
         ymaps.ready(init);

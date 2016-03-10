@@ -456,7 +456,33 @@ width:auto;
                 }
             }
         }
+        .pickup_maps {
+            .map_points {
+                width: 460px;
+            }
+        }
+        .step3 {
+            .personal_data {
+                width: auto;
+                columns: 1;
+            }
+            .confirmation  {
+                width: 750px;
+                 .submit_block {
+                    .terms_use {
+                        width: 434px;
+                        margin: 0;
+                    }
+                }
+                .basket_table {
+                    .column2 {
+                        margin: 0 75px 0 0; 
+                    }
+                }
+            }
+        }
     }
+
 }
 
 @media (max-width: 767px) {
@@ -952,10 +978,10 @@ border:1px solid rgba(0, 0, 0, 0);
             margin-top: -66px;
         }
         .slick-next {
-            right: -30px;
+            right: 0;
         }
         .slick-prev {
-            left: -30px;
+            left: 0;
         }
     }
 }
@@ -1123,12 +1149,66 @@ h1.big_header.cart {
     .sign {
         .tooltip {
             width: 272px;
-            left: -118px;
+            left: -220px;
             &:after {
-                left: 119px;
+                left: 220px;
             }
             &:before {
-                left: 120px;
+                left: 221px;
+            }
+        }
+    }
+    .delivery_block,
+    .payment_block,
+    .delivery_form  {
+        width: auto;
+    }
+    .pickup_maps {
+        .map_points {
+            width: 300px;
+        }
+    }
+    .step3 {
+        .step_title {
+            margin-bottom: 20px;
+            border-bottom: none;
+        }
+        .personal_data {
+            margin: 30px 0 0;
+        }
+        .confirmation {
+            width: auto;
+            .basket_table  {
+                border-top: 1px solid #e4e4e7;
+                border-bottom: none;
+                .basket_item {
+                    border-bottom: 1px solid #e4e4e7;
+                }
+                .amount_count {
+                    margin-left: 10px;
+                }
+                .price_column,
+                .description {
+                    margin-left: 10px;
+                }
+            }
+            .summa_itog  {
+                float: left;
+            }
+            .submit_block {
+                .terms_use {
+                    width: 100%;
+                    float: none;
+                }
+                .itog_submit {
+                    float: none;
+                    margin: 30px 0 0;
+                }
+            }
+        }
+        .basket_table {
+            .basket_item {
+
             }
         }
     }
@@ -1152,6 +1232,19 @@ h1.big_header.cart {
        margin: 15px auto 25px;
        width: 70%;
        float: none;
+    }
+    .order_page {
+        .step3 {
+            .personal_data {
+                li {
+                    width: 100%;
+                    .name,
+                    .value {
+                        float: none;
+                    }
+                }
+            }
+        }
     }
 }
 
