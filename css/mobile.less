@@ -372,6 +372,7 @@ width:auto;
 #right div#dle-content .news-body {
     margin: 0 16px 23px 0;
 }
+
 }
 
 
@@ -432,6 +433,29 @@ width:auto;
     }
     #right div#dle-content .news-body:nth-child(2n) {
         margin: 0 0 23px;
+    }
+    .order_page {
+        .reg_form {
+            float: none;
+            margin-right: 0;
+        }
+        .reg_question  {
+            br {
+                display: none;
+            }
+        }
+        .sign {
+            .tooltip {
+                width: 272px;
+                left: -118px;
+                &:after {
+                    left: 119px;
+                }
+                &:before {
+                    left: 120px;
+                }
+            }
+        }
     }
 }
 
@@ -1064,6 +1088,55 @@ h1.big_header.cart {
 }
 .news_vn_page .event-body .event-text {
     margin-bottom: 40px;
+}
+.order_page {
+    .path {
+        position: static;
+    }
+    .order_tabs {
+        margin-top: 30px;
+    }
+    .reg_form  {
+        width: auto;
+        .form_element {
+            margin: 0 0 25px;
+        }
+        .inputs_submit {
+            .input_submit {
+                margin: 0 0 20px;
+                width: 300px;
+                float: none;
+            }
+            .subscribe_block {
+                float: none;
+                br {
+                    display: none;
+                }
+                .subscribe {
+                    &:before {
+                        top: -2px;
+                    }
+                }
+            }
+        }
+    }
+    .sign {
+        .tooltip {
+            width: 272px;
+            left: -118px;
+            &:after {
+                left: 119px;
+            }
+            &:before {
+                left: 120px;
+            }
+        }
+    }
+}
+.template_form {
+    .form_element {
+        width: 300px;
+    }
 }
 // .mm-list > li > a {
 //     &:hover {

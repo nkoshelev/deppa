@@ -4923,6 +4923,7 @@ table.cont-block {
 .order_page {
     padding: 37px 0 60px;
     .steps {
+        margin-bottom: 34px;
         .step_title {
             font-size: 1.5em;
             color: #070706;
@@ -4935,7 +4936,7 @@ table.cont-block {
     .path {
         .clearfix();
         position: absolute;
-        right: -3px;
+        right: 0;
         top: 11px;
         width: 172px;
         span {
@@ -5233,6 +5234,104 @@ table.cont-block {
             height: 375px;
             width: 665px;
             float: left;
+        }
+    }
+    .step3 {
+        .step_title {
+            border-bottom: 1px solid #cfcfcf;
+            padding-bottom: 6px;
+            margin-bottom: 43px;
+        }
+        .path {
+            top: -80px;
+        }
+        .personal_data {
+            .clearfix();
+            li {
+                float: left;
+                list-style-type: none;
+                width: 460px;
+                margin-bottom: 12px;
+                color: #070706;
+                margin-right: 10px;
+                span {
+                    color: #686868;
+                }
+                a {
+                    color: #008fd4;
+                    border-bottom: 1px solid #53a7dc;
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+                .name {
+                    float: left;
+                    width: 148px;
+                }
+                .value {
+                    float: right;
+                    width: 300px;
+                }
+            }
+        }
+        .confirmation {
+            width: 886px;
+            .basket_table {
+                margin: 35px 0 0;
+                border: 1px solid #e4e4e7;
+                border-top: none;
+                .thead {
+                    background: #e4e4e7;
+                }
+                .column1 {
+                    margin: 0 61px 0 0;
+                }
+                .column2 {
+                    margin: 0 93px 0 0;
+                }
+                .column3 {
+                    width: 180px;
+                    margin: 0;
+                }
+                .amount_count {
+                    margin-top: 28px;
+                }
+            }
+            .summa_itog {
+                float: right;
+                width: 280px;
+                margin: 30px 0 11px;
+                .summa_line {
+                    font-size: 1.125em;
+                    font-family: 'pf_beausans_prothin', sans-serif;
+                    color: #070706;
+                    margin-bottom: 12px;
+                    .clearfix();
+                    .name {
+                        float: left;
+                        width: 180px;
+                        margin-right: 8px;
+                    }
+                    .value {
+                        float: left;
+                    }
+                    &.itog {
+                        font-family: 'pf_beausans_proregular', sans-serif;
+                    }
+                }
+            }
+            .submit_block {
+                .clearfix();
+                .terms_use {
+                    &:extend(.order_page .reg_form .terms_use all);
+                    width: 520px;
+                    float: left;
+                    margin: 5px 0 0;
+                }
+                .itog_submit {
+                    float: right;
+                }
+            }
         }
     }
 }

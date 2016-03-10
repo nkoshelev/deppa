@@ -866,7 +866,7 @@
                         <div id='dle-content'>
                             <div class="order_page">
                                 <form class="order_form">
-                                    <div class="steps step1 display_none">
+                                    <div class="steps step1">
                                         <div class="step_title">
                                             1. Регистрация
                                         </div>
@@ -936,7 +936,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="reg_question">
-                                                        Уже регестрировались? <a href="#">Войдите</a><br>или <a href="#">продолжите без регистрации</a>
+                                                        Уже регистрировались? <a href="#">Войдите</a> <br>или <a href="#">продолжите без регистрации</a>
                                                     </div>
                                                 </div>
                                                 <div id="tab1-2" class="tab-content">
@@ -1003,7 +1003,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="steps step2">
+                                    <div class="steps step2 display_none">
                                         <div class="step_title">
                                             2. Оплата и доставка
                                         </div>
@@ -1179,6 +1179,201 @@
                                                 </div>
                                                 <textarea name="comment" id="comment" class="comment_text"></textarea>
                                                 <button class="next_button input_submit">Продолжить</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="steps step3 display_none">
+                                        <div class="step_title">
+                                            3. Подтверждение заказа
+                                        </div>
+                                        <div class="steps_body">
+                                            <div class="path">
+                                                <span>Шаг</span>
+                                                <div class="step_number">1</div>
+                                                <div class="step_number">2</div>
+                                                <div class="step_number selected">3</div>
+                                            </div>
+                                            <ul class="personal_data">
+                                                <li>
+                                                    <div class="name">
+                                                        E-mail <span>(логин)</span>:
+                                                    </div>
+                                                    <div class="value">
+                                                        nasorokina@1cbit.ru
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="name">
+                                                        Способ доставки:
+                                                    </div>
+                                                    <div class="value">
+                                                        Курьером Pony Express
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="name">
+                                                        Имя:
+                                                    </div>
+                                                    <div class="value">
+                                                        Наталья
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="name">
+                                                        Адрес доставки:
+                                                    </div>
+                                                    <div class="value">
+                                                        Москва, ул. Бабушкина, д.3
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="name">
+                                                        Фамилия:
+                                                    </div>
+                                                    <div class="value">
+                                                        Сорокина
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="name">
+                                                        Срок доставки:
+                                                    </div>
+                                                    <div class="value">
+                                                        3 дня <span>(уточняется курьерской службой)</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="name">
+                                                        Телефон:
+                                                    </div>
+                                                    <div class="value">
+                                                        +7 (937) 918-55-65
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="name">
+                                                        <a href="#" class="edit_fields">Редактировать</a>
+                                                    </div>
+                                                    <div class="value"></div>
+                                                </li>
+                                            </ul>
+                                            <div class="confirmation">
+                                                <div class="basket_table">
+                                                    <div class="table_responsive">
+                                                        <div class="thead">
+                                                            <div class="column1">
+                                                                <div class="title">
+                                                                    Название товара
+                                                                </div>
+                                                            </div>
+                                                            <div class="column2">
+                                                                <div class="title">
+                                                                    Количество
+                                                                </div>
+                                                            </div>
+                                                            <div class="column3">
+                                                                <div class="title">
+                                                                    Стоимость
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tbody">
+                                                            <div class="basket_item">
+                                                                <div class="column1">
+                                                                    <div class="description">
+                                                                        <div class="imgblock">
+                                                                            <a href="#">
+                                                                                <div class="img">
+                                                                                    <img src="css/img/basket_img1.jpg" alt="">
+                                                                                </div>
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="infoblock">
+                                                                            <div class="name">
+                                                                                <a href="#">Чехол-подставка Wallet Fold M, золотой</a>
+                                                                            </div>
+                                                                            <div class="article">
+                                                                                арт. 54375
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="column2">
+                                                                    <div class="amount">
+                                                                        <div class="amount_count">
+                                                                            1 шт
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="column3">
+                                                                    <div class="price_column">
+                                                                        <div class="price">
+                                                                            1 700 руб.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                            </div>
+                                                            <div class="basket_item">
+                                                                <div class="column1">
+                                                                    <div class="description">
+                                                                        <div class="imgblock">
+                                                                            <a href="#">
+                                                                                <div class="img">
+                                                                                    <img src="css/img/basket_img2.jpg" alt="">
+                                                                                </div>
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="infoblock">
+                                                                            <div class="name">
+                                                                                <a href="#">Монопод Selfie Mini, проводной, черный</a>
+                                                                            </div>
+                                                                            <div class="article">
+                                                                                арт. 24375
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="column2">
+                                                                    <div class="amount">
+                                                                        <div class="amount_count">
+                                                                            1 шт
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="column3">
+                                                                    <div class="price_column">
+                                                                        <div class="price">
+                                                                            2 400 руб.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="summa_itog">
+                                                    <div class="summa_line">
+                                                        <div class="name">Стоимость заказа:</div>
+                                                        <div class="value">3 000 руб.</div>
+                                                    </div>
+                                                    <div class="summa_line">
+                                                        <div class="name">Доставка:</div>
+                                                        <div class="value">1 100 руб.</div>
+                                                    </div>
+                                                    <div class="summa_line itog">
+                                                        <div class="name">Итоговая стоимость:</div>
+                                                        <div class="value">4 100 руб.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                                <div class="submit_block">
+                                                    <div class="terms_use">
+                                                        Нажимая кнопку «Подтвердить», Вы принимаете настоящее <a href="#">Пользовательское соглашение</a> и соглашаетесь на обработку Ваших персональных данных
+                                                    </div>
+                                                    <input type="submit" class="itog_submit input_submit next_button" value="Подтвердить">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -106,6 +106,19 @@ $(document).ready(function() {
             $(this).removeClass('active');
         }
     });
+    // Personal data change on order page
+    $('.edit_fields').click(function(e){
+        e.preventDefault();
+        if (!$(this).hasClass('active')) {
+            $(this).parents('.personal_data').find('.value').attr('contenteditable','true');
+            $(this).text('Сохранить');
+            $(this).addClass('active');
+        }else{
+            $(this).parents('.personal_data').find('.value').attr('contenteditable','false');
+            $(this).text('Редактировать');
+            $(this).removeClass('active');
+        }
+    });
     if($('.cont-tri .info').length) {
         ymaps.ready(init);
         var myMap, 
