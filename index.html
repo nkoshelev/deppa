@@ -1323,15 +1323,54 @@
                 </div>
             </div>
         </div>
-        <script>
-        $('.tovar_block .sel_color .color-link').hover(
-            function(event) {
-                event.preventDefault();
-                $(this).parent().parent().find('a > img').attr('src', $(this).attr('rel'));
-            },
-            function() {}
-        );
-        </script>
+        <div class="write_us">
+            <div class="container">
+                <div class="title">
+                    Напишите нам
+                </div>
+                <div class="anons">
+                    Оставьте вопрос, предложение или комментарий к качеству продукта.<br>Мы быстро ответим на Ваше обращение.
+                </div>
+                <a href="#" class="expand_button"></a>
+                <form class="feedback_form template_form">
+                    <div class="inputs_block">
+                        <div class="form_element">
+                            <label>Ваше имя*</label>
+                            <input type="text" name="feedback_name" id="feedback_name">
+                        </div>
+                        <div class="form_element">
+                            <label>Телефон*</label>
+                            <input type="text" name="feedback_phone" id="feedback_phone">
+                        </div>
+                        <div class="form_element">
+                            <label>E-mail*</label>
+                            <input type="email" name="feedback_email" id="feedback_email">
+                        </div>
+                    </div>
+                    <div class="inputs_block">
+                        <div class="form_element">
+                            <label>Страна*</label>
+                            <input type="text" name="feedback_name" id="feedback_name">
+                        </div>
+                        <div class="form_element">
+                            <label>Город*</label>
+                            <input type="text" name="feedback_city" id="feedback_city">
+                        </div>
+                        <div class="form_element">
+                            <label>Выберите тему обращения</label>
+                            <input type="email" name="feedback_email" id="feedback_email">
+                        </div>
+                    </div>
+                    <div class="inputs_submit">
+                        <div class="form_element">
+                            <label>Ваше сообщение</label>
+                            <textarea name="feedback_text" id="feedback_text"></textarea>
+                        </div>
+                        <input type="submit" class="input_submit" value="Отправить">
+                    </div>
+                </form>
+            </div>
+        </div>
         <div id="footer_cont">
             <div id="footer">
                 <div class="menu_foo">

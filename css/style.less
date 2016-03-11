@@ -5521,3 +5521,71 @@ table.cont-block {
 #bx-panel {
     z-index: 3010!important;
 }
+.write_us {
+    background: #e1e6ec;
+    padding: 68px 0 69px;
+    position: relative;
+    .title {
+        &:extend(.welcome .title all);
+        text-align: center;
+        margin-bottom: 19px;
+    }
+    .anons {
+        &:extend(.welcome .anons all);
+        text-align: center;
+        line-height: 26px;
+        margin-bottom: 32px;
+        font-size: 1.319em;
+    }
+    .expand_button {
+        background: url('img/extand_str.png') no-repeat;
+        width: 42px;
+        height: 21px;
+        display: block;
+        margin: 0 auto;
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+    .feedback_form {
+        .clearfix();
+        display: block;
+        .inputs_block,
+        .inputs_submit {
+            float: left;
+        }
+        .inputs_block {
+            width: 270px;
+            margin-right: 62px;
+            margin-bottom: 0;
+            .form_element {
+                width: 100%;
+                margin: 0 0 17px;
+                input {
+                    border: none;
+                    height: 37px;
+                }
+            }
+        }
+        .inputs_submit {
+            width: 458px;
+            .form_element {
+                width: 100%;
+                margin: 0 0 28px;
+            }
+            .input_submit {
+                float: right;
+                width: 174px;
+                padding: 11px 25px;
+            }
+        }
+        textarea {
+            width: 100%;
+            resize: none;
+            border: none;
+            padding: 10px;
+            box-sizing: border-box;
+            height: 131px;
+        }
+    }
+}
