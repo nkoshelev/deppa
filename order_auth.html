@@ -41,7 +41,9 @@
     <link href="css/jquery.mmenu.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
     <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script type="text/javascript">
     $.ajax({
         type: "POST",
@@ -388,14 +390,12 @@
             }
         });
 
-        $('.tov_list div.show-more').click(function() {
+        $('.sub_cat_section .show-more').click(function() {
             $(this).parent().find('.hidden').slideToggle();
-            if ($(this).css('background-image') == 'url(css/img/arr-black-down.png)') {
-                $(this).css('background-image', 'url(css/img/arr-black-up.png)');
-            } else $(this).css('background-image', 'url(css/img/arr-black-down.png)');
-
-            if ($(this).text() == 'Показать еще') $(this).text('Скрыть');
-            else $(this).text('Показать еще');
+            $(this).toggleClass('active');
+            var title = $(this).data('name');
+            if ($(this).text() != 'Скрыть') $(this).text('Скрыть');
+            else $(this).text('Показать еще '+title);
 
         });
 
@@ -425,6 +425,25 @@
         });
 
     }
+    </script>
+    <script>
+    $(function() {
+
+
+        $('.tovar_block .sel_color .color-link').click(function(event) {
+            event.preventDefault();
+            $(this).parent().parent().find('a > img').attr('src', $(this).attr('rel'));
+
+        });
+
+        $('.tovar_block .sel_color .color-link').hover(
+            function(event) {
+                event.preventDefault();
+                $(this).parent().parent().find('a > img').attr('src', $(this).attr('rel'));
+            },
+            function() {}
+        );
+    });
     </script>
 </head>
 
@@ -476,16 +495,12 @@
                 <div class="actions">
                     <div class="menu_icon">
                         <div class="fav">
-                            <a href="#">
-                                <img src="css/img/menu_fav.png" />
-                                <span>11</span>
-                            </a>
+                            <img src="css/img/menu_fav.png" />
+                            <span>11</span>
                         </div>
                         <div class="cart">
-                            <a href="#">
-                                <img src="css/img/menu_cart.png" />
-                                <span>2</span>
-                            </a>
+                            <img src="css/img/menu_cart.png" />
+                            <span>2</span>
                         </div>
                     </div>
                     <div class="search_adaptive"></div>
@@ -830,660 +845,445 @@
                     <a href="/nokia/">Nokia</a>
                 </div>
             </div>
-        </div>
-        <div class="video-modal">
-            <div class="video-close" onclick="$('#main-video').get(0).pause();$('.video-modal').hide();$('.slides ul li video').get(0).play();return false;">
-                <img src="css/img/(x).png" width="30" />
-            </div>
-            <div class="video-wrapper">
-                <video id="main-video" class="main-video" controls>
-                    <source src="video/11.mp4" type="video/mp4">
-                </video>
+            <div class="h-menu-drop fav">
+                <a href="#" class="clear">ОЧИСТИТЬ</a>
+                <br />
+                <br /> У вас нет избранного
+                <br />
+                <br />
             </div>
         </div>
-        <div class="h-slider fw">
-            <div class="height-fill">
-                <div class="slides">
-                    <ul class="slides-container">
-                        <li>
-                            <div class="ban-text">
-                                СТИЛЬ
-                                <br />БОЛЬШОГО
-                                <br />ГОРОДА
-                                <span>Чехлы Air</span>
-                                <a href="http://deppa.ru/covers-cases-bumpers/#air-case">
-                                    <div class="more">УЗНАТЬ БОЛЬШЕ</div>
-                                </a>
-                            </div>
-                            <img src="css/img/1434725505_ban_1-1.jpg" alt="">
-                        </li>
-                        <li>
-                            <div class="ban-text">
-                                ВСЕ ДЕЛО
-                                <br />В МАГНИТЕ
-                                <span>Держатели Crab Mage</span>
-                                <a href="http://deppa.ru/top3/">
-                                    <div class="more">УЗНАТЬ БОЛЬШЕ</div>
-                                </a>
-                            </div>
-                            <img src="css/img/1435050648_banners-big-2.jpg" alt="">
-                        </li>
-                        <li>
-                            <div class="ban-text">
-                                ТОНКИЕ
-                                <br />РЕШЕНИЯ
-                                <span>Универсальные чехлы Fold</span>
-                                <a href="http://deppa.ru/fold-cover.html">
-                                    <div class="more">УЗНАТЬ БОЛЬШЕ</div>
-                                </a>
-                            </div>
-                            <img src="css/img/1435053439_banners-big-3.jpg" alt="">
-                        </li>
-                        <li>
-                            <div class="ban-text">
-                                СВОБОДА
-                                <br />БЫТЬ
-                                <br />СОБОЙ
-                                <span>Чехлы Ultra Cover</span>
-                                <a href="http://deppa.ru/top5/">
-                                    <div class="more">УЗНАТЬ БОЛЬШЕ</div>
-                                </a>
-                            </div>
-                            <img src="css/img/1435054054_banners-big-4.jpg" alt="">
-                        </li>
-                        <li>
-                            <video preload="yes" autoplay loop width="100%" muted="muted" src="video/1.mp4" height="auto" poster="css/img/ban_3.jpg">
-                                <source src="video/1.mp4" type="video/mp4">
-                            </video>
-                            <div class="ban-text">
-                                КАЧЕСТВЕННО.
-                                <br /> ЭЛЕГАНТНО.
-                                <br /> С УМОМ.
-                                <br />
-                                <span>Для Вас.</span>
-                                <a href="#" class="watch-video" onclick="if (!mobilecheck()) {$('.slides ul li video').get(0).pause()};$('.video-modal').show();$('#main-video').get(0).play();return false;"></a>
-                            </div>
-                        </li>
-                    </ul>
-                    <!-- <div class="slider-text">
-        <div>
-
-        Мы создаем аксессуары для Ваших девайсов 10 лет. <br />
-Качественно. Элегантно. С умом. На этих принципах основаны все наши решения.<br />
-Наша цель состоит в том,  чтобы повысить качество Вашей жизни через детали.
-        </div>
-    </div> -->
-                </div>
+        <div class="h-cat-wrap fw">
+            <div class="h-cat">
+                <h1>
+                    Оформление заказа
+                </h1>
             </div>
         </div>
-        <!-- <div class="slider-text fw mob">
-        <div>
-
-        Мы создаем аксессуары для Ваших девайсов 10 лет. <br />
-Качественно. Элегантно. С умом. На этих принципах основаны все наши решения.<br />
-Наша цель состоит в том,  чтобы повысить качество Вашей жизни через детали.
-        </div>
-    </div> -->
-        <div class="welcome">
-            <div class="container">
-                <div class="title">
-                    Добро пожаловать в мир Deppa!
-                </div>
-                <div class="anons">
-                    Мы создаем аксессуары для Ваших девайсов вот уже более 10 лет.
-                    <br> Качественно. Элегантно. С умом. На этих принципах основаны все наши решения.
-                    <br> Наша цель — повысить качество Вашей жизни через детали.
-                </div>
-                <div class="actions_block">
-                    <a href="#" class="about_more">
-                        <span>Узнать о нас больше</span>
-                    </a>
-                    <a href="#" class="want_distribution">Хочу рассылку</a>
-                </div>
-            </div>
-        </div>
-        <div class="main_banners">
-            <div class="container">
-                <a href="#" class="banner">
-                    <div class="ban_head">
-                        <div class="name">
-                            Кейсы Air
-                        </div>
-                        <div class="anons">
-                            Стиль большого города
-                        </div>
-                    </div>
-                    <img src="css/img/ban1.jpg" class="ban_img" alt="" />
-                    <div class="action_block">
-                        <div class="action_text">
-                            Кейсы с покрытием «soft touch» для Sony Xperia Z5 Compact
-                        </div>
-                        <div class="date">
-                            СКОРО
-                            <br>В ПРОДАЖЕ
-                        </div>
-                    </div>
-                </a>
-                <a href="#" class="banner">
-                    <div class="ban_head">
-                        <div class="name">
-                            Защитные стекла Full
-                        </div>
-                        <div class="anons">
-                            Инновации в защите
-                        </div>
-                    </div>
-                    <img src="css/img/ban2.jpg" class="ban_img" alt="" />
-                    <div class="action_block">
-                        <div class="action_text">
-                            Кейсы с покрытием «soft touch» для Sony Xperia Z5 Compact
-                        </div>
-                        <div class="date">
-                            СКОРО
-                            <br>В ПРОДАЖЕ
-                        </div>
-                    </div>
-                </a>
-                <a href="#" class="banner">
-                    <div class="ban_head">
-                        <div class="name">
-                            Кейсы Gel
-                        </div>
-                        <div class="anons">
-                            Эластичный минимализм
-                        </div>
-                    </div>
-                    <img src="css/img/ban3.jpg" class="ban_img" alt="" />
-                    <div class="action_block">
-                        <div class="action_text">
-                            Кейсы с покрытием «soft touch» для Sony Xperia Z5 Compact
-                        </div>
-                        <div class="date">
-                            СКОРО
-                            <br>В ПРОДАЖЕ
-                        </div>
-                    </div>
-                </a>
-                <a href="#" class="banner">
-                    <div class="ban_head">
-                        <div class="name">
-                            Моноподы для селфи
-                        </div>
-                        <div class="anons">
-                            Эластичный минимализм
-                        </div>
-                    </div>
-                    <img src="css/img/ban4.jpg" class="ban_img" alt="" />
-                    <div class="action_block">
-                        <div class="action_text">
-                            Кейсы с покрытием «soft touch» для Sony Xperia Z5 Compact
-                        </div>
-                        <div class="date">
-                            СКОРО
-                            <br>В ПРОДАЖЕ
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="main_tovar_slider_block">
-            <div class="container">
-                <div class="title">
-                    Популярные продукты
-                </div>
-                <div class="main_tovar_slider">
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="655" />
-                        <div class="sel_color">
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491079_dlya-sayta-produkt-m-86014.jpg" class="color-link" style="background-color:#9D63A9;">#9D63A9</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491115_dlya-sayta-produkt-m-86015.jpg" class="color-link" style="background-color:#E966AA;">#E966AA</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491105_dlya-sayta-produkt-m-86017.jpg" class="color-link" style="background-color:#B6EDEB;">#B6EDEB</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491146_dlya-sayta-produkt-m-86016.jpg" class="color-link" style="background-color:#B49F32;">#B49F32</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491091_dlya-sayta-produkt-m-86012.jpg" class="color-link" style="background-color:#E6E6E6;">#E6E6E6</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491092_dlya-sayta-produkt-m-86013.jpg" class="color-link" style="background-color:#737373;">#737373</a>
-                        </div>
-                        <a href="/covers-cases-bumpers/sm/cases/sky-case/655-chehol-sky-case-dlya-apple-iphone-6.html">
-                            <img src="css/img/1437491079_dlya-sayta-produkt-m-86014.jpg" height="210" alt="Чехол Sky Case для Apple iPhone&nbsp6/6S" />
-                            <br />
-                        </a>
-                        <span class="caption">Чехол Sky Case для Apple iPhone&nbsp6/6S</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="639" />
-                        <a href="/glasses/smart-glass/639-zaschitnoe-steklo-dlya-apple-iphone-6-02-mm.html">
-                            <img src="css/img/1412684021_dlya-sayta-produkt-m-61943.jpg" height="210" alt="Защитное стекло для Apple iPhone 6/6S, Asahi" />
-                            <br />
-                        </a>
-                        <span class="caption">Защитное стекло для Apple iPhone 6/6S, Asahi</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="798" />
-                        <div class="sel_color">
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1438094769_dlya-sayta-produkt-m-72187.jpg" class="color-link" style="background-color:#bababa;">#bababa</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1438094830_dlya-sayta-produkt-m-72188.jpg" class="color-link" style="background-color:#c8b99e;">#c8b99e</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-12/thumbs/1449147526_dlya-sayta-produkt-m-72209.jpg" class="color-link" style="background-color:#dbbcb7;">#dbbcb7</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1438094843_dlya-sayta-produkt-m-72189.jpg" class="color-link" style="background-color:#737373;">#737373</a>
-                        </div>
-                        <a href="/special/new3/798-data-kabel-usb-8-pin-dlya-apple.html">
-                            <img src="css/img/1438094769_dlya-sayta-produkt-m-72187.jpg" height="210" alt="Дата-кабель USB - 8-pin для Apple, MFI" />
-                            <br />
-                        </a>
-                        <span class="caption">Дата-кабель USB - 8-pin для Apple, MFI</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="640" />
-                        <a href="/glasses/protect-smartphones/640-zaschitnye-plenki-dlya-apple-iphone-6.html">
-                            <img src="css/img/1412751219_dlya-sayta-m-61073.jpg" height="210" alt="Защитная пленка для Apple iPhone 6/6S" />
-                            <br />
-                        </a>
-                        <span class="caption">Защитная пленка для Apple iPhone 6/6S</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="785" />
-                        <a href="/covers-cases-bumpers/sm/art-cases/art-flowers/785-chehol-art-case-flowers-dlya-apple-iphone-6.html">
-                            <img src="css/img/1437997755_dlya-sayta-produkt-iphone-6-100100.jpg" height="210" alt="Чехол Art Case для Apple iPhone 6/6S" />
-                            <br />
-                        </a>
-                        <span class="caption">Чехол Art Case для Apple iPhone 6/6S</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="786" />
-                        <a href="/covers-cases-bumpers/sm/art-cases/art-flowers/786-chehol-art-case-flowers-dlya-apple-iphone-6-plus.html">
-                            <img src="css/img/1438001714_dlya-sayta-produkt-iphone-6plus-100105.jpg" height="210" alt="Чехол Art Case для Apple iPhone 6 Plus/6S Plus" />
-                            <br />
-                        </a>
-                        <span class="caption">Чехол Art Case для Apple iPhone 6 Plus/6S Plus</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="789" />
-                        <a href="/covers-cases-bumpers/sm/art-cases/art-flowers/789-chehol-art-case-dlya-samsung-galaxy-s6.html">
-                            <img src="css/img/1438008654_dlya-sayta-produkt-galaxy-s6-100118.jpg" height="210" alt="Чехол Art Case для Samsung Galaxy S6" />
-                            <br />
-                        </a>
-                        <span class="caption">Чехол Art Case для Samsung Galaxy S6</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="790" />
-                        <a href="/covers-cases-bumpers/sm/art-cases/art-flowers/790-chehol-art-case-dlya-samsung-galaxy-s6-edge.html">
-                            <img src="css/img/1438009134_dlya-sayta-produkt-galaxy-s6edge-100123.jpg" height="210" alt="Чехол Art Case для Samsung Galaxy S6 edge" />
-                            <br />
-                        </a>
-                        <span class="caption">Чехол Art Case для Samsung Galaxy S6 edge</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="972" />
-                        <div class="sel_color">
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-09/thumbs/1442404501_dlya-sayta-produkt-m-45006-1.jpg" class="color-link" style="background-color:#5D5D5D;">#5D5D5D</a>
-                        </div>
-                        <a href="/selfie_monopods/monopods/972-monopod-selfie-pro.html">
-                            <img src="css/img/1442404501_dlya-sayta-produkt-m-45006-1.jpg" height="210" alt="Монопод Selfie Pro" />
-                            <br />
-                        </a>
-                        <span class="caption">Монопод Selfie Pro</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="744" />
-                        <div class="sel_color">
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431521887_dlya-sayta-produkt-m-87006.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431522293_dlya-sayta-produkt-m-87007.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431522294_dlya-sayta-produkt-m-87008.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431522386_dlya-sayta-produkt-m-87009.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431522387_dlya-sayta-produkt-m-87005.jpg" class="color-link" style="background-color:black;">black</a>
-                        </div>
-                        <a href="/covers-cases-bumpers/sm/cov/universal-wallet-fold/744-chehol-podstavka-wallet-fold-m.html">
-                            <img src="css/img/1431521887_dlya-sayta-produkt-m-87006.jpg" height="210" alt="Чехол-подставка Wallet Fold M" />
-                            <br />
-                        </a>
-                        <span class="caption">Чехол-подставка Wallet Fold M</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="709" />
-                        <div class="sel_color">
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-08/thumbs/1440060376_dlya-sayta-produkt-b-55135.jpg" class="color-link" style="background-color:black;">black</a>
-                        </div>
-                        <a href="/special/top3/709-avtomobilnyy-derzhatel-crab-air-mage.html">
-                            <img src="css/img/1440060376_dlya-sayta-produkt-b-55135.jpg" height="210" alt="Магнитный автомобильный держатель Crab Air mage" />
-                            <br />
-                        </a>
-                        <span class="caption">Магнитный автомобильный держатель Crab Air mage</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="1049" />
-                        <div class="sel_color">
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-11/thumbs/1448031924_dlya-sayta-produkt-b-11375.jpg" class="color-link" style="background-color:black;">black</a>
-                        </div>
-                        <img src="css/img/new_item.png" class="new_item" />
-                        <a href="/special/new2/1049-szu-usb-quick-charge-20.html">
-                            <img src="css/img/1448031924_dlya-sayta-produkt-b-11375.jpg" height="210" alt="СЗУ USB Quick Charge 2.0" />
-                            <br />
-                        </a>
-                        <span class="caption">СЗУ USB Quick Charge 2.0</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="h-popular fw">
-            <div class="h-top">
-                <div class="hdr">Популярные продукты</div>
-            </div>
-            <div class="banners">
-                <span class="jc-prev">
-                    <img src="css/img/left-arr.png" />
-                </span>
-                <span class="jc-next">
-                    <img src="css/img/right-arr.png" />
-                </span>
-                <div class="banners_wrap">
-                    <div class="banner">
-                        <div class="hdr">Стиль и защита нового iPhone 6S</div>
-                        <div class="goods">
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="655" />
-                                <div class="sel_color">
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491079_dlya-sayta-produkt-m-86014.jpg" class="color-link" style="background-color:#9D63A9;">#9D63A9</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491115_dlya-sayta-produkt-m-86015.jpg" class="color-link" style="background-color:#E966AA;">#E966AA</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491105_dlya-sayta-produkt-m-86017.jpg" class="color-link" style="background-color:#B6EDEB;">#B6EDEB</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491146_dlya-sayta-produkt-m-86016.jpg" class="color-link" style="background-color:#B49F32;">#B49F32</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491091_dlya-sayta-produkt-m-86012.jpg" class="color-link" style="background-color:#E6E6E6;">#E6E6E6</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491092_dlya-sayta-produkt-m-86013.jpg" class="color-link" style="background-color:#737373;">#737373</a>
-                                </div>
-                                <a href="/covers-cases-bumpers/sm/cases/sky-case/655-chehol-sky-case-dlya-apple-iphone-6.html">
-                                    <img src="css/img/1437491079_dlya-sayta-produkt-m-86014.jpg" height="210" alt="Чехол Sky Case для Apple iPhone&nbsp6/6S" />
-                                    <br />
-                                </a>
-                                <span class="caption">Чехол Sky Case для Apple iPhone&nbsp6/6S</span>
-                            </div>
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="639" />
-                                <a href="/glasses/smart-glass/639-zaschitnoe-steklo-dlya-apple-iphone-6-02-mm.html">
-                                    <img src="css/img/1412684021_dlya-sayta-produkt-m-61943.jpg" height="210" alt="Защитное стекло для Apple iPhone 6/6S, Asahi" />
-                                    <br />
-                                </a>
-                                <span class="caption">Защитное стекло для Apple iPhone 6/6S, Asahi</span>
-                            </div>
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="798" />
-                                <div class="sel_color">
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1438094769_dlya-sayta-produkt-m-72187.jpg" class="color-link" style="background-color:#bababa;">#bababa</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1438094830_dlya-sayta-produkt-m-72188.jpg" class="color-link" style="background-color:#c8b99e;">#c8b99e</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-12/thumbs/1449147526_dlya-sayta-produkt-m-72209.jpg" class="color-link" style="background-color:#dbbcb7;">#dbbcb7</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1438094843_dlya-sayta-produkt-m-72189.jpg" class="color-link" style="background-color:#737373;">#737373</a>
-                                </div>
-                                <a href="/special/new3/798-data-kabel-usb-8-pin-dlya-apple.html">
-                                    <img src="css/img/1438094769_dlya-sayta-produkt-m-72187.jpg" height="210" alt="Дата-кабель USB - 8-pin для Apple, MFI" />
-                                    <br />
-                                </a>
-                                <span class="caption">Дата-кабель USB - 8-pin для Apple, MFI</span>
-                            </div>
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="640" />
-                                <a href="/glasses/protect-smartphones/640-zaschitnye-plenki-dlya-apple-iphone-6.html">
-                                    <img src="css/img/1412751219_dlya-sayta-m-61073.jpg" height="210" alt="Защитная пленка для Apple iPhone 6/6S" />
-                                    <br />
-                                </a>
-                                <span class="caption">Защитная пленка для Apple iPhone 6/6S</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="banner">
-                        <div class="hdr">4 решения, которые создают настроение</div>
-                        <div class="goods">
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="785" />
-                                <a href="/covers-cases-bumpers/sm/art-cases/art-flowers/785-chehol-art-case-flowers-dlya-apple-iphone-6.html">
-                                    <img src="css/img/1437997755_dlya-sayta-produkt-iphone-6-100100.jpg" height="210" alt="Чехол Art Case для Apple iPhone 6/6S" />
-                                    <br />
-                                </a>
-                                <span class="caption">Чехол Art Case для Apple iPhone 6/6S</span>
-                            </div>
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="786" />
-                                <a href="/covers-cases-bumpers/sm/art-cases/art-flowers/786-chehol-art-case-flowers-dlya-apple-iphone-6-plus.html">
-                                    <img src="css/img/1438001714_dlya-sayta-produkt-iphone-6plus-100105.jpg" height="210" alt="Чехол Art Case для Apple iPhone 6 Plus/6S Plus" />
-                                    <br />
-                                </a>
-                                <span class="caption">Чехол Art Case для Apple iPhone 6 Plus/6S Plus</span>
-                            </div>
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="789" />
-                                <a href="/covers-cases-bumpers/sm/art-cases/art-flowers/789-chehol-art-case-dlya-samsung-galaxy-s6.html">
-                                    <img src="css/img/1438008654_dlya-sayta-produkt-galaxy-s6-100118.jpg" height="210" alt="Чехол Art Case для Samsung Galaxy S6" />
-                                    <br />
-                                </a>
-                                <span class="caption">Чехол Art Case для Samsung Galaxy S6</span>
-                            </div>
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="790" />
-                                <a href="/covers-cases-bumpers/sm/art-cases/art-flowers/790-chehol-art-case-dlya-samsung-galaxy-s6-edge.html">
-                                    <img src="css/img/1438009134_dlya-sayta-produkt-galaxy-s6edge-100123.jpg" height="210" alt="Чехол Art Case для Samsung Galaxy S6 edge" />
-                                    <br />
-                                </a>
-                                <span class="caption">Чехол Art Case для Samsung Galaxy S6 edge</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="banner">
-                        <div class="hdr">ТОП-4 универсальных решений сезона</div>
-                        <div class="goods">
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="972" />
-                                <div class="sel_color">
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-09/thumbs/1442404501_dlya-sayta-produkt-m-45006-1.jpg" class="color-link" style="background-color:#5D5D5D;">#5D5D5D</a>
-                                </div>
-                                <a href="/selfie_monopods/monopods/972-monopod-selfie-pro.html">
-                                    <img src="css/img/1442404501_dlya-sayta-produkt-m-45006-1.jpg" height="210" alt="Монопод Selfie Pro" />
-                                    <br />
-                                </a>
-                                <span class="caption">Монопод Selfie Pro</span>
-                            </div>
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="744" />
-                                <div class="sel_color">
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431521887_dlya-sayta-produkt-m-87006.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431522293_dlya-sayta-produkt-m-87007.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431522294_dlya-sayta-produkt-m-87008.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431522386_dlya-sayta-produkt-m-87009.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431522387_dlya-sayta-produkt-m-87005.jpg" class="color-link" style="background-color:black;">black</a>
-                                </div>
-                                <a href="/covers-cases-bumpers/sm/cov/universal-wallet-fold/744-chehol-podstavka-wallet-fold-m.html">
-                                    <img src="css/img/1431521887_dlya-sayta-produkt-m-87006.jpg" height="210" alt="Чехол-подставка Wallet Fold M" />
-                                    <br />
-                                </a>
-                                <span class="caption">Чехол-подставка Wallet Fold M</span>
-                            </div>
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="709" />
-                                <div class="sel_color">
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-08/thumbs/1440060376_dlya-sayta-produkt-b-55135.jpg" class="color-link" style="background-color:black;">black</a>
-                                </div>
-                                <a href="/special/top3/709-avtomobilnyy-derzhatel-crab-air-mage.html">
-                                    <img src="css/img/1440060376_dlya-sayta-produkt-b-55135.jpg" height="210" alt="Магнитный автомобильный держатель Crab Air mage" />
-                                    <br />
-                                </a>
-                                <span class="caption">Магнитный автомобильный держатель Crab Air mage</span>
-                            </div>
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="1049" />
-                                <div class="sel_color">
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-11/thumbs/1448031924_dlya-sayta-produkt-b-11375.jpg" class="color-link" style="background-color:black;">black</a>
-                                </div>
-                                <img src="css/img/new_item.png" class="new_item" />
-                                <a href="/special/new2/1049-szu-usb-quick-charge-20.html">
-                                    <img src="css/img/1448031924_dlya-sayta-produkt-b-11375.jpg" height="210" alt="СЗУ USB Quick Charge 2.0" />
-                                    <br />
-                                </a>
-                                <span class="caption">СЗУ USB Quick Charge 2.0</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script>
-        $('.tovar_block .sel_color .color-link').hover(
-            function(event) {
-                event.preventDefault();
-                $(this).parent().parent().find('a > img').attr('src', $(this).attr('rel'));
-            },
-            function() {}
-        );
-        </script>
-        <div class="h-foo fw footer_blocks">
-            <div class="h-foo">
-                <div class="reklam sld">
-                    <div class="hdr">Рекламации</div>
-                    <p>Пожалуйста, напишите свои вопросы или претензии к качеству продуктов нашим специалистам
-                    </p>
-                    <div class="hid">
-                        <form id="reklam_form" action="POST">
-                            <input type="text" value="" placeholder="Ваше имя" name="nn" />
-                            <input type="text" value="" placeholder="E-mail" name="ee" />
-                            <input type="text" value="" placeholder="Телефон" name="pp" />
-                            <textarea name="mm" placeholder="Ваш вопрос или комментарий к качеству продукта"></textarea>
-                            <input type="hidden" name="recip" value="1">
-                            <div class="form-error"></div>
-                            <input type="submit" value="Отправить" />
-                            <input type="hidden" name="subject" value="Рекламации">
-                        </form>
-                    </div>
-                </div>
-                <div class="writeus sld">
-                    <div class="hdr">Напишите нам</div>
-                    <p>
-                        Мы ответим на ваши вопросы, отзывы и предложения.
-                    </p>
-                    <div class="hid">
-                        <form id="writeus_form" action="POST">
-                            <input type="text" value="" placeholder="Ваше имя" name="nn" />
-                            <input type="text" value="" placeholder="E-mail" name="ee" />
-                            <input type="text" value="" placeholder="Телефон" name="pp" />
-                            <textarea name="mm" placeholder="Ваш вопрос, отзыв или предложение"></textarea>
-                            <input type="hidden" name="recip" value="1">
-                            <div class="form-error"></div>
-                            <input type="submit" value="Отправить" />
-                            <input type="hidden" name="subject" value="Напишите нам">
-                        </form>
-                    </div>
-                </div>
-                <div class="subscribe sld">
-                    <div class="subscr">
-                        <a name="subscr-form"></a>
-                        <div class="hdr">Подписка на новинки</div>
-                        <div class="hid">
-                            <!-- Begin MailChimp Signup Form -->
-                            <div id="mc_embed_signup">
-                                <form action="//deppa.us9.list-manage.com/subscribe/post?u=c9553ffdc5d66566206f0409e&amp;id=7998655a71" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                                    <div id="mc_embed_signup_scroll">
-                                        <div class="mc-field-group">
-                                            <label for="mce-FNAME"></label>
-                                            <input type="text" value="" name="FNAME" class="" placeholder="Ваше имя" id="mce-FNAME">
+        <div id="main_cont">
+            <div id="main">
+                <div id="content">
+                    <div id="right">
+                        <div id='dle-content'>
+                            <div class="order_page">
+                                <form class="order_form">
+                                    <div class="auth_step steps step1">
+                                        <div class="step_title">
+                                            1. Войти
                                         </div>
-                                        <div class="mc-field-group">
-                                            <label for="mce-EMAIL"></label>
-                                            <input type="email" value="" placeholder="E-mail" name="EMAIL" class="required email" id="mce-EMAIL">
+                                        <div class="steps_body">
+                                            <div class="path">
+                                                <span>Шаг</span>
+                                                <div class="step_number selected">1</div>
+                                                <div class="step_number">2</div>
+                                                <div class="step_number">3</div>
+                                            </div>
+                                            <div class="auth_block">
+                                                <div class="auth_form template_form">
+                                                    <div class="inputs_block">
+                                                        <div class="form_element">
+                                                            <label>E-mail* <span>(логин)</span></label>
+                                                            <input type="email" name="auth_email" id="auth_email">
+                                                        </div>
+                                                        <div class="form_element">
+                                                            <label>Пароль*</label>
+                                                            <input type="password" name="auth_passwd" id="auth_passwd">
+                                                            <a href="#" class="forget_passwd">Забыли пароль?</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="inputs_submit">
+                                                        <input type="button" class="input_submit" value="Войти">
+                                                        <div class="reg_question">
+                                                            Нет аккаунта? <a href="#">Зарегистрируйтесь</a> или <a href="#">продолжите без регистрации</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div id="mce-responses" class="clear">
-                                            <div class="response" id="mce-error-response" style="display:none"></div>
-                                            <div class="response" id="mce-success-response" style="display:none"></div>
+                                    </div>
+                                    <div class="steps step2">
+                                        <div class="step_title">
+                                            2. Оплата и доставка
                                         </div>
-                                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                        <div style="position: absolute; left: -5000px;">
-                                            <input type="text" name="b_c9553ffdc5d66566206f0409e_7998655a71" tabindex="-1" value="">
+                                        <div class="steps_body">
+                                            <div class="path">
+                                                <span>Шаг</span>
+                                                <div class="step_number">1</div>
+                                                <div class="step_number selected">2</div>
+                                                <div class="step_number">3</div>
+                                            </div>
+                                            <ul class="order_tabs tabs-menu">
+                                                <li class="current"><a href="#tab2-1">Доставка курьером</a></li>
+                                                <li><a href="#tab2-2">Самовывоз</a></li>
+                                            </ul>
+                                            <div class="tab">
+                                                <div id="tab2-1" class="tab-content">
+                                                    <div class="sub_title">
+                                                        Адрес доставки:
+                                                    </div>
+                                                    <div class="delivery_form template_form">
+                                                        <div class="inputs_block">
+                                                            <div class="form_element">
+                                                                <label>Город*</label>
+                                                                <input type="text" name="pers_city" id="pers_city">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Улица*</label>
+                                                                <input type="text" name="pers_street" id="pers_street">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Дом</label>
+                                                                <input type="text" name="pers_house" id="pers_house">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Строение (если есть)</label>
+                                                                <input type="text" name="pers_build" id="pers_build">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Номер квартиры (если есть)</label>
+                                                                <input type="text" name="pers_flat" id="pers_flat">
+                                                            </div>
+                                                            <div class="form_element">
+                                                                <label>Индекс</label>
+                                                                <input type="text" name="pers_index" id="pers_index">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="delivery_block">
+                                                        <div class="sub_title">
+                                                            Курьерская служба:
+                                                        </div>
+                                                        <ul class="delivery_select selectbox">
+                                                            <li class="radio_block">
+                                                                <input type="radio" id="delivery1" name="delivery" value="1" checked>
+                                                                <label for="delivery1" class="delivery_radio">
+                                                                    <span>DHL</span><br>1-2 дня, 250 руб.
+                                                                </label>
+                                                            </li>
+                                                            <li class="radio_block">
+                                                                <input type="radio" id="delivery2" name="delivery" value="2">
+                                                                <label for="delivery2" class="delivery_radio">
+                                                                    <span>Pony Express</span><br>завтра, 300 руб.
+                                                                </label>
+                                                            </li>    
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div id="tab2-2" class="tab-content">
+                                                    <div class="pickup_block">
+                                                        <div class="sub_title">
+                                                            Выберите пункт самовывоза:
+                                                        </div>
+                                                        <div class="pickup_maps">
+                                                            <ul class="pickup_list">
+                                                                <li class="active" data-coord="[55.753559,37.609218]" data-number="1">г. Москва<br>ул. Третья строителей, д.13</li>
+                                                                <li data-coord="[59.938531,30.313497]" data-number="2">г. Санкт-Петербург<br>ул. Третья строителей, д.13</li>
+                                                                <li data-coord="[56.8297408,60.617435]" data-number="3">г. Ульяновск<br>ул. Гагарина, д. 8, корпус 6</li>
+                                                                <li data-coord="[46.466444,30.7058]" data-number="4">г. Санкт-Петербург<br>ул. Третья строителей, д.99</li>
+                                                            </ul>
+                                                            <div class="map_points" id="map_points"></div>
+                                                            <input type="hidden" class="current_point" value="1">
+                                                        </div>
+                                                        <script>
+                                                            ymaps.ready(init);
+                                                            function init(){ 
+                                                                var centerCoord = $('.pickup_list li:first-child').data('coord');
+                                                                var map = new ymaps.Map("map_points", {
+                                                                    center: centerCoord,
+                                                                    zoom: 10,
+                                                                    controls: []
+                                                                });
+                                                                map.behaviors.disable('scrollZoom');
+                                                                $('.pickup_list li').each(function(){
+                                                                    var coord = $(this).data('coord'),
+                                                                        content = $(this).html();
+                                                                    var myPlacemark = new ymaps.Placemark(coord, {
+                                                                        hintContent: content
+                                                                    });
+                                                                    map.geoObjects.add(myPlacemark);
+                                                                });
+                                                                $('.pickup_list li').bind('click', function(){
+                                                                    $('.pickup_list li').removeClass('active');
+                                                                    $(this).addClass('active');
+                                                                    var coord = $(this).data('coord'),
+                                                                        number = $(this).data('number');
+                                                                        $('.current_point').val(number);
+                                                                    map.panTo(coord, {flying: 0});
+                                                                });
+                                                            }
+                                                        </script>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="payment_block">
+                                                <div class="sub_title">
+                                                    Способы оплаты:
+                                                </div>
+                                                <ul class="payment_select selectbox">
+                                                    <li class="radio_block">
+                                                        <input type="radio" id="payment1" name="payment" value="1" checked>
+                                                        <label for="payment1" class="payment_radio">
+                                                            <div class="icon">
+                                                                <div class="img">
+                                                                    <img src="css/img/payment1.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name">
+                                                                Наличными<br>при получении
+                                                            </div>
+                                                        </label>
+                                                    </li>
+                                                    <li class="radio_block">
+                                                        <input type="radio" id="payment2" name="payment" value="2">
+                                                        <label for="payment2" class="payment_radio">
+                                                            <div class="icon">
+                                                                <div class="img">
+                                                                    <img src="css/img/payment2.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name">
+                                                                Картой Visa или MasterCard<br>при получении товаров
+                                                            </div>
+                                                        </label>
+                                                    </li>
+                                                    <li class="radio_block">
+                                                        <input type="radio" id="payment3" name="payment" value="3">
+                                                        <label for="payment3" class="payment_radio">
+                                                            <div class="icon">
+                                                                <div class="img">
+                                                                    <img src="css/img/payment3.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name">
+                                                                Картой Visa или MasterCard<br>сейчас на сайте
+                                                            </div>
+                                                        </label>
+                                                    </li>
+                                                    <li class="radio_block">
+                                                        <input type="radio" id="payment4" name="payment" value="4">
+                                                        <label for="payment4" class="payment_radio">
+                                                            <div class="icon">
+                                                                <div class="img">
+                                                                    <img src="css/img/payment4.png" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="name">
+                                                                Yandex деньги<br>или Qiwi кошелек 
+                                                            </div>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                                <div class="sub_title">
+                                                    Комментарий к доставке <span>(необязательно для заполнения):</span>
+                                                </div>
+                                                <textarea name="comment" id="comment" class="comment_text"></textarea>
+                                                <input type="button" class="next_button input_submit" value="Продолжить">
+                                            </div>
                                         </div>
-                                        <div class="clear">
-                                            <input type="submit" value="Подписка" name="subscribe" id="mc-embedded-subscribe" class="button">
+                                    </div>
+                                    <div class="steps step3">
+                                        <div class="step_title">
+                                            3. Подтверждение заказа
+                                        </div>
+                                        <div class="steps_body">
+                                            <div class="path">
+                                                <span>Шаг</span>
+                                                <div class="step_number">1</div>
+                                                <div class="step_number">2</div>
+                                                <div class="step_number selected">3</div>
+                                            </div>
+                                            <ul class="personal_data">
+                                                <li>
+                                                    <div class="name">
+                                                        E-mail <span>(логин)</span>:
+                                                    </div>
+                                                    <div class="value">
+                                                        nasorokina@1cbit.ru
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="name">
+                                                        Имя:
+                                                    </div>
+                                                    <div class="value">
+                                                        Наталья
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="name">
+                                                        Фамилия:
+                                                    </div>
+                                                    <div class="value">
+                                                        Сорокина
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="name">
+                                                        Телефон:
+                                                    </div>
+                                                    <div class="value">
+                                                        +7 (937) 918-55-65
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="name">
+                                                        Способ доставки:
+                                                    </div>
+                                                    <div class="value">
+                                                        Курьером Pony Express
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="name">
+                                                        Адрес доставки:
+                                                    </div>
+                                                    <div class="value">
+                                                        Москва, ул. Бабушкина, д.3
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="name">
+                                                        Срок доставки:
+                                                    </div>
+                                                    <div class="value">
+                                                        3 дня
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="name">
+                                                        <a href="#" class="edit_fields">Редактировать</a>
+                                                    </div>
+                                                    <div class="value"></div>
+                                                </li>
+                                            </ul>
+                                            <div class="confirmation">
+                                                <div class="basket_table">
+                                                    <div class="table_responsive">
+                                                        <div class="thead">
+                                                            <div class="column1">
+                                                                <div class="title">
+                                                                    Название товара
+                                                                </div>
+                                                            </div>
+                                                            <div class="column2">
+                                                                <div class="title">
+                                                                    Количество
+                                                                </div>
+                                                            </div>
+                                                            <div class="column3">
+                                                                <div class="title">
+                                                                    Стоимость
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tbody">
+                                                            <div class="basket_item">
+                                                                <div class="column1">
+                                                                    <div class="description">
+                                                                        <div class="imgblock">
+                                                                            <a href="#">
+                                                                                <div class="img">
+                                                                                    <img src="css/img/basket_img1.jpg" alt="">
+                                                                                </div>
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="infoblock">
+                                                                            <div class="name">
+                                                                                <a href="#">Чехол-подставка Wallet Fold M, золотой</a>
+                                                                            </div>
+                                                                            <div class="article">
+                                                                                арт. 54375
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="column2">
+                                                                    <div class="amount">
+                                                                        <div class="amount_count">
+                                                                            1 шт
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="column3">
+                                                                    <div class="price_column">
+                                                                        <div class="price">
+                                                                            1 700 руб.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                            </div>
+                                                            <div class="basket_item">
+                                                                <div class="column1">
+                                                                    <div class="description">
+                                                                        <div class="imgblock">
+                                                                            <a href="#">
+                                                                                <div class="img">
+                                                                                    <img src="css/img/basket_img2.jpg" alt="">
+                                                                                </div>
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="infoblock">
+                                                                            <div class="name">
+                                                                                <a href="#">Монопод Selfie Mini, проводной, черный</a>
+                                                                            </div>
+                                                                            <div class="article">
+                                                                                арт. 24375
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="column2">
+                                                                    <div class="amount">
+                                                                        <div class="amount_count">
+                                                                            1 шт
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="column3">
+                                                                    <div class="price_column">
+                                                                        <div class="price">
+                                                                            2 400 руб.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="clear"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="summa_itog">
+                                                    <div class="summa_line">
+                                                        <div class="name">Стоимость заказа:</div>
+                                                        <div class="value">3 000 руб.</div>
+                                                    </div>
+                                                    <div class="summa_line">
+                                                        <div class="name">Доставка:</div>
+                                                        <div class="value">1 100 руб.</div>
+                                                    </div>
+                                                    <div class="summa_line itog">
+                                                        <div class="name">Итоговая стоимость:</div>
+                                                        <div class="value">4 100 руб.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                                <div class="submit_block">
+                                                    <div class="terms_use">
+                                                        Нажимая кнопку «Подтвердить», Вы принимаете настоящее <a href="#">Пользовательское соглашение</a> и соглашаетесь на обработку Ваших персональных данных
+                                                    </div>
+                                                    <input type="submit" class="itog_submit input_submit next_button" value="Подтвердить">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </form>
                             </div>
-                            <!--End mc_embed_signup-->
                         </div>
                     </div>
+                    <div class="clr"></div>
                 </div>
             </div>
         </div>
-        <script>
-        if (true) {
-            $('.h-foo.fw > .h-foo div.sld').click(function() {
-                if ((event.target.nodeName == 'INPUT') || (event.target.nodeName == 'TEXTAREA')) return;
-                $(this).find('p').slideToggle();
-                $(this).find('div.hid').slideToggle();
-                if ($(this).css('background-image') == 'url(css/img/foo-bird-2.png)') {
-                    $(this).css('background-image', 'url(css/img/foo-bird.png)');
-                } else {
-                    $(this).css('background-image', 'url(css/img/foo-bird-2.png)')
-                };
-            });
-        }
-        /*
-        if (!mobilecheck()) {
-        $('.h-foo > .h-foo div.sld').hover(function() { 
-            $(this).find('p').slideUp();
-            $(this).find('div.hid').slideDown();
-            if ($(this).hasClass('subscribe')) $(this).find('subscr').css('background-image','url(/templates/ENG_D2015/i/foo-bird-2.png)');
-            else $(this).css('background-image','url(/templates/ENG_D2015/i/foo-bird-2.png)');
-            
-        },function() {
-            $(this).find('p').slideDown();
-            $(this).find('div.hid').slideUp();
-            if ($(this).hasClass('subscribe')) $(this).find('subscr').css('background-image','url(/templates/ENG_D2015/i/foo-bird.png)');
-            else $(this).css('background-image','url(/templates/ENG_D2015/i/foo-bird.png)');
-            
-        });
-        }  */
-
-        $('.want_distribution').click(function() {
-            $("html, body").animate({
-                scrollTop: $("div.subscribe div.subscr").offset().top - 50
-            }, 1000);
-            $('.h-foo.fw > .h-foo > div.subscribe').find('div.hid').slideDown();
-
-        });
-
-
-        $(function() {
-
-            $('.h-foo.fw > .h-foo > div > div > form').submit(function() {
-
-                form = $(this);
-                if ($(this).find('input[name="nn"]').val() == '' || $(this).find('input[name="ee"]').val() == '' || $(this).find('input[name="pp"]').val() == '') {
-                    $(this).find('div.form-error').show();
-                    $(this).find('div.form-error').html('Заполните все необходимые поля');
-                    return false;
-                }
-
-                var params = {};
-                $.each(form.serializeArray(), function(index, value) {
-                    params[value.name] = value.value;
-                });
-
-                params['message'] = $(this).find('textarea[name="mm"]').val();
-                params['name'] = $(this).find('input[name="nn"]').val();
-                params['email'] = $(this).find('input[name="ee"]').val();
-                params['phone'] = $(this).find('input[name="pp"]').val();
-
-                params['skin'] = dle_skin;
-                $.post(dle_root + "engine/ajax/feedback.php", params, function(data) {
-                    if (data) {
-                        if (data.status == "ok") {
-                            form.html('<div style="text-align:center;">Спасибо! <br /> Сообщение отправлено.</div>');
-                        } else {
-                            form.find('div.form-error').html('Пожалуйста, заполните все поля.');
-                        }
-                    }
-                }, "json");
-                return false;
-            });
-
-            if ($('.h-slider .slides-container li:first-child > .ban-text').text().trim() == '..') $('.h-slider .slides-container li:first-child > .ban-text').text('');
-
-        });
-
-        function reload() {
-            var rndval = new Date().getTime();
-            document.getElementById('dle-captcha').innerHTML = '<a onclick="reload(); return false;" href="#"><img src="/engine/modules/antibot.php?rndval=' + rndval + '" alt="Включите эту картинку для отображения кода безопасности" style="vertical-align: bottom;height: 32px;" /></a>';
-        };
-        </script>
         <div id="footer_cont">
             <div id="footer">
                 <div class="menu_foo">

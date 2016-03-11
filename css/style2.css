@@ -2211,7 +2211,6 @@ div#footer {
   float: left;
   width: 33%;
   font-size: 1em;
-  font-family: pf_beausans_proextrabook;
 }
 .h-menu-drop-wrap .h-menu-drop > div > a {
   display: block;
@@ -2705,6 +2704,9 @@ a.watch-video {
   margin: 60px 0 0 0;
   cursor: pointer;
 }
+a.watch-video:hover {
+  opacity: 0.7;
+}
 .info-menu > .pluso {
   position: absolute;
   right: 9px;
@@ -2775,6 +2777,8 @@ a.watch-video {
   padding-left: 43px;
   position: relative;
   display: table;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .ban-text a {
   display: table;
@@ -2791,10 +2795,7 @@ a.watch-video {
   top: 8px;
 }
 .ban-text .more:hover {
-  color: #008fd4;
-}
-.ban-text .more:hover:before {
-  background-position: 0 -31px;
+  opacity: 0.7;
 }
 .h-foo .subscribe .social {
   position: absolute;
@@ -4844,18 +4845,18 @@ table.cont-block {
 }
 .order_page .step2,
 .order_page .step3 {
-  opacity: 0;
-  visibility: hidden;
   display: none;
   -webkit-animation-delay: .6s;
   animation-delay: .6s;
 }
-.order_page .step3 .step_title {
+.order_page .step3 .step_title,
+.order_page .auth_step .step_title {
   border-bottom: 1px solid #cfcfcf;
   padding-bottom: 6px;
   margin-bottom: 43px;
 }
-.order_page .step3 .path {
+.order_page .step3 .path,
+.order_page .auth_step .path {
   top: -80px;
 }
 .order_page .step3 .personal_data {
@@ -4974,6 +4975,32 @@ table.cont-block {
 }
 .order_page .step3 .confirmation .submit_block .itog_submit {
   float: right;
+}
+.order_page .auth_step .step_title {
+  margin-bottom: 32px;
+}
+.order_page .auth_step .auth_form {
+  width: 255px;
+}
+.order_page .auth_step .auth_form .input_submit {
+  width: 100%;
+}
+.order_page .auth_step .auth_form .form_element {
+  position: relative;
+}
+.order_page .auth_step .auth_form .forget_passwd {
+  position: absolute;
+  color: #008fd4;
+  font-size: 0.875em;
+  border-bottom: 1px dotted #008fd4;
+  right: -135px;
+  top: 39px;
+}
+.order_page .auth_step .auth_form .forget_passwd:hover {
+  opacity: 0.6;
+}
+.order_page .auth_step .reg_question {
+  margin-top: 44px;
 }
 .template_form .inputs_block::before,
 .template_form .inputs_submit::before,
@@ -5109,4 +5136,7 @@ table.cont-block {
 .fadeInLeft {
   -webkit-animation-name: fadeInLeft;
   animation-name: fadeInLeft;
+}
+#bx-panel {
+  z-index: 3010!important;
 }

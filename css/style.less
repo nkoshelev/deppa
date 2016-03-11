@@ -2727,7 +2727,6 @@ line-height: 1.4em;
       float: left;
       width: 33%;
       font-size: 1em;
-      font-family: pf_beausans_proextrabook;
   }
   .h-menu-drop-wrap .h-menu-drop > div > a {
     display: block;
@@ -3300,6 +3299,9 @@ position:fixed !important;}
         display: block;
         margin: 60px 0 0 0;
         cursor:pointer;
+        &:hover {
+            opacity: 0.7;
+        }
     }
 
     .info-menu > .pluso {
@@ -3386,6 +3388,7 @@ position:fixed !important;}
         padding-left: 43px;
         position: relative;
         display: table;
+        transition: .3s ease-in-out;
     }
     .ban-text a {
         display: table;
@@ -3402,11 +3405,11 @@ position:fixed !important;}
         top: 8px;
     }
     .ban-text .more:hover {
-        color: #008fd4;
+        opacity: 0.7;
     }
-    .ban-text .more:hover:before {
-        background-position: 0 -31px;
-    }
+    // .ban-text .more:hover:before {
+    //     background-position: 0 -31px;
+    // }
     .h-foo .subscribe .social {
         position: absolute;
         right: 25px;
@@ -4077,36 +4080,36 @@ ul.js-filter > li:last-child > a {
                 width: 245px;
             }
             .date {
-             text-transform: uppercase;
-             float: right;
-             position: relative;
-             &:before {
-                .before_block(#fff, 1px, 56px);
-                position: absolute;
-                left: -16px;
-                top: -9px;
+                text-transform: uppercase;
+                float: right;
+                position: relative;
+                &:before {
+                    .before_block(#fff, 1px, 56px);
+                    position: absolute;
+                    left: -16px;
+                    top: -9px;
+                }
+            }
+        }
+        &:before {
+            .before_block(rgba(255,255,255, .4), 100%, 100%);
+            position: absolute;
+            z-index: 12;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .5s ease-in-out;
+        }
+        &:hover {
+            &:before,
+            .action_block {
+                visibility: visible;
+                opacity: 1;
+            }
+            .action_block {
+                bottom: 90px;
             }
         }
     }
-    &:before {
-        .before_block(rgba(255,255,255, .4), 100%, 100%);
-        position: absolute;
-        z-index: 12;
-        opacity: 0;
-        visibility: hidden;
-        transition: all .5s ease-in-out;
-    }
-    &:hover {
-        &:before,
-        .action_block {
-            visibility: visible;
-            opacity: 1;
-        }
-        .action_block {
-            bottom: 90px;
-        }
-    }
-}
 }
 .footer_bottom {
     position: relative;
@@ -5238,8 +5241,8 @@ table.cont-block {
     }
     .step2,
     .step3 {
-        opacity: 0;
-        visibility: hidden;
+        // opacity: 0;
+        // visibility: hidden;
         display: none;
         animation-delay: .6s;
     }
@@ -5341,6 +5344,38 @@ table.cont-block {
                     float: right;
                 }
             }
+        }
+    }
+    .auth_step {
+        .step_title {
+            &:extend(.order_page .step3 .step_title all);
+            margin-bottom: 32px;
+        }
+        .path {
+            &:extend(.order_page .step3 .path all);
+        }
+        .auth_form {
+            width: 255px;
+            .input_submit {
+                width: 100%;
+            }
+            .form_element {
+                position: relative;
+            }
+            .forget_passwd {
+                position: absolute;
+                color: #008fd4;
+                font-size: 0.875em;
+                border-bottom: 1px dotted #008fd4;
+                right: -135px;
+                top: 39px;
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
+        }
+        .reg_question {
+            margin-top: 44px;
         }
     }
 }
@@ -5478,4 +5513,7 @@ table.cont-block {
 .fadeInLeft {
   -webkit-animation-name: fadeInLeft;
   animation-name: fadeInLeft;
+}
+#bx-panel {
+    z-index: 3010!important;
 }

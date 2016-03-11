@@ -54,12 +54,6 @@
     width: 100%;
     top: 80px;
   }
-  .h-menu-drop-wrap > .h-menu-drop {
-    width: 950px;
-    margin: 0px auto;
-    overflow: hidden;
-    padding: 20px 0 20px 150px;
-  }
 }
 @media (max-width: 1190px) {
   .h-cat-wrap > .h-cat {
@@ -1122,6 +1116,24 @@
   .order_page .step3 .confirmation .submit_block .itog_submit {
     float: none;
     margin: 30px 0 0;
+  }
+  .order_page .auth_step .step_title {
+    margin-bottom: 20px;
+    border-bottom: none;
+  }
+  .order_page .auth_step .auth_form {
+    width: 300px;
+  }
+  .order_page .auth_step .auth_block {
+    margin: 30px 0 0;
+  }
+  .order_page .auth_step .auth_block .forget_passwd {
+    position: static;
+    margin: 10px 0 0;
+    display: table;
+  }
+  .order_page .auth_step .auth_block .inputs_submit {
+    width: 100%;
   }
   .template_form .form_element {
     width: 300px;

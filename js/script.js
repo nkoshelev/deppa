@@ -125,19 +125,33 @@ $(document).ready(function() {
             $(this).removeClass('active');
         }
     });
+    // $('.reg_form .inputs_submit .input_submit').click(function(){
+    //     $('.step1').addClass('animated fadeOutLeft');
+    //     setTimeout(function(){
+    //         $('.step1').addClass('display_none');
+    //         $('.step2').show();
+    //     }, 500);
+    //     var animationName = 'fadeInLeft';
+    //     var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+    //     $('.step2').addClass('animated ' + animationName).one(animationEnd, function() {
+    //          $('.step2').removeClass('animated ' + animationName);
+    //     });
+    // });
+    // $('.next_button').click(function(){
+    //     $('.step2').addClass('animated fadeOutLeft');
+    //     setTimeout(function(){
+    //         $('.step2').addClass('display_none');
+    //         $('.step3').show();
+    //     }, 500);
+    //     $('.step3').addClass('animated fadeInLeft');
+    // });
     $('.reg_form .inputs_submit .input_submit').click(function(){
-        $('.step1').addClass('animated fadeOutLeft');
-        setTimeout(function(){
-            $('.step1').addClass('display_none');
-        }, 500);
-        $('.step2').addClass('animated fadeInLeft');
+        $('.step1').hide();
+        $('.step2').show();
     });
     $('.next_button').click(function(){
-        $('.step2').addClass('animated fadeOutLeft');
-        setTimeout(function(){
-            $('.step2').addClass('display_none');
-        }, 500);
-        $('.step3').addClass('animated fadeInLeft');
+        $('.step2').hide();
+        $('.step3').show();
     });
     if($('.cont-tri .info').length) {
         ymaps.ready(init);
