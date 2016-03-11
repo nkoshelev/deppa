@@ -155,6 +155,7 @@
   }
   .main_banners .banner .action_block {
     padding: 30px 4% 25px;
+    bottom: 35px;
   }
   .main_banners .banner .action_block .action_text {
     font-size: 0.938em;
@@ -167,9 +168,6 @@
   }
   .main_banners .banner .action_block .date:before {
     left: -10px;
-  }
-  .main_banners .banner:hover .action_block {
-    bottom: 35px;
   }
   .welcome {
     padding: 45px 0 52px;
@@ -816,8 +814,9 @@
     top: -1px;
   }
   .welcome .actions_block .about_more {
-    margin: 0;
+    margin: 0 0 20px;
     float: none;
+    display: block;
   }
   .main_banners .banner {
     width: 100%;
@@ -859,6 +858,10 @@
     width: 50%;
     margin-bottom: 14px;
   }
+  #footer > .menu_foo:nth-child(2n+1),
+  #footer > .menu_foo:nth-child(2n+1) {
+    clear: left;
+  }
   #footer > .menu_foo:nth-child(4n),
   #footer > .menu_foo:nth-child(4n) {
     margin-bottom: 14px;
@@ -881,16 +884,17 @@
   .footer_bottom .social {
     float: none;
     text-align: center;
+    margin-bottom: 10px;
   }
   .footer_bottom .social span {
     float: none;
-    margin: 0 0 7px;
+    margin: 0 0 16px;
   }
   .footer_bottom .social a {
     float: none;
     margin-right: 0;
     display: inline-block;
-    margin: 0 2px;
+    margin: 0 8px;
   }
   .h-menu .menu_icon {
     display: none;

@@ -1303,7 +1303,7 @@ font-family: pf_beausans_prothin;
         font-weight:bold;
         font-size:1em;
 
-        margin: 0px 0 0 -736px;
+        margin: 0 0 0 736px;
         background: url('img/totop.png') no-repeat;
         &.white {
            background: url('img/totop_white.png') no-repeat;
@@ -3973,6 +3973,7 @@ ul.js-filter > li:last-child > a {
 }
 .welcome  {
     padding: 81px 0 83px;
+    position: relative;
     .title {
         font-size: 2.750em;
         font-family: pf_beausans_prothin;
@@ -3995,12 +3996,18 @@ ul.js-filter > li:last-child > a {
             float: left;
             border: 1px solid #9fb8c7;
             padding: 11px 35px 13px;
-            .link_effect_background(#9fb8c7, #fff);
             margin: 0 46px 0 -12px;
+            position: relative;
             span {
                 color: #070706;
                 font-size: 21px;
                 font-family: pf_beausans_prothin;
+            }
+            &:hover {
+                background: #9fb8c7;
+                span {
+                    color: #fff;
+                }
             }
         }
         .want_distribution {
@@ -4066,7 +4073,7 @@ ul.js-filter > li:last-child > a {
             color: #fff;
             position: absolute;
             line-height: 20px;
-            bottom: 0;
+            bottom: 90px;
             background: rgba(102, 109, 122, .9);
             width: 100%;
             padding: 30px 8% 25px;
@@ -4104,9 +4111,6 @@ ul.js-filter > li:last-child > a {
             .action_block {
                 visibility: visible;
                 opacity: 1;
-            }
-            .action_block {
-                bottom: 90px;
             }
         }
     }

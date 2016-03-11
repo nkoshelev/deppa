@@ -142,6 +142,7 @@ width:auto;
     }
     .action_block {
         padding: 30px 4% 25px;
+        bottom: 35px;
         .action_text {
             font-size: 0.938em;
         }
@@ -153,11 +154,6 @@ width:auto;
             &:before {
                 left: -10px;
             }
-        }
-    }
-    &:hover {
-        .action_block {
-            bottom: 35px;
         }
     }
   }
@@ -887,8 +883,9 @@ border:1px solid rgba(0, 0, 0, 0);
     }
 }
 .welcome .actions_block .about_more {
-    margin: 0;
+    margin: 0 0 20px;
     float: none;
+    display: block;
 }
 .main_banners .banner {
     width: 100%;
@@ -928,6 +925,9 @@ border:1px solid rgba(0, 0, 0, 0);
 #footer > .menu_foo, #footer > .menu_foo {
     width: 50%;
     margin-bottom: 14px;
+    &:nth-child(2n+1) {
+        clear: left;
+    }
     &:nth-child(4n) {
         margin-bottom: 14px;
     }
@@ -949,15 +949,16 @@ border:1px solid rgba(0, 0, 0, 0);
 .footer_bottom .social {
     float: none;
     text-align: center;
+    margin-bottom: 10px;
     span {
         float: none;
-        margin: 0 0 7px;
+        margin: 0 0 16px;
     }
     a {
         float: none;
         margin-right: 0;
         display: inline-block;
-        margin: 0 2px;
+        margin: 0 8px;
     }
 }
 .h-menu .menu_icon {

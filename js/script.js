@@ -22,7 +22,16 @@ $(document).ready(function() {
         asNavFor: '.tovar_text_slider',
         variableWidth: true,
         touchMove: false,
-        draggable: false
+        draggable: false,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
     });
     $('.about_slider').slick({
         slidesToShow: 1,
@@ -49,6 +58,14 @@ $(document).ready(function() {
     $('.add_article_link').click(function() {
         $('.article_form').fadeToggle();
     });
+    // Color link
+    $('.tovar_block .sel_color .color-link').hover(
+        function(event) {
+            event.preventDefault();
+            $(this).parent().parent().find('a > img').attr('src', $(this).attr('rel'));
+        },
+        function() {}
+    );
     // Change size in basket
     $('.minus').click(function (e) {
         e.preventDefault();
