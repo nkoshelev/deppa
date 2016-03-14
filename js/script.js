@@ -3,6 +3,9 @@ $(document).ready(function() {
     if($("#pers_phone").length){
         $("#pers_phone").mask("+7 (999) 999 - 99 - 99");
     }
+    if($("#buy_phone").length){
+        $("#buy_phone").mask("+7 (999) 999 - 99 - 99");
+    }
     $('.search_adaptive').on('click', function() {
         $(this).toggleClass('active')
         $('.search_adaptive + form').toggleClass('active');
@@ -66,6 +69,37 @@ $(document).ready(function() {
         },
         function() {}
     );
+    // Form on main page open
+    $('.write_us .expand_button').click(function(e){
+        e.preventDefault();
+        $(this).hide();
+        $(this).next().slideDown();
+    });
+    // Form on cart page
+    $('.say_me').click(function(e){
+        e.preventDefault();
+        $(".say_me_form").toggle();
+    });
+    // Dropdown
+    $('body').on('click', '.dropdown span', function (e) {
+        e.preventDefault();
+        $(this).parents('.dropdown').find('.close_list').toggle();
+        $(this).parents('.dropdown').find('span').toggleClass('active');
+    });
+    $('body').on('click', '.dropdown .close_list li', function (e) {
+        e.preventDefault();
+        var g_ul_li = $(this).html();
+        var g_li = $(this).parents('.dropdown').find('span').html();
+        g_li = g_li.split('<ul');
+        $(this).parents('.dropdown').find('span').html(g_ul_li + ' <ul' + g_li[1]);
+        $(this).parents('.dropdown').find('span').removeClass('active');
+        $(this).parents('.close_list').hide();
+    });
+    $(document).bind('click', function (event) {
+        if ($(event.target).closest(".dropdown").length) return;
+        $('.dropdown span').removeClass('active');
+        $('.dropdown .close_list').hide();
+    });
     // Change size in basket
     $('.minus').click(function (e) {
         e.preventDefault();
@@ -169,6 +203,24 @@ $(document).ready(function() {
     $('.next_button').click(function(){
         $('.step2').hide();
         $('.step3').show();
+    });
+
+    // Формы обратной связи
+    $('.md-trigger').click(function(e){
+        e.preventDefault();
+        var form = $(this).data('modal');
+        $('#'+form).addClass('open');
+        $('body').addClass('md-show');
+    });
+    $('.md-modal').click(function(e){
+        e.preventDefault();
+        if ($(event.target).closest(".md-content").length) return;
+        $(this).removeClass('open');
+        $('body').removeClass('md-show');
+    });
+    $('.button_close').click(function(){
+        $(this).parents('.md-modal').removeClass('open');
+        $('body').removeClass('md-show');
     });
     if($('.cont-tri .info').length) {
         ymaps.ready(init);

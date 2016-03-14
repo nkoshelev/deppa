@@ -40,6 +40,7 @@
     <script src="js/jquery.mmenu.min.js" type="text/javascript"></script>
     <link href="css/jquery.mmenu.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript">
@@ -994,7 +995,19 @@
                                         <div class="in_stock no_tovar">
                                             нет в наличии, <a href="#" class="say_me">сообщить о поступлении</a>
                                         </div>
-                                        <a href="#" class="order_by_phone">Оформить по телефону</a>
+                                        <form class="say_me_form template_form ">
+                                            <div class="form_element">
+                                                <input type="email" name="supply_email" id="supply_email" placeholder="Введите ваш email">
+                                            </div>
+                                            <input type="submit" value="Сообщить" class="input_submit">
+                                            <!-- <div class="checkbox_block">
+                                                <input type="checkbox" id="supply_yes" name="supply_yes" value="yes" checked disabled>
+                                                <label for="supply_yes" class="supply_yes">
+                                                    Вы уже подписаны на уведомление о поступлении этого товара
+                                                </label>
+                                            </div> -->
+                                        </form>
+                                        <a href="#" class="order_by_phone md-trigger" data-modal="modal-2">Оформить по телефону</a>
                                         <div class="color_photos">
                                             <!--TBegin:http://deppa.ru/uploads/posts/2015-01/1422020359_dlya-sayta-produkt-m-84049.jpg|left-->
                                             <a href="css/img/1422020359_dlya-sayta-produkt-m-84049.jpg" onclick="return hs.expand(this)">
@@ -1758,6 +1771,39 @@
         });
         </script>
         <div id="toTop2"></div>
+    </div>
+    <!-- One byut click -->
+    <div class="md-modal md-effect-1 buy_form" id="modal-2">
+        <div class="md-content">
+            <div>
+                <form method="post" id="buy_form" class="modal_form template_form">
+                    <div class="form_content">
+                        <div class="title">
+                            Купить в один клик
+                        </div>
+                        <div class="inputs_block">
+                            <div class="form_element">
+                                <label>Ваше имя*</label>
+                                <input type="text" class="input_form" name="buy_name" id="buy_name">
+                            </div>
+                            <div class="form_element">
+                                <label>Ваша фамилия</label>
+                                <input type="text" class="input_form" name="buy_surname" id="buy_surname">
+                            </div>
+                            <div class="form_element">
+                                <label>Ваш номер телефона*</label>
+                                <input type="text" class="input_form" name="buy_phone" id="buy_phone" placeholder="+7 (___) ___ - __ - __">
+                            </div>
+                            <div class="form_element">
+                                <label>Ваш email*</label>
+                                <input type="email" class="input_form" name="buy_email" id="buy_email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button_close"></div>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 

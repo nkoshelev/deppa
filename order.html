@@ -9,7 +9,7 @@
     <meta name="keywords" content="Deppa" />
     <link rel="search" type="application/opensearchdescription+xml" href="http://deppa.ru/engine/opensearch.php" title="Deppa" />
     <link rel="alternate" type="application/rss+xml" title="Deppa" href="http://deppa.ru/rss.xml" />
-    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="js/jqueryui.js"></script>
     <script type="text/javascript" src="js/dle_js.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
@@ -41,6 +41,8 @@
     <link href="css/jquery.mmenu.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
     <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript" src="js/classie.js"></script>
+    <script type="text/javascript" src="js/modalEffects.js"></script>
     <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
@@ -933,7 +935,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="terms_use">
-                                                            Нажимая кнопку «Зарегестрироваться», Вы принимаете настоящее <a href="#">Пользовательское соглашение</a> и соглашаетесь на обработку Ваших персональных данных
+                                                            Нажимая кнопку «Зарегестрироваться», Вы принимаете настоящее <a href="#" class="md-trigger" data-modal="modal-1">Пользовательское соглашение</a> и соглашаетесь на обработку Ваших персональных данных
                                                         </div>
                                                     </div>
                                                     <div class="reg_question">
@@ -998,7 +1000,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="reg_question">
-                                                        Уже регестрировались? <a href="#">Войдите</a><br>или <a href="#">продолжите без регистрации</a>
+                                                        Уже регестрировались? <a href="#" class="md-trigger" data-modal="modal-2">Войдите</a><br>или <a href="#">продолжите без регистрации</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1793,6 +1795,33 @@
         });
         </script>
         <div id="toTop2"></div>
+    </div>
+    <!-- Order finish -->
+    <div class="md-modal md-effect-1 accept_form" id="modal-1">
+        <div class="md-content">
+            <div>
+                <form method="post" id="accept_form" class="modal_form">
+                    <div class="form_content">
+                        <div class="accept_info">
+                            <div class="caption">
+                                Ваш заказ принят
+                            </div>
+                            <p class="number_order">
+                                Номер вашего заказа <span>24352</span>
+                            </p>
+                            <p>
+                                <b>Вы выбрали:</b><br>
+                                Способ доставки: Pony Express<br>
+                                Способ оплаты: Картой при получении<br>
+                                Срок доставки: 3 дня
+                            </p>
+                            <p><b>Ожидайте, с Вами свяжется курьер для согласования удобного времени доставки.</b></p>
+                        </div>
+                    </div>
+                    <div class="button_close"></div>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 
