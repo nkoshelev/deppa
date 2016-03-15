@@ -45,6 +45,14 @@ $(document).ready(function() {
     $('.mid_header.down').click(function() {
         $(this).next().slideToggle();
     });
+    // Jobs accordion
+    $('.accordion').find('.accordion-toggle').click(function(e){
+        e.preventDefault();
+        $(this).addClass('open');
+        $(this).next().slideToggle();
+        $(".accordion-content").not($(this).next()).slideUp();
+        $(".accordion-content").not($(this).next()).parents('.accordion-block').find('.accordion-toggle').removeClass('open');
+    });
     $(".small-pic").click(function() {
         $('.thumb_mini').removeClass('active');
         $(this).parents('.thumb_mini').addClass('active');
@@ -58,7 +66,8 @@ $(document).ready(function() {
         if ($(this).text() != 'Скрыть') $(this).text('Скрыть');
         else $(this).text('Показать все товары');
     });
-    $('.add_article_link').click(function() {
+    $('.add_article_link').click(function(e) {
+        e.preventDefault();
         $('.article_form').fadeToggle();
     });
     // Color link
@@ -72,8 +81,14 @@ $(document).ready(function() {
     // Form on main page open
     $('.write_us .expand_button').click(function(e){
         e.preventDefault();
-        $(this).hide();
-        $(this).next().slideDown();
+        if(!$(this).hasClass('active')){
+            $(this).addClass('active');
+            $(this).prev().slideDown();
+        }else{
+            $(this).removeClass('active');
+            $(this).prev().slideUp();
+        }
+        
     });
     // Form on cart page
     $('.say_me').click(function(e){
@@ -196,7 +211,7 @@ $(document).ready(function() {
     //     }, 500);
     //     $('.step3').addClass('animated fadeInLeft');
     // });
-    $('.reg_form .inputs_submit .input_submit').click(function(){
+    $('.reg_form .inputs_submit .input_submit, .auth_form .inputs_submit .input_submit').click(function(){
         $('.step1').hide();
         $('.step2').show();
     });
@@ -289,6 +304,14 @@ $(document).ready(function() {
             });
             
             myMap11.geoObjects.add(myPlacemark);
+
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                myMap4.behaviors.disable('drag');
+                myMap3.behaviors.disable('drag');
+                myMap2.behaviors.disable('drag');
+                myMap.behaviors.disable('drag');
+                myMap11.behaviors.disable('drag');
+            }
         }
     }
 });

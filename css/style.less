@@ -147,7 +147,17 @@
 100% {
     transform: scale(1);
 }
-} 
+}
+input[type="submit"],
+input[type="button"] {
+    appearance: none;
+    border-radius: 0;
+}
+input,
+textarea {
+    border-radius: 0;
+    appearance: none;
+}
 .checkbox_block {
     .clearfix();
     input[type="checkbox"] {
@@ -288,7 +298,7 @@
     background: rgba(0, 0, 0, .8);
     box-sizing: border-box;
     .modal_form {
-        padding: 30px 52px;
+        padding: 30px 52px 45px;
         color: #070706;
     }
     .md-content {
@@ -337,7 +347,7 @@
             margin: 0 0 8px;
         }
         input {
-            float: right;
+            float: left;
             width: 400px;
         }
     }
@@ -727,6 +737,7 @@ font-weight:normal;
     color:#070706;
 //  color:  #008dd0;
 text-decoration:none;
+line-height: 24px;
 //  padding-top:20px;
 }
 
@@ -4458,7 +4469,7 @@ table.cont-block {
         padding: 8px 21px 10px;
         margin: 2px 0 0;
         &:hover {
-            background: #add4e8;
+            background: #008BD0;
         }
         &.no_buy {
             background: #dbdbdb;
@@ -4593,7 +4604,7 @@ table.cont-block {
             font-family: 'pf_beausans_prothin', sans-serif;
             padding: 10px 21px;
             &:hover {
-                background: #add4e8;
+                background: #008BD0;
             }
         }
     }
@@ -4817,7 +4828,7 @@ table.cont-block {
                 cursor: pointer;
                 margin-top: 23px;
                 &:hover {
-                    background: #add4e8;
+                    background: #008BD0;
                 }
             }
         }
@@ -4940,6 +4951,8 @@ table.cont-block {
             text-align: center;
             color: #070706;
             border: 1px solid #d0d0d0;
+            box-shadow: none;
+            appearance: none;
         }
     }
     .price_column {
@@ -5616,7 +5629,7 @@ table.cont-block {
     transition: 0.3s ease-in-out;
     cursor: pointer;
     &:hover {
-        background: #add4e8;
+        background: #008BD0;
     }
 }
 .animated {
@@ -5714,6 +5727,10 @@ table.cont-block {
         margin: 0 auto;
         &:hover {
             opacity: 0.6;
+        }
+        &.active {
+            background-position: 0 -21px;
+            margin: 30px auto 0;
         }
     }
     .feedback_form {
@@ -5825,5 +5842,72 @@ table.cont-block {
         float: left;
         padding: 9px 18px;
         font-size: 0.938em;
+    }
+}
+.buy_form {
+    .input_form {
+        color: #070706;
+    }
+    .captcha {
+        margin: 28px 0 0;
+        img {
+            display: block;
+            float: left;
+        }
+        a {
+            color: #008fd4;
+            display: block;
+            float: right;
+            margin: 10px 0 0;
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+    .input_submit {
+        width: 200px;
+    }
+}
+#tab-1 {
+    display: block;
+}
+.partn_page {
+    padding: 0 0 30px;
+    .clearfix();
+}
+.jobs_page {
+    padding: 0 0 60px;
+    .jobs_list {
+        .jobs_name {
+            font-size: 1.2em;
+            margin: 20px 0 15px;
+            color: #000;
+            border-bottom: 1px dashed #000;
+            &:extend(.download_page .mid_header all);
+            &.open {
+                border-bottom: none;
+            }
+        }
+        .jobs_content {
+            display: none;
+            &.active {
+                display: block;
+            }
+            h3 {
+                font-size: 1.1em;
+                font-family: 'pf_beausans_prosemibold', sans-serif;
+                margin: 0 0 10px;
+            }
+            p {
+                margin-bottom: 10px;
+            }
+            ul {
+                padding-left: 20px;
+                margin-bottom: 20px;
+                li {
+                    margin-bottom: 4px;
+                }
+            }
+        }
     }
 }

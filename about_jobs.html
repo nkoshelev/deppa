@@ -202,11 +202,7 @@
         $(".h-popular.fw > .banners").jcarousel({
             list: '.banners_wrap',
             items: '.banner',
-            wrap: 'both',
-            animation: {
-                duration: 600,
-                easing:   'linear',
-            }
+            wrap: 'both'
         });
         $('.jc-prev').click(function() {
             $(".h-popular.fw > .banners").jcarousel('scroll', '-=1');
@@ -392,14 +388,12 @@
             }
         });
 
-        $('.tov_list div.show-more').click(function() {
+        $('.sub_cat_section .show-more').click(function() {
             $(this).parent().find('.hidden').slideToggle();
-            if ($(this).css('background-image') == 'url(css/img/arr-black-down.png)') {
-                $(this).css('background-image', 'url(css/img/arr-black-up.png)');
-            } else $(this).css('background-image', 'url(css/img/arr-black-down.png)');
-
-            if ($(this).text() == 'Показать еще') $(this).text('Скрыть');
-            else $(this).text('Показать еще');
+            $(this).toggleClass('active');
+            var title = $(this).data('name');
+            if ($(this).text() != 'Скрыть') $(this).text('Скрыть');
+            else $(this).text('Показать еще '+title);
 
         });
 
@@ -480,16 +474,12 @@
                 <div class="actions">
                     <div class="menu_icon">
                         <div class="fav">
-                            <a href="#">
-                                <img src="css/img/menu_fav.png" />
-                                <span>11</span>
-                            </a>
+                            <img src="css/img/menu_fav.png" />
+                            <span>11</span>
                         </div>
                         <div class="cart">
-                            <a href="#">
-                                <img src="css/img/menu_cart.png" />
-                                <span>2</span>
-                            </a>
+                            <img src="css/img/menu_cart.png" />
+                            <span>2</span>
                         </div>
                     </div>
                     <div class="search_adaptive"></div>
@@ -834,557 +824,183 @@
                     <a href="/nokia/">Nokia</a>
                 </div>
             </div>
-        </div>
-        <div class="video-modal">
-            <div class="video-close" onclick="$('#main-video').get(0).pause();$('.video-modal').hide();$('.slides ul li video').get(0).play();return false;">
-                <img src="css/img/(x).png" width="30" />
-            </div>
-            <div class="video-wrapper">
-                <video id="main-video" class="main-video" controls>
-                    <source src="video/11.mp4" type="video/mp4">
-                </video>
+            <div class="h-menu-drop fav">
+                <a href="#" class="clear">ОЧИСТИТЬ</a>
+                <br />
+                <br /> У вас нет избранного
+                <br />
+                <br />
             </div>
         </div>
-        <div class="h-slider fw">
-            <div class="height-fill">
-                <div class="slides">
-                    <ul class="slides-container">
-                        <li>
-                            <div class="ban-text">
-                                СТИЛЬ
-                                <br />БОЛЬШОГО
-                                <br />ГОРОДА
-                                <span>Чехлы Air</span>
-                                <a href="http://deppa.ru/covers-cases-bumpers/#air-case">
-                                    <div class="more">УЗНАТЬ БОЛЬШЕ</div>
-                                </a>
-                            </div>
-                            <img src="css/img/1434725505_ban_1-1.jpg" alt="">
-                        </li>
-                        <li>
-                            <div class="ban-text">
-                                ВСЕ ДЕЛО
-                                <br />В МАГНИТЕ
-                                <span>Держатели Crab Mage</span>
-                                <a href="http://deppa.ru/top3/">
-                                    <div class="more">УЗНАТЬ БОЛЬШЕ</div>
-                                </a>
-                            </div>
-                            <img src="css/img/1435050648_banners-big-2.jpg" alt="">
-                        </li>
-                        <li>
-                            <div class="ban-text">
-                                ТОНКИЕ
-                                <br />РЕШЕНИЯ
-                                <span>Универсальные чехлы Fold</span>
-                                <a href="http://deppa.ru/fold-cover.html">
-                                    <div class="more">УЗНАТЬ БОЛЬШЕ</div>
-                                </a>
-                            </div>
-                            <img src="css/img/1435053439_banners-big-3.jpg" alt="">
-                        </li>
-                        <li>
-                            <div class="ban-text">
-                                СВОБОДА
-                                <br />БЫТЬ
-                                <br />СОБОЙ
-                                <span>Чехлы Ultra Cover</span>
-                                <a href="http://deppa.ru/top5/">
-                                    <div class="more">УЗНАТЬ БОЛЬШЕ</div>
-                                </a>
-                            </div>
-                            <img src="css/img/1435054054_banners-big-4.jpg" alt="">
-                        </li>
-                        <li>
-                            <video preload="yes" autoplay loop width="100%" muted="muted" src="video/1.mp4" height="auto" poster="css/img/ban_3.jpg">
-                                <source src="video/1.mp4" type="video/mp4">
-                            </video>
-                            <div class="ban-text">
-                                КАЧЕСТВЕННО.
-                                <br /> ЭЛЕГАНТНО.
-                                <br /> С УМОМ.
-                                <br />
-                                <span>Для Вас.</span>
-                                <a href="#" class="watch-video" onclick="if (!mobilecheck()) {$('.slides ul li video').get(0).pause()};$('.video-modal').show();$('#main-video').get(0).play();return false;"></a>
-                            </div>
-                        </li>
-                    </ul>
-                    <!-- <div class="slider-text">
-        <div>
-
-        Мы создаем аксессуары для Ваших девайсов 10 лет. <br />
-Качественно. Элегантно. С умом. На этих принципах основаны все наши решения.<br />
-Наша цель состоит в том,  чтобы повысить качество Вашей жизни через детали.
-        </div>
-    </div> -->
-                </div>
+        <div class="h-cat-wrap fw">
+            <!-- <div class="h-cat-banner" style="background-image:url('http://deppa.ru/templates/ENG_D2015/i/about.jpg');"></div> -->
+            <div class="h-cat">
+                <h1>
+                    Вакансии
+                </h1>
             </div>
         </div>
-        <!-- <div class="slider-text fw mob">
-        <div>
-
-        Мы создаем аксессуары для Ваших девайсов 10 лет. <br />
-Качественно. Элегантно. С умом. На этих принципах основаны все наши решения.<br />
-Наша цель состоит в том,  чтобы повысить качество Вашей жизни через детали.
-        </div>
-    </div> -->
-        <div class="welcome">
-            <div class="container">
-                <div class="title">
-                    Добро пожаловать в мир Deppa!
-                </div>
-                <div class="anons">
-                    Мы создаем аксессуары для Ваших девайсов вот уже более 10 лет.
-                    <br> Качественно. Элегантно. С умом. На этих принципах основаны все наши решения.
-                    <br> Наша цель — повысить качество Вашей жизни через детали.
-                </div>
-                <div class="actions_block">
-                    <a href="#" class="about_more">
-                        <span>Узнать о нас больше</span>
-                    </a>
-                    <a href="#" class="want_distribution">Хочу рассылку</a>
-                </div>
-            </div>
-        </div>
-        <div class="main_banners">
-            <div class="container">
-                <a href="#" class="banner">
-                    <div class="ban_head">
-                        <div class="name">
-                            Кейсы Air
-                        </div>
-                        <div class="anons">
-                            Стиль большого города
-                        </div>
-                    </div>
-                    <img src="css/img/ban1.jpg" class="ban_img" alt="" />
-                    <div class="action_block">
-                        <div class="action_text">
-                            Кейсы с покрытием «soft touch» для Sony Xperia Z5 Compact
-                        </div>
-                        <div class="date">
-                            СКОРО
-                            <br>В ПРОДАЖЕ
-                        </div>
-                    </div>
-                </a>
-                <a href="#" class="banner">
-                    <div class="ban_head">
-                        <div class="name">
-                            Защитные стекла Full
-                        </div>
-                        <div class="anons">
-                            Инновации в защите
-                        </div>
-                    </div>
-                    <img src="css/img/ban2.jpg" class="ban_img" alt="" />
-                    <div class="action_block">
-                        <div class="action_text">
-                            Кейсы с покрытием «soft touch» для Sony Xperia Z5 Compact
-                        </div>
-                        <div class="date">
-                            СКОРО
-                            <br>В ПРОДАЖЕ
-                        </div>
-                    </div>
-                </a>
-                <a href="#" class="banner">
-                    <div class="ban_head">
-                        <div class="name">
-                            Кейсы Gel
-                        </div>
-                        <div class="anons">
-                            Эластичный минимализм
-                        </div>
-                    </div>
-                    <img src="css/img/ban3.jpg" class="ban_img" alt="" />
-                    <div class="action_block">
-                        <div class="action_text">
-                            Кейсы с покрытием «soft touch» для Sony Xperia Z5 Compact
-                        </div>
-                        <div class="date">
-                            СКОРО
-                            <br>В ПРОДАЖЕ
-                        </div>
-                    </div>
-                </a>
-                <a href="#" class="banner">
-                    <div class="ban_head">
-                        <div class="name">
-                            Моноподы для селфи
-                        </div>
-                        <div class="anons">
-                            Эластичный минимализм
-                        </div>
-                    </div>
-                    <img src="css/img/ban4.jpg" class="ban_img" alt="" />
-                    <div class="action_block">
-                        <div class="action_text">
-                            Кейсы с покрытием «soft touch» для Sony Xperia Z5 Compact
-                        </div>
-                        <div class="date">
-                            СКОРО
-                            <br>В ПРОДАЖЕ
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="main_tovar_slider_block">
-            <div class="container">
-                <div class="title">
-                    Популярные продукты
-                </div>
-                <div class="main_tovar_slider">
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="655" />
-                        <div class="sel_color">
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491079_dlya-sayta-produkt-m-86014.jpg" class="color-link" style="background-color:#9D63A9;">#9D63A9</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491115_dlya-sayta-produkt-m-86015.jpg" class="color-link" style="background-color:#E966AA;">#E966AA</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491105_dlya-sayta-produkt-m-86017.jpg" class="color-link" style="background-color:#B6EDEB;">#B6EDEB</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491146_dlya-sayta-produkt-m-86016.jpg" class="color-link" style="background-color:#B49F32;">#B49F32</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491091_dlya-sayta-produkt-m-86012.jpg" class="color-link" style="background-color:#E6E6E6;">#E6E6E6</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491092_dlya-sayta-produkt-m-86013.jpg" class="color-link" style="background-color:#737373;">#737373</a>
-                        </div>
-                        <a href="/covers-cases-bumpers/sm/cases/sky-case/655-chehol-sky-case-dlya-apple-iphone-6.html">
-                            <img src="css/img/1437491079_dlya-sayta-produkt-m-86014.jpg" height="210" alt="Чехол Sky Case для Apple iPhone&nbsp6/6S" />
-                            <br />
-                        </a>
-                        <span class="caption">Чехол Sky Case для Apple iPhone&nbsp6/6S</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="639" />
-                        <a href="/glasses/smart-glass/639-zaschitnoe-steklo-dlya-apple-iphone-6-02-mm.html">
-                            <img src="css/img/1412684021_dlya-sayta-produkt-m-61943.jpg" height="210" alt="Защитное стекло для Apple iPhone 6/6S, Asahi" />
-                            <br />
-                        </a>
-                        <span class="caption">Защитное стекло для Apple iPhone 6/6S, Asahi</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="798" />
-                        <div class="sel_color">
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1438094769_dlya-sayta-produkt-m-72187.jpg" class="color-link" style="background-color:#bababa;">#bababa</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1438094830_dlya-sayta-produkt-m-72188.jpg" class="color-link" style="background-color:#c8b99e;">#c8b99e</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-12/thumbs/1449147526_dlya-sayta-produkt-m-72209.jpg" class="color-link" style="background-color:#dbbcb7;">#dbbcb7</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1438094843_dlya-sayta-produkt-m-72189.jpg" class="color-link" style="background-color:#737373;">#737373</a>
-                        </div>
-                        <a href="/special/new3/798-data-kabel-usb-8-pin-dlya-apple.html">
-                            <img src="css/img/1438094769_dlya-sayta-produkt-m-72187.jpg" height="210" alt="Дата-кабель USB - 8-pin для Apple, MFI" />
-                            <br />
-                        </a>
-                        <span class="caption">Дата-кабель USB - 8-pin для Apple, MFI</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="640" />
-                        <a href="/glasses/protect-smartphones/640-zaschitnye-plenki-dlya-apple-iphone-6.html">
-                            <img src="css/img/1412751219_dlya-sayta-m-61073.jpg" height="210" alt="Защитная пленка для Apple iPhone 6/6S" />
-                            <br />
-                        </a>
-                        <span class="caption">Защитная пленка для Apple iPhone 6/6S</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="785" />
-                        <a href="/covers-cases-bumpers/sm/art-cases/art-flowers/785-chehol-art-case-flowers-dlya-apple-iphone-6.html">
-                            <img src="css/img/1437997755_dlya-sayta-produkt-iphone-6-100100.jpg" height="210" alt="Чехол Art Case для Apple iPhone 6/6S" />
-                            <br />
-                        </a>
-                        <span class="caption">Чехол Art Case для Apple iPhone 6/6S</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="786" />
-                        <a href="/covers-cases-bumpers/sm/art-cases/art-flowers/786-chehol-art-case-flowers-dlya-apple-iphone-6-plus.html">
-                            <img src="css/img/1438001714_dlya-sayta-produkt-iphone-6plus-100105.jpg" height="210" alt="Чехол Art Case для Apple iPhone 6 Plus/6S Plus" />
-                            <br />
-                        </a>
-                        <span class="caption">Чехол Art Case для Apple iPhone 6 Plus/6S Plus</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="789" />
-                        <a href="/covers-cases-bumpers/sm/art-cases/art-flowers/789-chehol-art-case-dlya-samsung-galaxy-s6.html">
-                            <img src="css/img/1438008654_dlya-sayta-produkt-galaxy-s6-100118.jpg" height="210" alt="Чехол Art Case для Samsung Galaxy S6" />
-                            <br />
-                        </a>
-                        <span class="caption">Чехол Art Case для Samsung Galaxy S6</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="790" />
-                        <a href="/covers-cases-bumpers/sm/art-cases/art-flowers/790-chehol-art-case-dlya-samsung-galaxy-s6-edge.html">
-                            <img src="css/img/1438009134_dlya-sayta-produkt-galaxy-s6edge-100123.jpg" height="210" alt="Чехол Art Case для Samsung Galaxy S6 edge" />
-                            <br />
-                        </a>
-                        <span class="caption">Чехол Art Case для Samsung Galaxy S6 edge</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="972" />
-                        <div class="sel_color">
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-09/thumbs/1442404501_dlya-sayta-produkt-m-45006-1.jpg" class="color-link" style="background-color:#5D5D5D;">#5D5D5D</a>
-                        </div>
-                        <a href="/selfie_monopods/monopods/972-monopod-selfie-pro.html">
-                            <img src="css/img/1442404501_dlya-sayta-produkt-m-45006-1.jpg" height="210" alt="Монопод Selfie Pro" />
-                            <br />
-                        </a>
-                        <span class="caption">Монопод Selfie Pro</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="744" />
-                        <div class="sel_color">
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431521887_dlya-sayta-produkt-m-87006.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431522293_dlya-sayta-produkt-m-87007.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431522294_dlya-sayta-produkt-m-87008.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431522386_dlya-sayta-produkt-m-87009.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431522387_dlya-sayta-produkt-m-87005.jpg" class="color-link" style="background-color:black;">black</a>
-                        </div>
-                        <a href="/covers-cases-bumpers/sm/cov/universal-wallet-fold/744-chehol-podstavka-wallet-fold-m.html">
-                            <img src="css/img/1431521887_dlya-sayta-produkt-m-87006.jpg" height="210" alt="Чехол-подставка Wallet Fold M" />
-                            <br />
-                        </a>
-                        <span class="caption">Чехол-подставка Wallet Fold M</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="709" />
-                        <div class="sel_color">
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-08/thumbs/1440060376_dlya-sayta-produkt-b-55135.jpg" class="color-link" style="background-color:black;">black</a>
-                        </div>
-                        <a href="/special/top3/709-avtomobilnyy-derzhatel-crab-air-mage.html">
-                            <img src="css/img/1440060376_dlya-sayta-produkt-b-55135.jpg" height="210" alt="Магнитный автомобильный держатель Crab Air mage" />
-                            <br />
-                        </a>
-                        <span class="caption">Магнитный автомобильный держатель Crab Air mage</span>
-                    </div>
-                    <div class="slider_item tovar_block">
-                        <img src="css/img/fav.png" class="fav" alt="1049" />
-                        <div class="sel_color">
-                            <a href="#" rel="http://deppa.ru/uploads/posts/2015-11/thumbs/1448031924_dlya-sayta-produkt-b-11375.jpg" class="color-link" style="background-color:black;">black</a>
-                        </div>
-                        <img src="css/img/new_item.png" class="new_item" />
-                        <a href="/special/new2/1049-szu-usb-quick-charge-20.html">
-                            <img src="css/img/1448031924_dlya-sayta-produkt-b-11375.jpg" height="210" alt="СЗУ USB Quick Charge 2.0" />
-                            <br />
-                        </a>
-                        <span class="caption">СЗУ USB Quick Charge 2.0</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="h-popular fw">
-            <div class="h-top">
-                <div class="hdr">Популярные продукты</div>
-            </div>
-            <div class="banners">
-                <span class="jc-prev">
-                    <img src="css/img/left-arr.png" />
-                </span>
-                <span class="jc-next">
-                    <img src="css/img/right-arr.png" />
-                </span>
-                <div class="banners_wrap">
-                    <div class="banner">
-                        <div class="hdr">Стиль и защита нового iPhone 6S</div>
-                        <div class="goods">
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="655" />
-                                <div class="sel_color">
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491079_dlya-sayta-produkt-m-86014.jpg" class="color-link" style="background-color:#9D63A9;">#9D63A9</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491115_dlya-sayta-produkt-m-86015.jpg" class="color-link" style="background-color:#E966AA;">#E966AA</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491105_dlya-sayta-produkt-m-86017.jpg" class="color-link" style="background-color:#B6EDEB;">#B6EDEB</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491146_dlya-sayta-produkt-m-86016.jpg" class="color-link" style="background-color:#B49F32;">#B49F32</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491091_dlya-sayta-produkt-m-86012.jpg" class="color-link" style="background-color:#E6E6E6;">#E6E6E6</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1437491092_dlya-sayta-produkt-m-86013.jpg" class="color-link" style="background-color:#737373;">#737373</a>
+        <div id="main_cont">
+            <div id="main">
+                <div id="content">
+                    <div id="right">
+                        <div id='dle-content'>
+                            <div class="jobs_page">
+                                <div class="jobs_list accordion">
+                                    <div class="jobs_item accordion-block">
+                                        <div class="jobs_name accordion-toggle open">
+                                            Специалист по моделированию
+                                        </div>
+                                        <div class="jobs_content accordion-content active">
+                                            <h3>Ваши обязанности</h3>
+                                            <p>Эта вакансия взята со стороннего сайта и мы не имеем контактных данных по ней.</p>
+                                            <ul>
+                                                <li>Оценка стоимости проектных спецификаций (запросы поставщикам, расчет цен для заказчиков);</li>
+                                                <li>Подготовка счетов и технико-коммерческих предложений для заказчиков;</li>
+                                                <li>Закупка оборудования;</li>
+                                                <li>Ведения учета поставок.</li>
+                                            </ul>
+                                            <h3>Требования</h3>
+                                            <ul>
+                                                <li>Высшее техническое образование;</li>
+                                                <li>Опыт работы от 1 года;</li>
+                                                <li>Профильное образование (желательно);</li>
+                                                <li>Кропотливость, внимательность, усидчивость - ОБЯЗАТЕЛЬНО!</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="jobs_item accordion-block">
+                                        <div class="jobs_name accordion-toggle">
+                                            Продакт-менеджер в категории "Звук"
+                                        </div>
+                                        <div class="jobs_content accordion-content">
+                                            <h3>Ваши обязанности</h3>
+                                            <ul>
+                                                <li>Оценка стоимости проектных спецификаций (запросы поставщикам, расчет цен для заказчиков);</li>
+                                                <li>Подготовка счетов и технико-коммерческих предложений для заказчиков;</li>
+                                                <li>Закупка оборудования;</li>
+                                                <li>Ведения учета поставок.</li>
+                                            </ul>
+                                            <h3>Требования</h3>
+                                            <ul>
+                                                <li>Высшее техническое образование;</li>
+                                                <li>Опыт работы от 1 года;</li>
+                                                <li>Профильное образование (желательно);</li>
+                                                <li>Кропотливость, внимательность, усидчивость - ОБЯЗАТЕЛЬНО!</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="jobs_item accordion-block">
+                                        <div class="jobs_name accordion-toggle">
+                                            Продакт-менеджер в категории "Звук"
+                                        </div>
+                                        <div class="jobs_content accordion-content">
+                                            <h3>Ваши обязанности</h3>
+                                            <ul>
+                                                <li>Оценка стоимости проектных спецификаций (запросы поставщикам, расчет цен для заказчиков);</li>
+                                                <li>Подготовка счетов и технико-коммерческих предложений для заказчиков;</li>
+                                                <li>Закупка оборудования;</li>
+                                                <li>Ведения учета поставок.</li>
+                                            </ul>
+                                            <h3>Требования</h3>
+                                            <ul>
+                                                <li>Высшее техническое образование;</li>
+                                                <li>Опыт работы от 1 года;</li>
+                                                <li>Профильное образование (желательно);</li>
+                                                <li>Кропотливость, внимательность, усидчивость - ОБЯЗАТЕЛЬНО!</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="jobs_item accordion-block">
+                                        <div class="jobs_name accordion-toggle">
+                                            Продакт-менеджер в категории "Звук"
+                                        </div>
+                                        <div class="jobs_content accordion-content">
+                                            <h3>Ваши обязанности</h3>
+                                            <ul>
+                                                <li>Оценка стоимости проектных спецификаций (запросы поставщикам, расчет цен для заказчиков);</li>
+                                                <li>Подготовка счетов и технико-коммерческих предложений для заказчиков;</li>
+                                                <li>Закупка оборудования;</li>
+                                                <li>Ведения учета поставок.</li>
+                                            </ul>
+                                            <h3>Требования</h3>
+                                            <ul>
+                                                <li>Высшее техническое образование;</li>
+                                                <li>Опыт работы от 1 года;</li>
+                                                <li>Профильное образование (желательно);</li>
+                                                <li>Кропотливость, внимательность, усидчивость - ОБЯЗАТЕЛЬНО!</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="jobs_item accordion-block">
+                                        <div class="jobs_name accordion-toggle">
+                                            Продакт-менеджер в категории "Звук"
+                                        </div>
+                                        <div class="jobs_content accordion-content">
+                                            <h3>Ваши обязанности</h3>
+                                            <ul>
+                                                <li>Оценка стоимости проектных спецификаций (запросы поставщикам, расчет цен для заказчиков);</li>
+                                                <li>Подготовка счетов и технико-коммерческих предложений для заказчиков;</li>
+                                                <li>Закупка оборудования;</li>
+                                                <li>Ведения учета поставок.</li>
+                                            </ul>
+                                            <h3>Требования</h3>
+                                            <ul>
+                                                <li>Высшее техническое образование;</li>
+                                                <li>Опыт работы от 1 года;</li>
+                                                <li>Профильное образование (желательно);</li>
+                                                <li>Кропотливость, внимательность, усидчивость - ОБЯЗАТЕЛЬНО!</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="jobs_item accordion-block">
+                                        <div class="jobs_name accordion-toggle">
+                                            Продакт-менеджер в категории "Звук"
+                                        </div>
+                                        <div class="jobs_content accordion-content">
+                                            <h3>Ваши обязанности</h3>
+                                            <ul>
+                                                <li>Оценка стоимости проектных спецификаций (запросы поставщикам, расчет цен для заказчиков);</li>
+                                                <li>Подготовка счетов и технико-коммерческих предложений для заказчиков;</li>
+                                                <li>Закупка оборудования;</li>
+                                                <li>Ведения учета поставок.</li>
+                                            </ul>
+                                            <h3>Требования</h3>
+                                            <ul>
+                                                <li>Высшее техническое образование;</li>
+                                                <li>Опыт работы от 1 года;</li>
+                                                <li>Профильное образование (желательно);</li>
+                                                <li>Кропотливость, внимательность, усидчивость - ОБЯЗАТЕЛЬНО!</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="jobs_item accordion-block">
+                                        <div class="jobs_name accordion-toggle">
+                                            Продакт-менеджер в категории "Звук"
+                                        </div>
+                                        <div class="jobs_content accordion-content">
+                                            <h3>Ваши обязанности</h3>
+                                            <ul>
+                                                <li>Оценка стоимости проектных спецификаций (запросы поставщикам, расчет цен для заказчиков);</li>
+                                                <li>Подготовка счетов и технико-коммерческих предложений для заказчиков;</li>
+                                                <li>Закупка оборудования;</li>
+                                                <li>Ведения учета поставок.</li>
+                                            </ul>
+                                            <h3>Требования</h3>
+                                            <ul>
+                                                <li>Высшее техническое образование;</li>
+                                                <li>Опыт работы от 1 года;</li>
+                                                <li>Профильное образование (желательно);</li>
+                                                <li>Кропотливость, внимательность, усидчивость - ОБЯЗАТЕЛЬНО!</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <a href="/covers-cases-bumpers/sm/cases/sky-case/655-chehol-sky-case-dlya-apple-iphone-6.html">
-                                    <img src="css/img/1437491079_dlya-sayta-produkt-m-86014.jpg" height="210" alt="Чехол Sky Case для Apple iPhone&nbsp6/6S" />
-                                    <br />
-                                </a>
-                                <span class="caption">Чехол Sky Case для Apple iPhone&nbsp6/6S</span>
-                            </div>
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="639" />
-                                <a href="/glasses/smart-glass/639-zaschitnoe-steklo-dlya-apple-iphone-6-02-mm.html">
-                                    <img src="css/img/1412684021_dlya-sayta-produkt-m-61943.jpg" height="210" alt="Защитное стекло для Apple iPhone 6/6S, Asahi" />
-                                    <br />
-                                </a>
-                                <span class="caption">Защитное стекло для Apple iPhone 6/6S, Asahi</span>
-                            </div>
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="798" />
-                                <div class="sel_color">
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1438094769_dlya-sayta-produkt-m-72187.jpg" class="color-link" style="background-color:#bababa;">#bababa</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1438094830_dlya-sayta-produkt-m-72188.jpg" class="color-link" style="background-color:#c8b99e;">#c8b99e</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-12/thumbs/1449147526_dlya-sayta-produkt-m-72209.jpg" class="color-link" style="background-color:#dbbcb7;">#dbbcb7</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-07/thumbs/1438094843_dlya-sayta-produkt-m-72189.jpg" class="color-link" style="background-color:#737373;">#737373</a>
-                                </div>
-                                <a href="/special/new3/798-data-kabel-usb-8-pin-dlya-apple.html">
-                                    <img src="css/img/1438094769_dlya-sayta-produkt-m-72187.jpg" height="210" alt="Дата-кабель USB - 8-pin для Apple, MFI" />
-                                    <br />
-                                </a>
-                                <span class="caption">Дата-кабель USB - 8-pin для Apple, MFI</span>
-                            </div>
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="640" />
-                                <a href="/glasses/protect-smartphones/640-zaschitnye-plenki-dlya-apple-iphone-6.html">
-                                    <img src="css/img/1412751219_dlya-sayta-m-61073.jpg" height="210" alt="Защитная пленка для Apple iPhone 6/6S" />
-                                    <br />
-                                </a>
-                                <span class="caption">Защитная пленка для Apple iPhone 6/6S</span>
                             </div>
                         </div>
                     </div>
-                    <div class="banner">
-                        <div class="hdr">4 решения, которые создают настроение</div>
-                        <div class="goods">
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="785" />
-                                <a href="/covers-cases-bumpers/sm/art-cases/art-flowers/785-chehol-art-case-flowers-dlya-apple-iphone-6.html">
-                                    <img src="css/img/1437997755_dlya-sayta-produkt-iphone-6-100100.jpg" height="210" alt="Чехол Art Case для Apple iPhone 6/6S" />
-                                    <br />
-                                </a>
-                                <span class="caption">Чехол Art Case для Apple iPhone 6/6S</span>
-                            </div>
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="786" />
-                                <a href="/covers-cases-bumpers/sm/art-cases/art-flowers/786-chehol-art-case-flowers-dlya-apple-iphone-6-plus.html">
-                                    <img src="css/img/1438001714_dlya-sayta-produkt-iphone-6plus-100105.jpg" height="210" alt="Чехол Art Case для Apple iPhone 6 Plus/6S Plus" />
-                                    <br />
-                                </a>
-                                <span class="caption">Чехол Art Case для Apple iPhone 6 Plus/6S Plus</span>
-                            </div>
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="789" />
-                                <a href="/covers-cases-bumpers/sm/art-cases/art-flowers/789-chehol-art-case-dlya-samsung-galaxy-s6.html">
-                                    <img src="css/img/1438008654_dlya-sayta-produkt-galaxy-s6-100118.jpg" height="210" alt="Чехол Art Case для Samsung Galaxy S6" />
-                                    <br />
-                                </a>
-                                <span class="caption">Чехол Art Case для Samsung Galaxy S6</span>
-                            </div>
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="790" />
-                                <a href="/covers-cases-bumpers/sm/art-cases/art-flowers/790-chehol-art-case-dlya-samsung-galaxy-s6-edge.html">
-                                    <img src="css/img/1438009134_dlya-sayta-produkt-galaxy-s6edge-100123.jpg" height="210" alt="Чехол Art Case для Samsung Galaxy S6 edge" />
-                                    <br />
-                                </a>
-                                <span class="caption">Чехол Art Case для Samsung Galaxy S6 edge</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="banner">
-                        <div class="hdr">ТОП-4 универсальных решений сезона</div>
-                        <div class="goods">
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="972" />
-                                <div class="sel_color">
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-09/thumbs/1442404501_dlya-sayta-produkt-m-45006-1.jpg" class="color-link" style="background-color:#5D5D5D;">#5D5D5D</a>
-                                </div>
-                                <a href="/selfie_monopods/monopods/972-monopod-selfie-pro.html">
-                                    <img src="css/img/1442404501_dlya-sayta-produkt-m-45006-1.jpg" height="210" alt="Монопод Selfie Pro" />
-                                    <br />
-                                </a>
-                                <span class="caption">Монопод Selfie Pro</span>
-                            </div>
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="744" />
-                                <div class="sel_color">
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431521887_dlya-sayta-produkt-m-87006.jpg" class="color-link" style="background-color:#76787e;">#76787e</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431522293_dlya-sayta-produkt-m-87007.jpg" class="color-link" style="background-color:#ccc1ae;">#ccc1ae</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431522294_dlya-sayta-produkt-m-87008.jpg" class="color-link" style="background-color:#7a4052;">#7a4052</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431522386_dlya-sayta-produkt-m-87009.jpg" class="color-link" style="background-color:#39456e;">#39456e</a>
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-05/thumbs/1431522387_dlya-sayta-produkt-m-87005.jpg" class="color-link" style="background-color:black;">black</a>
-                                </div>
-                                <a href="/covers-cases-bumpers/sm/cov/universal-wallet-fold/744-chehol-podstavka-wallet-fold-m.html">
-                                    <img src="css/img/1431521887_dlya-sayta-produkt-m-87006.jpg" height="210" alt="Чехол-подставка Wallet Fold M" />
-                                    <br />
-                                </a>
-                                <span class="caption">Чехол-подставка Wallet Fold M</span>
-                            </div>
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="709" />
-                                <div class="sel_color">
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-08/thumbs/1440060376_dlya-sayta-produkt-b-55135.jpg" class="color-link" style="background-color:black;">black</a>
-                                </div>
-                                <a href="/special/top3/709-avtomobilnyy-derzhatel-crab-air-mage.html">
-                                    <img src="css/img/1440060376_dlya-sayta-produkt-b-55135.jpg" height="210" alt="Магнитный автомобильный держатель Crab Air mage" />
-                                    <br />
-                                </a>
-                                <span class="caption">Магнитный автомобильный держатель Crab Air mage</span>
-                            </div>
-                            <div class="tovar_block">
-                                <img src="css/img/fav.png" class="fav" alt="1049" />
-                                <div class="sel_color">
-                                    <a href="#" rel="http://deppa.ru/uploads/posts/2015-11/thumbs/1448031924_dlya-sayta-produkt-b-11375.jpg" class="color-link" style="background-color:black;">black</a>
-                                </div>
-                                <img src="css/img/new_item.png" class="new_item" />
-                                <a href="/special/new2/1049-szu-usb-quick-charge-20.html">
-                                    <img src="css/img/1448031924_dlya-sayta-produkt-b-11375.jpg" height="210" alt="СЗУ USB Quick Charge 2.0" />
-                                    <br />
-                                </a>
-                                <span class="caption">СЗУ USB Quick Charge 2.0</span>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="clr"></div>
                 </div>
-            </div>
-        </div>
-        <div class="write_us">
-            <div class="container">
-                <div class="title">
-                    Напишите нам
-                </div>
-                <div class="anons">
-                    Оставьте вопрос, предложение или комментарий к качеству продукта.<br>Мы быстро ответим на Ваше обращение.
-                </div>
-                <form class="feedback_form template_form">
-                    <div class="inputs_block">
-                        <div class="form_element">
-                            <label>Ваше имя*</label>
-                            <input type="text" name="feedback_name" id="feedback_name">
-                        </div>
-                        <div class="form_element">
-                            <label>Телефон*</label>
-                            <input type="text" name="feedback_phone" id="feedback_phone">
-                        </div>
-                        <div class="form_element">
-                            <label>E-mail*</label>
-                            <input type="email" name="feedback_email" id="feedback_email">
-                        </div>
-                    </div>
-                    <div class="inputs_block">
-                        <div class="form_element">
-                            <label>Страна*</label>
-                            <div class="dropdown">
-                                <span>Выберите из списка</span>
-                                <ul class="close_list">  
-                                    <li><a href="#">Россия</a></li>
-                                    <li><a href="#">Индия</a></li>
-                                    <li><a href="#">Польша</a></li>
-                                    <li><a href="#">Казахстан</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="form_element">
-                            <label>Город*</label>
-                            <input type="text" name="feedback_city" id="feedback_city">
-                        </div>
-                        <div class="form_element">
-                            <label>Выберите тему обращения</label>
-                            <div class="dropdown">
-                                <span>Выберите из списка</span>
-                                <ul class="close_list">  
-                                    <li><a href="#">Качество продукции</a></li>
-                                    <li><a href="#">Оптовые закупки</a></li>
-                                    <li><a href="#">Работа интернет-магазина</a></li>
-                                    <li><a href="#">Другое</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="inputs_submit">
-                        <div class="form_element">
-                            <label>Ваше сообщение</label>
-                            <textarea name="feedback_text" id="feedback_text"></textarea>
-                        </div>
-                        <input type="submit" class="input_submit" value="Отправить">
-                    </div>
-                </form>
-                <a href="#" class="expand_button"></a>
             </div>
         </div>
         <div id="footer_cont">
@@ -1395,13 +1011,14 @@
                     <a href="/about.html#artcase">Artcase</a>
                     <a href="/about.html#lamel">Lamel SPb</a>
                     <a href="/contacts.html">Контакты</a>
+                    <!--a href="/events/">Deppa Life</a-->
+                    <!--a href="/vac.html">Вакансии</a-->
                 </div>
-                <div class="menu_foo">
-                    <b>Интернет-магазин</b>
-                    <a href="#">Оплата и доставка</a>
-                    <a href="#">Возврат</a>
-                    <a href="#">Гарантия</a>
-                </div>
+                <!-- <div class="menu_foo"> -->
+                <!--b>Каталог</b>
+             <a href="/smart/">Подбор по категории</a>
+             <a href="/smart/">Подбор по устройству</a//-->
+                <!-- </div> -->
                 <div class="menu_foo">
                     <b>Поддержка</b>
                     <a href="/sertif.html">Сертификаты</a>
@@ -1413,14 +1030,23 @@
                     <b>Новости</b>
                     <a href="/news/">Все новости</a>
                     <a href="/news/#new">Новые продукты</a>
+                    <!--a href="/news/#reviews">Обзоры в прессе</a-->
                     <a href="/news/#events">События</a>
                     <a href="/news/#drive">Deppa Life</a>
                 </div>
                 <div class="menu_foo">
+                    <b>Медиа</b>
+                    <a href="https://www.facebook.com/pages/Deppa/299338476879857?fref=ts">Facebook</a>
+                    <a href="http://www.youtube.com/channel/UCNs2_Jdo4vVwPnty4HBO3LQ">YouTube</a>
+                    <a href="https://instagram.com/deppa_accessories/">Instagram</a>
+                </div>
+                <div class="menu_foo">
                     <b>Обратная связь</b>
                     <a href="/contacts.html">Контакты</a>
-                    <a href="#">Рекламации</a>
-                    <a href="#">Отзывы и предложения</a>
+                    <a href="#" onclick="$('.h-foo.fw > .h-foo > div.reklam').find('div.hid').slideDown();return false;">Рекламации</a>
+                    <a href="#" onclick="$('.h-foo.fw > .h-foo > div.writeus').find('div.hid').slideDown();return false;">Отзывы и предложения</a>
+                </div>
+                <div class="menu_foo">
                 </div>
                 <div class="clr"></div>
             </div>
@@ -1692,7 +1318,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Ваше устройство</a>
+                    <a href="#">Подбор по устройству</a>
                     <ul>
                         <li>
                             <a href="#">Apple</a>

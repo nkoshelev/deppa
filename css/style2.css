@@ -66,6 +66,20 @@
     transform: scale(1);
   }
 }
+input[type="submit"],
+input[type="button"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+input,
+textarea {
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 .checkbox_block::before,
 .checkbox_block::after {
   display: table;
@@ -231,7 +245,7 @@
   box-sizing: border-box;
 }
 .md-modal .modal_form {
-  padding: 30px 52px;
+  padding: 30px 52px 45px;
   color: #070706;
 }
 .md-modal .md-content {
@@ -294,7 +308,7 @@
   margin: 0 0 8px;
 }
 .md-modal .form_element input {
-  float: right;
+  float: left;
   width: 400px;
 }
 .accept_form .modal_form {
@@ -631,6 +645,7 @@ a.news_text {
   font-size: 2.125em;
   color: #070706;
   text-decoration: none;
+  line-height: 24px;
 }
 .wide_header,
 .half_header {
@@ -3847,7 +3862,7 @@ table.cont-block {
   margin: 2px 0 0;
 }
 .order_tovar_block .order_button:hover {
-  background: #add4e8;
+  background: #008BD0;
 }
 .order_tovar_block .order_button.no_buy {
   background: #dbdbdb;
@@ -4024,7 +4039,7 @@ table.cont-block {
   padding: 10px 21px;
 }
 .recalls_block .recall_head .give_recall:hover {
-  background: #add4e8;
+  background: #008BD0;
 }
 .recalls_block .recall_list {
   width: 906px;
@@ -4295,7 +4310,7 @@ table.cont-block {
   margin-top: 23px;
 }
 .basket_page .itog .itog_actions .checkout:hover {
-  background: #add4e8;
+  background: #008BD0;
 }
 .basket_page .itog .itog_text {
   font-family: 'pf_beausans_prothin', sans-serif;
@@ -4460,6 +4475,10 @@ table.cont-block {
   text-align: center;
   color: #070706;
   border: 1px solid #d0d0d0;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .basket_table .price_column {
   padding: 28px 0 0;
@@ -4571,7 +4590,8 @@ table.cont-block {
 .download_page .news-text {
   margin-bottom: 40px;
 }
-.download_page .mid_header {
+.download_page .mid_header,
+.jobs_page .jobs_list .jobs_name {
   cursor: pointer;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
@@ -4579,7 +4599,8 @@ table.cont-block {
   width: auto;
   margin: 0 0 20px;
 }
-.download_page .mid_header:hover {
+.download_page .mid_header:hover,
+.jobs_page .jobs_list .jobs_name:hover {
   opacity: 0.6;
 }
 .download_page .download {
@@ -5242,7 +5263,7 @@ table.cont-block {
   cursor: pointer;
 }
 .input_submit:hover {
-  background: #add4e8;
+  background: #008BD0;
 }
 .animated {
   -webkit-animation-duration: 1s;
@@ -5333,6 +5354,10 @@ table.cont-block {
 }
 .write_us .expand_button:hover {
   opacity: 0.6;
+}
+.write_us .expand_button.active {
+  background-position: 0 -21px;
+  margin: 30px auto 0;
 }
 .write_us .feedback_form {
   display: none;
@@ -5462,4 +5487,73 @@ table.cont-block {
   float: left;
   padding: 9px 18px;
   font-size: 0.938em;
+}
+.buy_form .input_form {
+  color: #070706;
+}
+.buy_form .captcha {
+  margin: 28px 0 0;
+}
+.buy_form .captcha img {
+  display: block;
+  float: left;
+}
+.buy_form .captcha a {
+  color: #008fd4;
+  display: block;
+  float: right;
+  margin: 10px 0 0;
+}
+.buy_form .captcha a:hover {
+  opacity: 0.6;
+}
+.buy_form .input_submit {
+  width: 200px;
+}
+#tab-1 {
+  display: block;
+}
+.partn_page {
+  padding: 0 0 30px;
+}
+.partn_page::before,
+.partn_page::after {
+  display: table;
+  content: "";
+}
+.partn_page::after {
+  clear: both;
+}
+.jobs_page {
+  padding: 0 0 60px;
+}
+.jobs_page .jobs_list .jobs_name {
+  font-size: 1.2em;
+  margin: 20px 0 15px;
+  color: #000;
+  border-bottom: 1px dashed #000;
+}
+.jobs_page .jobs_list .jobs_name.open {
+  border-bottom: none;
+}
+.jobs_page .jobs_list .jobs_content {
+  display: none;
+}
+.jobs_page .jobs_list .jobs_content.active {
+  display: block;
+}
+.jobs_page .jobs_list .jobs_content h3 {
+  font-size: 1.1em;
+  font-family: 'pf_beausans_prosemibold', sans-serif;
+  margin: 0 0 10px;
+}
+.jobs_page .jobs_list .jobs_content p {
+  margin-bottom: 10px;
+}
+.jobs_page .jobs_list .jobs_content ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+.jobs_page .jobs_list .jobs_content ul li {
+  margin-bottom: 4px;
 }
