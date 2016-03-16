@@ -1,3 +1,33 @@
+@media print {
+    .h-menu .menu,
+    .h-menu .actions,
+    #footer_cont {
+        display: none;
+    }
+    .h-menu > img.logo {
+        left: 50% !important;
+        transform: translate(-50%, -30px) !important;
+    }
+    .catalog_vn_page {
+        h1 {
+            padding-bottom: 0;
+            margin: 25px 0 0 !important;
+        }
+        h1 + .rating,
+        .tovar_like.fake,
+        .order_tovar_block .order_button,
+        .in_stock.yes_tovar,
+        .order_by_phone,
+        .color_links,
+        .info-menu {
+            display: none;
+        }
+        .order_tovar_block {
+            margin: 10px 0 5px;
+        }
+    }
+}
+
 // Mixins
 .image_center(@width_block, @height_block, @max_width_img, @max_height_img) {
     width: @width_block;
