@@ -942,7 +942,7 @@
                     <a href="#" class="about_more">
                         <span>Узнать о нас больше</span>
                     </a>
-                    <a href="#" class="want_distribution">Хочу рассылку</a>
+                    <a href="#" class="want_distribution md-trigger" data-modal="modal-3">Хочу рассылку</a>
                 </div>
             </div>
         </div>
@@ -1783,6 +1783,34 @@
         });
         </script>
         <div id="toTop2"></div>
+    </div>
+    <!-- Want subscribe -->
+    <div class="md-modal md-effect-1 buy_form" id="modal-3">
+        <div class="md-content">
+            <div>
+                <form method="post" id="subscribe_form" class="modal_form template_form">
+                    <div class="form_content">
+                        <div class="title">
+                            Хочу рассылку
+                        </div>
+                        <div class="inputs_block">
+                            <div class="form_element">
+                                <label>Ваше имя*</label>
+                                <input type="text" class="input_form" name="buy_name" id="buy_name">
+                            </div>
+                            <div class="form_element">
+                                <label>Ваш email*</label>
+                                <input type="email" class="input_form" name="buy_email" id="buy_email">
+                            </div>
+                        </div>
+                        <div class="inputs_submit">
+                            <input type="submit" value="Подписаться" class="input_submit">
+                        </div>
+                    </div>
+                    <div class="button_close"></div>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 
