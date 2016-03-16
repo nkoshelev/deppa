@@ -1204,6 +1204,45 @@
                                             </div>
                                             <a href="#" class="give_recall">Оставить отзыв</a>
                                         </div>
+                                        <div class="write_review">
+                                            <div class="caption">
+                                                Написать отзыв
+                                            </div>
+                                            <form class="review_form template_form">
+                                                <div class="form_element">
+                                                    <label>Имя*</label>
+                                                    <input type="text" name="review_name" id="review_name">
+                                                </div>
+                                                <div class="form_element">
+                                                    <label>E-mail*</label>
+                                                    <input type="email" name="review_email" id="review_email">
+                                                </div>
+                                                <div class="rating">
+                                                    <span>Оцените товар</span>
+                                                    <div class="star-rating">
+                                                        <div class="star-rating__wrap">
+                                                            <input class="star-rating__input fa" id="review_rating5" type="radio" name="review_rating" value="5">
+                                                            <label for="review_rating5" class="label_star"></label>
+                                                            <input class="star-rating__input fa" id="review_rating4" type="radio" name="review_rating" value="4">
+                                                            <label for="review_rating4" class="label_star"></label>
+                                                            <input class="star-rating__input fa" id="review_rating3" type="radio" name="review_rating" value="3">
+                                                            <label for="review_rating3" class="label_star"></label>
+                                                            <input class="star-rating__input fa" id="review_rating2" type="radio" name="review_rating" value="2">
+                                                            <label for="review_rating2" class="label_star"></label>
+                                                            <input class="star-rating__input fa" id="review_rating1" type="radio" name="review_rating" value="1">
+                                                            <label for="review_rating1" class="label_star"></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="textblock">
+                                                    <label>Текст отзыва*</label>
+                                                    <textarea name="review_comment" id="review_comment"></textarea>
+                                                </div>
+                                                <div class="form_element">
+                                                    <input type="submit" class="review_submit input_submit" value="Отправить"> 
+                                                </div>
+                                            </form>
+                                        </div>
                                         <div class="recall_list">
                                             <div class="recall_item">
                                                 <div class="comment">
@@ -1292,6 +1331,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <p class="recall_warn">Если вы хотите оставить отзыв на сайте, то вам надо <a href="#">авторизоваться</a>.</p>
                                     </div>
                                     <div id="download" class="ex-info">
                                         <div class="item pdf">

@@ -60,6 +60,11 @@ $(document).ready(function() {
     $('.order_button').click(function(e){
         e.preventDefault();
     });
+    // Review open form
+    $('.give_recall').click(function(e){
+        e.preventDefault();
+        $('.write_review').slideToggle();
+    });
     $('.favorite_more').click(function() {
         $(this).parent().find('.tovar_list').find('.hidden').slideToggle();
         $(this).toggleClass('active');

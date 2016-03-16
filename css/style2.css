@@ -4980,7 +4980,8 @@ table.cont-block {
   float: left;
   width: 206px;
 }
-.order_page .comment_text {
+.order_page .comment_text,
+.write_review .review_form textarea {
   height: 100px;
   resize: none;
   border: 1px solid #a1a1a1;
@@ -5216,7 +5217,8 @@ table.cont-block {
 .template_form .form_element:nth-child(2n) {
   margin: 0 0 24px;
 }
-.template_form .form_element label {
+.template_form .form_element label,
+.write_review .review_form .textblock label {
   color: #070706;
   display: block;
   font-family: 'pf_beausans_prothin', sans-serif;
@@ -5567,4 +5569,35 @@ table.cont-block {
 }
 .recall_warn a:hover {
   opacity: 0.6;
+}
+.write_review {
+  display: none;
+}
+.write_review .caption {
+  font-size: 1.250em;
+  margin-bottom: 15px;
+}
+.write_review .review_form {
+  border-bottom: 1px solid #d6d6d8;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+}
+.write_review .review_form .form_element {
+  float: none;
+}
+.write_review .review_form .form_element input[type="submit"] {
+  border: none;
+}
+.write_review .review_form .textblock {
+  margin-bottom: 30px;
+  width: 440px;
+}
+.write_review .review_form textarea {
+  font-family: 'pf_beausans_prothin', sans-serif;
+  margin-bottom: 0;
+  height: 140px;
+}
+.write_review .rating span {
+  margin-right: 10px;
+  font-family: 'pf_beausans_prothin', sans-serif;
 }

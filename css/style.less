@@ -5922,3 +5922,40 @@ table.cont-block {
         }
     }
 }
+.write_review {
+    display: none;
+    .caption {
+        font-size: 1.250em;
+        margin-bottom: 15px;
+    }
+    .review_form {
+        border-bottom: 1px solid #d6d6d8;
+        padding-bottom: 30px;
+        margin-bottom: 20px;
+        .form_element {
+            float: none;
+            input[type="submit"] {
+                border: none;
+            }
+        }
+        .textblock {
+            margin-bottom: 30px;
+            width: 440px;
+            label {
+                &:extend(.template_form .form_element label);
+            }
+        }
+        textarea {
+            &:extend(.order_page .comment_text all);
+            font-family: 'pf_beausans_prothin', sans-serif;
+            margin-bottom: 0;
+            height: 140px;
+        }
+    }
+    .rating {
+        span {
+            margin-right: 10px;
+            font-family: 'pf_beausans_prothin', sans-serif;
+        }
+    }
+}

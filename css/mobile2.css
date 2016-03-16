@@ -997,7 +997,7 @@
     float: left;
   }
   .recalls_block .recall_head .rating {
-    margin: 14px 0;
+    margin: 14px 20px 14px 0;
   }
   #content_main > div#download > .item > a.link {
     margin: 4px 0 0;
@@ -1236,6 +1236,9 @@
   }
   a.prn-link {
     top: 23px;
+  }
+  .write_review .review_form .textblock {
+    width: 100%;
   }
 }
 @media (max-width: 620px) {
